@@ -60,7 +60,7 @@ namespace MicroHttpd.Core.Tests
 		public void ParseCorrectVerbAndURI()
 		{
 			var header = new HttpRequestHeader("GET /myFile HTTP/1.1");
-			Assert.Equal("GET", header.Verb);
+			Assert.Equal(HttpRequestMethod.GET, header.Method);
 			Assert.Equal("/myFile", header.Uri);
 		}
 

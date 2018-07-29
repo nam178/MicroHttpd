@@ -13,17 +13,17 @@ namespace MicroHttpd.Core
 				?? throw new ArgumentNullException(nameof(tcpSessionLifetimeScope));
 		}
 
-		public IAsyncExecutable Create()
+		public IAsyncOperation Create()
 		{
-			var child = _tcpSessionLifetimeScope.BeginLifetimeScope();
-			return new AsyncExecutableWithLifetimeScope(
+			var child = _tcpSessionLifetimeScope.BeginLifetimeScope(Module.Tags.HttpSession);
+			return new AsyncOperationWithLifeTimeScope(
 				child,
 				child.Resolve<HttpSession>()
 				);
 				
 		}
 
-		public void Destroy(IAsyncExecutable httpSession)
-			=> ((AsyncExecutableWithLifetimeScope)httpSession).LifetimeScope.Dispose();
+		public void Destroy(IAsyncOperation httpSession)
+			=> ((AsyncOperationWithLifeTimeScope)httpSession).LifetimeScope.Dispose();
 	}
 }

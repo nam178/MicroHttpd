@@ -1,7 +1,7 @@
 ﻿using log4net;
 using System;
-using System.Globalization;
 using System.IO;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -71,19 +71,17 @@ namespace MicroHttpd.Core
 		{
 			RequireNonCompleted();
 
-			// If content-length or content-encoding header was set,
-			// immediately flush the header before writing anything.
-
 			// Header wasn't sent,
-			// We support to store this write into memory
+			// We suppose to store this write into memory
 			if(false == _response.IsHeaderSent)
 			{
-				// Can we determine the encoder type now?
+				// Is the type of body explicitly specified in header?
+				// (Content-length or Transfer-Encoding)
 				// Or,
 				// Will this write overflows the internal buffer?
 				// If so, send the header.
 				if(WillInternalBufferFull(additionalBytes: count) 
-					|| CanEncoderTypeBeDetermined(_response))
+					|| _response.IsBodyTypeExplicitlySpecified())
 				{
 					await SendHeaderAndCreateEncoderAsync();
 					// Dump this write request into it.
@@ -93,9 +91,20 @@ namespace MicroHttpd.Core
 				else
 					_buffer.Write(buffer, offset, count);
 			}
-			// Header was sent,
+			// Header was sent, 
 			// We direct all writes to the current encoder.
-			else await _encoder.AppendAsync(buffer, offset, count);
+			else
+			{
+				// If we don't have an encoder, 
+				// which means the header was sent by someone else,
+				// we should have no data held in memory
+				// (if we do, encoder was created already),
+				// so just create an encoder and use it.
+				if(null == _encoder)
+					_encoder = GetEncoderImpl(_rawResponseStream);
+
+				await _encoder.AppendAsync(buffer, offset, count);
+			}
 		}
 
 		/// <summary>
@@ -117,31 +126,8 @@ namespace MicroHttpd.Core
 				await SendHeaderAndCreateEncoderAsync();
 
 			// Complete encoding
-			await _encoder?.CompleteAsync();
-		}
-
-		/// <summary>
-		/// User of this instance should call this method to indicate
-		/// they have finished sending data.
-		/// 
-		/// The async version of this method is preferred over the non-async one,
-		/// because it uses async IO under the hood.
-		/// 
-		/// This method is called automatically when disposing this instance.
-		/// </summary>
-		public void Complete()
-		{
-			// Already completed? 
-			if(_isCompleted)
-				return;
-			_isCompleted = true;
-
-			// Send the header if it was not sent
-			if(false == _response.IsHeaderSent)
-				SendHeaderAndCreateEncoder();
-
-			// Complete encoding
-			_encoder?.Complete();
+			if(_encoder != null)
+				await _encoder.CompleteAsync();
 		}
 
 		/// <summary>
@@ -158,24 +144,6 @@ namespace MicroHttpd.Core
 			_buffer.SetLength(0);
 		}
 
-		void SendHeaderAndCreateEncoder()
-		{
-			if(_response.IsHeaderSent)
-				throw new InvalidOperationException();
-			// First, crete the encoder
-			_encoder = GetEncoderImpl(_rawResponseStream);
-			
-			// Flush headers.
-			// This need tobe done before any data written into the encoder,
-			// and after the encoder is created.
-			_response.SendHeader();
-
-			// Transfer bytes held in memory to the encoder
-			_encoder.Append(
-				_buffer.GetBuffer(), 0, (int)_buffer.Length,
-				_tcpSettings.ReadWriteBufferSize);
-		}
-
 		async Task SendHeaderAndCreateEncoderAsync()
 		{
 			if(_response.IsHeaderSent)
@@ -184,11 +152,11 @@ namespace MicroHttpd.Core
 			_encoder = GetEncoderImpl(_rawResponseStream);
 
 			// Flush headers.
+			// This need tobe done before any data written into the encoder,
+			// and after the encoder is created.
 			await _response.SendHeaderAsync();
 
 			// Transfer bytes held in memory to the encoder
-			// This need tobe done before any data written into the encoder,
-			// and after the encoder is created.
 			await _encoder.AppendAsync(
 				_buffer.GetBuffer(), 0, (int)_buffer.Length,
 				_tcpSettings.ReadWriteBufferSize);
@@ -203,14 +171,14 @@ namespace MicroHttpd.Core
 			{
 				encoder = new HttpChunkedResponseEncoder(_rawResponseStream,
 					_tcpSettings, _httpSettings);
+				_response.Header.AddChunkedTransferEncodingHeaderIfRequired();
 			}
 			// Otherwise, use the passthrough encoder 
 			// with fixed length
 			else
 			{
 				RequireValidContentLength(proposedContentLength);
-				AddContentLengthHeaderWhenRequired(_response.Header,
-					proposedContentLength);
+				_response.Header.AddContentLengthHeaderWhenRequired(proposedContentLength);
 				encoder = new HttpPassthroughResponseEncoder(_rawResponseStream, 
 					proposedContentLength);
 			}
@@ -256,6 +224,11 @@ namespace MicroHttpd.Core
 			{
 				Complete();
 			}
+			catch(TcpException) {
+				// It's pretty normal to get TcpException 
+				// when closing the body, i.e. when the user closes the browser,
+				// causing the whole session to drop.
+			}
 			catch(Exception ex)
 			{
 				// Disposer should never throw exception,
@@ -263,6 +236,22 @@ namespace MicroHttpd.Core
 				_logger.Error(ex.Message, ex);
 			}
 			base.Dispose(disposing);
+		}
+
+		void Complete()
+		{
+			if(_isCompleted)
+				return;
+			try
+			{
+				CompleteAsync().Wait();
+			}
+			catch(AggregateException ex)
+			{
+				if(ex.InnerException != null)
+					ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
+				throw;
+			}
 		}
 
 		bool TryGetProposedContentLength(out long contentLength)
@@ -273,7 +262,10 @@ namespace MicroHttpd.Core
 			{
 				var encodings = _response.Header.Get(HttpKeys.TransferEncoding, false);
 				if(encodings.Count == 1
-					&& string.Compare(encodings[0], HttpKeys.ChunkedValue) == 0)
+					&& string.Compare(
+						encodings[0], HttpKeys
+						.ChunkedValue, 
+						StringComparison.InvariantCultureIgnoreCase) == 0)
 				{
 					contentLength = default(long);
 					return false;
@@ -305,29 +297,6 @@ namespace MicroHttpd.Core
 			// We will use fixed length;
 			contentLength = _response.Header.GetContentLength();
 			return true;
-		}
-
-		static void AddContentLengthHeaderWhenRequired(
-			IHttpResponseHeader responseHeader,
-			long proposedContentLength)
-		{
-			// Don't have to add 'Content-length' header if there is no content
-			if(proposedContentLength <= 0)
-				return;
-			// Don't have to add 'Content-length' header if it is already added.
-			if(responseHeader.ContainsKey(HttpKeys.ContentLength))
-				return;
-
-			// Add it
-			responseHeader[HttpKeys.ContentLength]
-				= proposedContentLength.ToString(CultureInfo.InvariantCulture);
-		}
-
-		static bool CanEncoderTypeBeDetermined(IHttpResponse _response)
-		{
-			return _response.Header.ContainsKey(HttpKeys.ContentLength)
-				|| _response.Header.ContainsKey(HttpKeys.TransferEncoding)
-				;
 		}
 	}
 }

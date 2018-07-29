@@ -10,7 +10,7 @@ using Xunit;
 namespace MicroHttpd.Core.Tests
 {
 	public sealed class HttpResponseBodyTests
-    {
+	{
 		[Theory]
 		[InlineData(4096, 8000)]
 		[InlineData(7000, 8000)]
@@ -27,15 +27,15 @@ namespace MicroHttpd.Core.Tests
 		[InlineData(8200, 4096, true)]
 		[InlineData(36002, 4096, true)]
 		public async Task UseChunkedEncodingWhenWritesExceedInternalBuffer(
-			int testDataSize, 
+			int testDataSize,
 			int writeBufferSize,
 			bool endResponseBodyByDisposingIt = false)
 		{
 			// Mockup
-			MockUp(testDataSize, 
-				out HttpSettings httpSettings, 
-				out MemoryStream senderData, 
-				out Mock <IHttpResponse> mockHttpResponse, 
+			MockUp(testDataSize,
+				out HttpSettings httpSettings,
+				out MemoryStream senderData,
+				out Mock<IHttpResponse> mockHttpResponse,
 				out MemoryStream receiverData,
 				out _);
 
@@ -48,10 +48,10 @@ namespace MicroHttpd.Core.Tests
 		}
 
 		static void MockUp(
-			int testDataSize, 
-			out HttpSettings httpSettings, 
-			out MemoryStream senderData, 
-			out Mock<IHttpResponse> mockHttpResponse, 
+			int testDataSize,
+			out HttpSettings httpSettings,
+			out MemoryStream senderData,
+			out Mock<IHttpResponse> mockHttpResponse,
 			out MemoryStream receiverData,
 			out HttpResponseHeader responseHeader)
 		{
@@ -70,9 +70,6 @@ namespace MicroHttpd.Core.Tests
 				.Setup(inst => inst.IsHeaderSent)
 				.Returns(() => isHeaderSent);
 			mockHttpResponse
-				.Setup(inst => inst.SendHeader())
-				.Callback(() => t.SendHeaderAsync().Wait());
-			mockHttpResponse
 				.Setup(inst => inst.SendHeaderAsync())
 				.Returns(delegate
 				{
@@ -86,7 +83,7 @@ namespace MicroHttpd.Core.Tests
 		}
 
 		static async Task VerifyReceivedChunkedMessage(
-			MemoryStream senderData, 
+			MemoryStream senderData,
 			MemoryStream receiverData)
 		{
 			receiverData.Position = 0;
@@ -168,7 +165,7 @@ namespace MicroHttpd.Core.Tests
 				out HttpResponseHeader responseHeader);
 
 			// Begin test
-			await PerformWriteIntoBody(endResponseBodyByDisposingIt, httpSettings, 
+			await PerformWriteIntoBody(endResponseBodyByDisposingIt, httpSettings,
 				senderData, mockHttpResponse, receiverData);
 
 			// Test decode
@@ -243,10 +240,8 @@ namespace MicroHttpd.Core.Tests
 			}
 		}
 
-		[Theory]
-		[InlineData(true)]
-		[InlineData(false)]
-		async Task CanUseDisposeAndCompleteTogether(bool useCompleteAsyncVersion)
+		[Fact]
+		async Task CanUseDisposeAndCompleteTogether()
 		{
 			// Mockup
 			MockUp(10000,
@@ -264,11 +259,7 @@ namespace MicroHttpd.Core.Tests
 							mockHttpResponse.Object))
 			{
 				await senderData.CopyToAsync(body, 4096);
-
-				if(useCompleteAsyncVersion)
-					await body.CompleteAsync();
-				else
-					body.Complete();
+				await body.CompleteAsync();
 			}
 
 			await VerifyReceivedChunkedMessage(senderData, receiverData);
@@ -327,7 +318,7 @@ namespace MicroHttpd.Core.Tests
 			}
 			// Check logger
 			logger.Verify(
-				l => l.Error(It.IsAny<string>(), It.Is<Exception>(e => e is InvalidOperationException)), 
+				l => l.Error(It.IsAny<string>(), It.Is<Exception>(e => e is InvalidOperationException)),
 				Times.Once);
 		}
 
@@ -355,6 +346,71 @@ namespace MicroHttpd.Core.Tests
 			// as we set the content-length, data must go directly to the response stream
 			// and won't buffered in memory.
 			Assert.True(mockStream.ToArray().Last() == 0x99);
+		}
+
+		[Fact]
+		async Task CanSendHeaderBeforeWritingIntoBody_WithContentLength()
+		{
+			// Mockup
+			MockUp(100,
+				out HttpSettings httpSettings,
+				out MemoryStream senderData,
+				out Mock<IHttpResponse> mockHttpResponse,
+				out MemoryStream receiverData,
+				out HttpResponseHeader header);
+
+			mockHttpResponse.Setup(inst => inst.IsHeaderSent).Returns(true);
+			header["content-length"] = "100";
+
+			// Begin test
+			await PerformWriteIntoBody(false, httpSettings,
+				senderData, mockHttpResponse, receiverData, 1024);
+
+			// Verify 
+			Assert.True(senderData.ToArray().SequenceEqual(receiverData.ToArray()));
+		}
+
+		[Fact]
+		async Task CanSendHeaderBeforeWritingIntoBody_WithContentLengthNoBodyForHeadRequest()
+		{
+			// Mockup
+			MockUp(0,
+				out HttpSettings httpSettings,
+				out MemoryStream senderData,
+				out Mock<IHttpResponse> mockHttpResponse,
+				out MemoryStream receiverData,
+				out HttpResponseHeader header);
+
+			mockHttpResponse.Setup(inst => inst.IsHeaderSent).Returns(true);
+			header["content-length"] = "100";
+
+			// Begin test
+			await PerformWriteIntoBody(false, httpSettings,
+				senderData, mockHttpResponse, receiverData, 1024);
+
+			// Verify 
+			Assert.True(receiverData.Length == 0);
+		}
+
+		[Fact]
+		async Task CanSendHeaderBeforeWritingIntoBody_Chunked()
+		{
+			// Mockup
+			MockUp(100,
+				out HttpSettings httpSettings,
+				out MemoryStream senderData,
+				out Mock<IHttpResponse> mockHttpResponse,
+				out MemoryStream receiverData,
+				out HttpResponseHeader header);
+
+			mockHttpResponse.Setup(inst => inst.IsHeaderSent).Returns(true);
+			header["tranfer-encoding"] = "chunked";
+
+			// Begin test
+			await PerformWriteIntoBody(false, httpSettings,
+				senderData, mockHttpResponse, receiverData, 1024);
+
+			await VerifyReceivedChunkedMessage(senderData, receiverData);
 		}
 	}
 }

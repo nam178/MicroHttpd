@@ -13,6 +13,9 @@ namespace MicroHttpd.Core
 		public string FileExtension
 		{ get; }
 
+		public bool IsText
+		{ get;  }
+
 		public MimeTypeEntry(
 			string name,
 			string httpContentType,
@@ -24,6 +27,9 @@ namespace MicroHttpd.Core
 				?? throw new ArgumentNullException(nameof(httpContentType));
 			FileExtension = fileExtension
 				?? throw new ArgumentNullException(nameof(fileExtension));
+			IsText = HttpContentType.StartsWith(
+				"text/", 
+				StringComparison.InvariantCultureIgnoreCase);
 		}
 	}
 }

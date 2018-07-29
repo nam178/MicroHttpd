@@ -1,4 +1,7 @@
-﻿using MicroHttpd.Core;
+﻿using log4net;
+using log4net.Appender;
+using log4net.Config;
+using MicroHttpd.Core;
 using MicroHttpd.Core.StringMatch;
 using System.IO;
 using System.Reflection;
@@ -9,6 +12,12 @@ namespace Demo
     {
 		static void Main(string[] args)
 		{
+			// Enable logging
+			BasicConfigurator.Configure(
+				LogManager.CreateRepository(
+					Assembly.GetEntryAssembly(),
+					typeof(log4net.Repository.Hierarchy.Hierarchy)));
+
 			var httpService = HttpServiceFacade.Create();
 			httpService.AddVirtualHost(new VirtualHostConfig
 			{

@@ -60,39 +60,35 @@ namespace MicroHttpd.Core
 
 		async Task EnsureRequestBodyIsReadAsync()
 		{
-			var buff = new byte[_tcpSettings.ReadWriteBufferSize];
-
-			// In some cases, the request body hasn't been built,
-			// for example, when we receive an malformed request,
-			// and need to close the connection immediately.
-			//
-			// If body has not been built, this throws InvalidOperationException.
-			// Catch and ignore it.
+			// GET request contains no body, nothing to do.
+			// Notes: in some cases, i.e. malformed request, 
+			// accessing the header raises Exception
+			try
+			{
+				if(_request.Header.Method == HttpRequestMethod.GET)
+					return;
+			}
+			catch(InvalidOperationException) { return; };
+			
+			// Get a reference to request body,
+			// also be aware of InvalidOperationException due to
+			// accessing of body on a malformed request.
 			ReadOnlyStream body;
 			try
 			{
 				body = _request.Body;
 			}
-			catch(InvalidOperationException)
-			{ return; }
+			catch(InvalidOperationException) { return; }
 			
+			// Now read 
+			var buff = new byte[_tcpSettings.ReadWriteBufferSize];
 			while(true)
 			{
 				if(0 == await body.ReadAsync(buff, 0, buff.Length))
 					break;
 			}
 		}
-
-		public void SendHeader()
-		{
-			RequireUnsentHeader();
-			_rawResponseStream.Write(
-				Encoding.ASCII.GetBytes(_header.AsPlainText),
-				_tcpSettings.ReadWriteBufferSize
-				);
-			FlagHeaderAsSent();
-		}
-
+		
 		void FlagHeaderAsSent()
 		{
 			IsHeaderSent = true;

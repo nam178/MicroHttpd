@@ -21,7 +21,7 @@ namespace MicroHttpd.Core.Tests
 			var mock = new MockUp();
 
 			// Begin test
-			using(var watchDog = new WatchDogImpl(Mock.Of<ILog>(), mock.TimerFactory.Object, mock.MockClock.Object))
+			using(var watchDog = new WatchDog(mock.TimerFactory.Object, mock.MockClock.Object))
 			using(var session = watchDog.Watch(mock.Target.Object))
 			{
 				watchDog.MaxSessionDuration = TimeSpan.FromSeconds(30);
@@ -55,7 +55,7 @@ namespace MicroHttpd.Core.Tests
 		public void WatchDogWontDisposeTheTargetIfSessionIsAborted()
 		{
 			var mock = new MockUp();
-			using(var watchDog = new WatchDogImpl(Mock.Of<ILog>(), mock.TimerFactory.Object, mock.MockClock.Object))
+			using(var watchDog = new WatchDog(mock.TimerFactory.Object, mock.MockClock.Object))
 			{
 				watchDog.MaxSessionDuration = TimeSpan.FromSeconds(30);
 

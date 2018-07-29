@@ -77,8 +77,14 @@ namespace MicroHttpd.Core
 				.SingleInstance();
 
 			// Contents
+			builder.RegisterType<Content.Static>().AsSelf();
+			builder.RegisterType<Content.NoContent>().AsSelf();
 			builder
-				.RegisterType<Content.Static>().AsSelf()
+				.Register(x => new Content.Aggregated(new IContent[]
+				{
+					x.Resolve<Content.Static>(),
+					x.Resolve<Content.NoContent>()
+				}))
 				.AsImplementedInterfaces()
 				.SingleInstance();
 
@@ -87,6 +93,25 @@ namespace MicroHttpd.Core
 			// child of the root scope.
 			builder
 				.RegisterType<TcpSessionFactory>()
+				.AsImplementedInterfaces()
+				.SingleInstance();
+
+			// SSL service
+			// Singleton so it won't repeatedly resolve X509Certificate
+			builder
+				.RegisterType<SslService>()
+				.AsImplementedInterfaces()
+				.SingleInstance();
+
+			// Content settings - it is read-only
+			// so let's make it a singleton to avoid creating too many objects
+			builder
+				.RegisterType<ContentSettings>()
+				.As<IContentSettingsReadOnly>()
+				.SingleInstance();
+
+			builder
+				.RegisterType<HttpRequestBodyFactory>()
 				.AsImplementedInterfaces()
 				.SingleInstance();
 		}
@@ -138,19 +163,21 @@ namespace MicroHttpd.Core
 				.AsImplementedInterfaces();
 
 			builder
-				.RegisterType<SslImpl>()
+				.RegisterType<SslService>()
 				.AsImplementedInterfaces();
 
-			builder
-				.RegisterType<WatchDogImpl>()
-				.AsSelf();
+			builder.RegisterType<WatchDog>().AsSelf();
+
+			builder.RegisterType<TimerFactory>().AsImplementedInterfaces();
+
+			builder.RegisterType<Clock>().AsImplementedInterfaces();
 		}
 
-		static WatchDogImpl CreateWatchDogWithSessionTTL(
+		static WatchDog CreateWatchDogWithSessionTTL(
 			IComponentContext serviceLocator, 
 			TimeSpan keepAliveTimeout)
 		{
-			var watchdog = serviceLocator.Resolve<WatchDogImpl>();
+			var watchdog = serviceLocator.Resolve<WatchDog>();
 			if(keepAliveTimeout.TotalSeconds <= 0)
 				throw new ArgumentException(nameof(keepAliveTimeout));
 			watchdog.MaxSessionDuration = keepAliveTimeout;

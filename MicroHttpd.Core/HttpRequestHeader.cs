@@ -6,41 +6,26 @@ namespace MicroHttpd.Core
 {
 	sealed class HttpRequestHeader : HttpHeader, IHttpRequestHeader
 	{
-		string _cachedVerb = null;
-		public string Verb
-		{
-			get
-			{
-				if(_cachedVerb == null)
-					CacheVerbAndUri(StartLine, out _cachedVerb, out _cachedUri);
-				return _cachedVerb;
-			}
-		}
+		HttpRequestMethod _cachedMethod;
+		public HttpRequestMethod Method
+		{ get => _cachedMethod; }
 
 		string _cachedUri;
 		public string Uri
-		{
-			get
-			{
-				if(_cachedUri == null)
-					CacheVerbAndUri(StartLine, out _cachedVerb, out _cachedUri);
-				return _cachedUri;
-			}
-		}
+		{ get => _cachedUri; }
 
 		public override string StartLine {
 			get => base.StartLine;
 			set
 			{
 				base.StartLine = value;
-				_protocol = GetProtocol(value);
-				CacheVerbAndUri(value, out _cachedVerb, out _cachedUri);
+				RefreshCachedValues(value);
 			}
 		}
 
-		HttpProtocol _protocol = HttpProtocol.Unknown;
+		HttpProtocol _cachedProtocol = HttpProtocol.Unknown;
 		public HttpProtocol Protocol
-		{ get => _protocol; }
+		{ get => _cachedProtocol; }
 
 		public HttpRequestHeader(
 			string startLine = null,
@@ -48,13 +33,19 @@ namespace MicroHttpd.Core
 			: base(startLine, entries)
 		{
 			if(startLine != null)
-			{
-				_protocol = GetProtocol(startLine);
-				CacheVerbAndUri(startLine, out _cachedVerb, out _cachedUri);
-			}
+				RefreshCachedValues(startLine);
 		}
 
-		static void CacheVerbAndUri(string startLine, out string _cachedVerb, out string _cachedUri)
+		void RefreshCachedValues(string startLine)
+		{
+			_cachedProtocol = GetProtocol(startLine);
+			GetMethodAndUri(startLine, out _cachedMethod, out _cachedUri);
+		}
+
+		static void GetMethodAndUri(
+			string startLine, 
+			out HttpRequestMethod method, 
+			out string uri)
 		{
 			if(string.IsNullOrWhiteSpace(startLine))
 				throw new InvalidOperationException(
@@ -63,8 +54,8 @@ namespace MicroHttpd.Core
 			var match = Regex.Match(startLine, @"^\s*([^\s]+)\s+([^\s]+)");
 			if((match != null) && (match.Groups.Count == 3))
 			{
-				_cachedVerb = match.Groups[1].Value.ToUpper();
-				_cachedUri = match.Groups[2].Value;
+				method = HttpRequestMethodHelper.FromString(match.Groups[1].Value);
+				uri = match.Groups[2].Value;
 				return;
 			}
 

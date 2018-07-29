@@ -42,6 +42,8 @@ namespace MicroHttpd.Core
 		public IPAddress RemoteAddress
 		{ get => _remoteAddress.Value; }
 
+		readonly string _debugName;
+
 		public TcpClientImpl()
 		{
 			_tcpClient = new TcpClient();
@@ -49,6 +51,7 @@ namespace MicroHttpd.Core
 				() => ((IPEndPoint)_tcpClient.Client.RemoteEndPoint).Address,
 				LazyThreadSafetyMode.ExecutionAndPublication
 				);
+			_debugName = _tcpClient.Client.RemoteEndPoint.ToString();
 		}
 
 		public TcpClientImpl(TcpClient tcpClient)
@@ -62,9 +65,8 @@ namespace MicroHttpd.Core
 		public Task ConnectAsync(string host, int port)
 			=> _tcpClient.ConnectAsync(host, port);
 
-		public override string ToString()
-			=>  $"[{GetType().Name} {_tcpClient.Client.RemoteEndPoint}]";
-		
+		public override string ToString() =>  $"[TcpClient {_debugName}]";
+
 		void IDisposable.Dispose() => _tcpClient.Close();
 	}
 }

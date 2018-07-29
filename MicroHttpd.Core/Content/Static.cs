@@ -32,34 +32,57 @@ namespace MicroHttpd.Core.Content
 		}
 
 		public async Task<bool> WriteContentAsync(
-			IHttpRequest request, 
+			IHttpRequest request,
 			IHttpResponse response)
 		{
-			var vhost = GetVirtualHost(request);
+			// Early exit for non GET/HEAD request
+			if(request.Header.Method != HttpRequestMethod.GET
+				&& request.Header.Method != HttpRequestMethod.HEAD)
+			{
+				return false;
+			}
 
 			// No vhost? Early exit after returning 404 Not Found
+			var vhost = GetVirtualHost(request);
 			if(null == vhost)
 			{
 				await Write404NotFoundAsync(response);
 				return true;
 			}
-			
+
 			// Not a valid path? 
-			if(IsValidFileUri(vhost.DocumentRoot, request.Header.Uri, 
+			if(false == IsValidFileUri(vhost.DocumentRoot, 
+				request.Header.Uri.TrimStart('/'),
 				out string resolvedPath))
 			{
 				return false;
 			}
 
-			// Good path.
+			// Valid path to a file.
+			await WriteFileContentAsync(request, response, 
+				resolvedPath, _contentSettings.DefaultCharsetForTextContents);
+			return true;
+		}
+
+		async Task WriteFileContentAsync(
+			IHttpRequest request, 
+			IHttpResponse response, 
+			string absolutePathToFile,
+			string defaultCharSetForTextContent)
+		{
 			// First, set response content-type header
-			var ext = (StringCI)Path.GetExtension(resolvedPath);
-			response.Header[HttpKeys.ContentType] = _mimeTypes.ContainsKey(ext)
-				? _mimeTypes[ext].HttpContentType
+			var ext = Path.GetExtension(absolutePathToFile);
+			response.Header[HttpKeys.ContentType] = 
+				(ext != null && _mimeTypes.ContainsKey((StringCI)ext))
+				? (
+					_mimeTypes[ext].IsText 
+						? $"{_mimeTypes[ext].HttpContentType}; charset={defaultCharSetForTextContent}" 
+						: _mimeTypes[ext].HttpContentType
+					)
 				: "application/octet-stream";
 
 			// Open the file in async mode, ready to stream it.
-			using(var fs = new FileStream(resolvedPath, FileMode.Open, 
+			using(var fs = new FileStream(absolutePathToFile, FileMode.Open,
 				FileAccess.Read, FileShare.Read, _tcpSettings.ReadWriteBufferSize, true))
 			{
 				// Then, set content-length before writing into the body.
@@ -68,12 +91,16 @@ namespace MicroHttpd.Core.Content
 				response.Header[HttpKeys.ContentLength] = fs.Length.ToString(
 					CultureInfo.InvariantCulture);
 
-				// Then, write the body
-				await fs.CopyToAsync(response.Body, _tcpSettings.ReadWriteBufferSize);
+				// Then, write the body, only for GET request
+				if(request.Header.Method == HttpRequestMethod.GET)
+					await fs.CopyToAsync(response.Body, _tcpSettings.ReadWriteBufferSize);
+				// For HEAD request, we are not sending the body.
+				else
+				{
+					// Flush the header.
+					await response.SendHeaderAsync();
+				}
 			}
-
-			// Done! We've served the file
-			return true;
 		}
 
 		static bool IsValidFileUri(
@@ -92,6 +119,10 @@ namespace MicroHttpd.Core.Content
 			// i.e. GET /hack/../../my.jpeg
 			var fullPath = Path.GetFullPath(Path.Combine(documentRoot, path));
 			if(false == fullPath.StartsWith(documentRoot, StringComparison.InvariantCulture))
+				return false;
+
+			// We don't accept files that don't exist
+			if(false == File.Exists(fullPath))
 				return false;
 
 			resolvedPath = fullPath;

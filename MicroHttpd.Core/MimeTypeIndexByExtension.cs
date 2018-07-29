@@ -15,7 +15,10 @@ namespace MicroHttpd.Core
 				foreach(var inst in JsonConvert
 					.DeserializeObject<MimeTypeEntry[]>(reader.ReadToEnd()))
 				{
-					Add(inst.FileExtension, inst);
+					if(false == ContainsKey(inst.FileExtension))
+					{
+						Add(inst.FileExtension, inst);
+					}
 				}
 			}
 		}

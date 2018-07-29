@@ -14,7 +14,7 @@ namespace MicroHttpd.Core
 	sealed class TcpSessionInitializer : ITcpSessionInitializer, IDisposable
     {
 		readonly ILog _logger = LogManager.GetLogger(typeof(TcpSessionInitializer));
-		readonly ISsl _ssl;
+		readonly ISslService _sslService;
 		readonly ITcpSessionFactory _tcpSessionFactory;
 		readonly IWatchDog _tcpWatchDog;
 		readonly TcpSettings _tcpSettings;
@@ -24,33 +24,21 @@ namespace MicroHttpd.Core
 		/// </summary>
 		int _concurrentTcpSessionCount;
 
-		/// <summary>
-		/// The SSL certificate, if supplied, 
-		/// this instance with attempt to establish an SSL connection with the client.
-		/// </summary>
-		public X509Certificate2 SslCertificate
-		{ get; set; }
-
-		/// <summary>
-		/// If SSL certificate is used, the SSL protocol to use
-		/// </summary>
-		public SslProtocols SupportedSslProtocols
-		{ get; set; } = SslProtocols.Tls | SslProtocols.Tls11 | SslProtocols.Tls12;
-
 		public bool IsLimitReached
 		{
 			get => Interlocked.CompareExchange(
-				ref _concurrentTcpSessionCount, 0, 0)  < _tcpSettings.MaxTcpClients;
+				ref _concurrentTcpSessionCount, 0, 0)  >= _tcpSettings.MaxTcpClients;
 		}
 
 		public TcpSessionInitializer(
-			ISsl ssl,
+			ISslService sslService,
 			ITcpSessionFactory tcpSessionFactory,
 			IWatchDog tcpWatchDog,
 			TcpSettings tcpSettings)
 		{
 			Validation.RequireValidTcpSettings(tcpSettings);
-			_ssl = ssl;
+			_sslService = sslService 
+				?? throw new ArgumentNullException(nameof(sslService));
 			_tcpSessionFactory = tcpSessionFactory 
 				?? throw new ArgumentNullException(nameof(tcpSessionFactory));
 			_tcpWatchDog = tcpWatchDog
@@ -62,10 +50,10 @@ namespace MicroHttpd.Core
 		public async void InitializeNewTcpSession(ITcpClient client)
 		{
 			// Logging
+			Interlocked.Increment(ref _concurrentTcpSessionCount);
 			_logger.Debug(
 				$"Tcp client connected: {client}, total clients: {CountTotalClients()}"
 				);
-			Interlocked.Increment(ref _concurrentTcpSessionCount);
 			try
 			{
 				await Impl(client);
@@ -99,8 +87,8 @@ namespace MicroHttpd.Core
 					new WatchDogStreamDecorator(client.GetStream(), networkActivityWatchDog));
 
 				// Wrap again with SSL, if required.
-				stream = await AddSslIRequiredAsync(_ssl,
-					SslCertificate, SupportedSslProtocols, stream);
+				if(_sslService.IsAvailable)
+					stream = await _sslService.AddSslAsync(stream);
 
 				// Create a TCP session and execute it
 				var session = _tcpSessionFactory.Create(client, stream);
@@ -126,19 +114,7 @@ namespace MicroHttpd.Core
 			client.SendBufferSize = tcpSettings.ReadWriteBufferSize;
 			client.ReceiveBufferSize = tcpSettings.ReadWriteBufferSize;
 		}
-
-		static async Task<Stream> AddSslIRequiredAsync(
-			ISsl ssl, 
-			X509Certificate2 cert, 
-			SslProtocols protocols, 
-			Stream stream)
-		{
-			// If this server configured with an SSL certificate, let's setup SSL
-			if (cert != null)
-				await ssl.AuthenticateAsServerAsync(stream, cert, protocols);
-			return stream;
-		}
-
+		
 		int _disposed;
 		public void Dispose()
 		{

@@ -10,6 +10,5 @@
 		/// </summary>
 		public string DefaultCharsetForTextContents
 		{ get; set; } = "utf-8";
-
 	}
 }

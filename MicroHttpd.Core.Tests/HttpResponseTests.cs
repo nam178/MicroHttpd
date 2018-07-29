@@ -14,6 +14,7 @@ namespace MicroHttpd.Core.Tests
 			var request = new Mock<IHttpRequest>();
 			request.Setup(inst => inst.Body)
 				.Returns(new ReadOnlyStreamAdapter(body));
+			request.Setup(inst => inst.Header).Returns(new HttpRequestHeader("POST / HTTP/1.1"));
 
 			var response = new HttpResponse(
 				request.Object,

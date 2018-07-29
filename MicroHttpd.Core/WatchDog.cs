@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace MicroHttpd.Core
 {
-	sealed class WatchDogImpl : IDisposable, IWatchDog
+	sealed class WatchDog : IDisposable, IWatchDog
 	{
-		readonly ILog _logger;
+		readonly ILog _logger = LogManager.GetLogger(typeof(WatchDog));
 		readonly List<WatchDogSession> _sessions = new List<WatchDogSession>();
 		readonly object _syncRoot = new object();
 		readonly ITimer _timer;
@@ -18,12 +18,10 @@ namespace MicroHttpd.Core
 		public TimeSpan MaxSessionDuration
 		{ get; set; } = TimeSpan.FromSeconds(DefaultMaxSessionDuration);
 
-		public WatchDogImpl(ILog logger, ITimerFactory timerFactory, IClock clock)
+		public WatchDog(ITimerFactory timerFactory, IClock clock)
 		{
 			if(timerFactory == null)
 				throw new ArgumentNullException(nameof(timerFactory));
-			_logger = logger 
-				?? throw new ArgumentNullException(nameof(logger));
 			_clock = clock 
 				?? throw new ArgumentNullException(nameof(clock));
 			_timer = timerFactory.Create(TimeSpan.FromSeconds(CheckIntervalSeconds));

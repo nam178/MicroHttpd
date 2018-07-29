@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
 {
-	sealed class HttpConnectionLoop : IAsyncExecutable
+	sealed class HttpConnectionLoop : IAsyncOperation
 	{
 		readonly Stream _connection;
 		readonly IHttpKeepAliveService _keepAliveService;
@@ -37,7 +37,8 @@ namespace MicroHttpd.Core
 			{
 				do
 				{
-					_logger.Debug($"Keep alive count: {debugKeepAliveCount}");
+					if(debugKeepAliveCount > 0)
+						_logger.Debug($"Connection kept alive {debugKeepAliveCount} time(s)");
 
 					// Create new http session
 					var httpSession = _httpSessionFactory.Create();
@@ -47,6 +48,7 @@ namespace MicroHttpd.Core
 						await httpSession.ExecuteAsync();
 					} finally {
 						_httpSessionFactory.Destroy(httpSession);
+						debugKeepAliveCount++;
 					}
 				}
 				// Continue, as long as the connection remains in

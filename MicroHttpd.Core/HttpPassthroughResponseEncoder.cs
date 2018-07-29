@@ -29,19 +29,10 @@ namespace MicroHttpd.Core
 			return Task.FromResult(true);
 		}
 
-		public void Complete() => RequireEnoughBytesWritten();
-
 		public async Task AppendAsync(byte[] buffer, int offset, int count)
 		{
 			RequireWithinContentLength(extraBytesToWrite: count);
 			await _target.WriteAsync(buffer, offset, count);
-			_bytesWritten += count;
-		}
-
-		public void Append(byte[] buffer, int offset, int count)
-		{
-			RequireWithinContentLength(extraBytesToWrite: count);
-			_target.Write(buffer, offset, count);
 			_bytesWritten += count;
 		}
 

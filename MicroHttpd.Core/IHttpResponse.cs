@@ -14,7 +14,5 @@ namespace MicroHttpd.Core
 		{ get; }
 
 		Task SendHeaderAsync();
-
-		void SendHeader();
 	}
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
 {
-	sealed class HttpSession : IAsyncExecutable
+	sealed class HttpSession : IAsyncOperation
 	{
 		readonly Stream _connection;
 		readonly TcpSettings _tcpSettings;
@@ -48,6 +48,7 @@ namespace MicroHttpd.Core
 			{
 				// Read the request header, minimum required prior processing the request;
 				await _request.WaitForHttpHeaderAsync();
+				_logger.Debug($"{_request.Header.Method} {_request.Header.Uri}");
 
 				// Got the header.
 				// Very likely that we just woke up from a keep-alive sleep,
@@ -77,8 +78,8 @@ namespace MicroHttpd.Core
 				// Caused by malformed HTTP request message
 				// sent by the client;
 				// We'll return with an 400 BadRequest
-				_logger.Warn(ex);
-				await RespondErrorAsync(
+				_logger.Warn(ex.Message);
+				await TryRespondErrorAsync(
 					400,
 					$"<h1>Bad Request</h1><br />{ex.ToString()}");
 			}
@@ -89,44 +90,55 @@ namespace MicroHttpd.Core
 				// Unexpected error caused by us,
 				// We'll return with an internal error
 				_logger.Error(ex);
-				await RespondErrorAsync(
+				await TryRespondErrorAsync(
 					500, 
 					$"<h1>Internal Server Error</h1><br />{ex.ToString()}");
 			}
 		}
-
-		/// <summary>
-		/// Try to respond with the supplied status 
-		/// code and some extra HTML message
-		/// </summary>
-		async Task RespondErrorAsync(int statusCode, string message)
+		
+		async Task TryRespondErrorAsync(int statusCode, string message)
 		{
-			// Header hasn't been sent,
-			// we can still change the status code and 
-			// write into the body.
-			if(false == _response.IsHeaderSent)
+			try
 			{
-				_response.Header.StatusCode = statusCode;
-				_response.Header[HttpKeys.Connection] = HttpKeys.CloseValue;
-				// notes: no need to use DefaultCharsetForTextContents here
-				_response.Header[HttpKeys.ContentType] = "text/plain; charset=utf-8";
-				_response.Body.Clear();
-				await _response.Body.WriteAsync(
-					Encoding.UTF8.GetBytes(message),
-					_tcpSettings.ReadWriteBufferSize
-					);
-				await _response.Body.CompleteAsync();
+				// Header hasn't been sent,
+				// we can still change the status code and 
+				// write into the body.
+				if(false == _response.IsHeaderSent)
+				{
+					_response.Header.StatusCode = statusCode;
+					_response.Header[HttpKeys.Connection] = HttpKeys.CloseValue;
+					// notes: no need to use DefaultCharsetForTextContents here
+					_response.Header[HttpKeys.ContentType] = "text/plain; charset=utf-8";
+					_response.Body.Clear();
+					await _response.Body.WriteAsync(
+						Encoding.UTF8.GetBytes(message),
+						_tcpSettings.ReadWriteBufferSize
+						);
+					await _response.Body.CompleteAsync();
+				}
+				// Else,
+				// Header already sent, we can't do anything.
 			}
-			// Else,
-			// Header already sent, we can't do anything.
+			catch(Exception) {
+				// It's safe to catch all exceptions in here
+			}
 		}
 
 		/// <summary>
 		/// Read the request, process it, and write to the response.
 		/// </summary>
 		/// <returns></returns>
-		Task ProcessRequestResponseAsync()
-			=> _content.WriteContentAsync(_request, _response);
+		async Task ProcessRequestResponseAsync()
+		{
+			if(false == await _content.WriteContentAsync(_request, _response))
+			{
+				// Content hasn't been served to the client,
+				// This indicates a programming error
+				throw new HttpSessionException(
+					"No content has been served to the client"
+					);
+			}
+		}
 
 		/// <summary>
 		/// Set minimum required for the response header.

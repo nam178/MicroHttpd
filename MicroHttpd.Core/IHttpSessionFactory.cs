@@ -2,8 +2,8 @@
 {
 	interface IHttpSessionFactory
 	{
-		IAsyncExecutable Create();
+		IAsyncOperation Create();
 
-		void Destroy(IAsyncExecutable httpSession);
+		void Destroy(IAsyncOperation httpSession);
 	}
 }

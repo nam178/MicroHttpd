@@ -2,7 +2,7 @@
 {
 	public interface IHttpRequestHeader : IHttpHeaderReadOnly
 	{
-		string Verb
+		HttpRequestMethod Method
 		{ get; }
 
 		string Uri

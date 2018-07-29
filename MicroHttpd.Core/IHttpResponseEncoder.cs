@@ -19,24 +19,9 @@ namespace MicroHttpd.Core
 		Task AppendAsync(byte[] buffer, int offset, int count);
 
 		/// <summary>
-		/// Continue encoding the specified data into the target stream,
-		/// 
-		/// Non-async version, can be used in the caller's Dispose method.
-		/// </summary>
-		void Append(byte[] buffer, int offset, int count);
-
-		/// <summary>
 		/// Called to tell the encoder to flush any unwritten data into
 		/// the target stream.
 		/// </summary>
 		Task CompleteAsync();
-
-		/// <summary>
-		/// Called to tell the encoder to flush any unwritten data into
-		/// the target stream.
-		/// 
-		/// Non-async version, can be used in the caller's Dispose method.
-		/// </summary>
-		void Complete();
 	}
 }

@@ -1,14 +1,12 @@
 ﻿using Moq;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace MicroHttpd.Core.Tests
 {
-    public class HttpSessionExceptionHandlingTests
+	public class HttpSessionExceptionHandlingTests
     {
 		[Fact]
 		public async Task Returns500ErrorsOnUnhandledExceptions()

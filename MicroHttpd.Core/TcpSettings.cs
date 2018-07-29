@@ -5,10 +5,8 @@ namespace MicroHttpd.Core
 	public struct TcpSettings
     {
 		/// <summary>
-		/// The TCP server kills the TCP connection if there is no 
-		/// read/write activity on the underluing TCP stream for longer than this threshold.
-		/// 
-		/// Must be larger than HTTP keep-alive timeout value.
+		/// The maximum amount of time a TCP connection
+		/// allowed to live without sending or receiving any data.
 		/// </summary>
 		public TimeSpan IdleTimeout
 		{ get; set; }

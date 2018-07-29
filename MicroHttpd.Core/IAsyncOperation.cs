@@ -2,7 +2,7 @@
 
 namespace MicroHttpd.Core
 {
-	interface IAsyncExecutable
+	interface IAsyncOperation
     {
 		Task ExecuteAsync();
     }

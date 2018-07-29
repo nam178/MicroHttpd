@@ -21,20 +21,9 @@ namespace MicroHttpd.Core.Tests
 		[InlineData(144, 1024)]
 		[InlineData(144, 1023)]
 		[InlineData(144, 1025)]
-		[InlineData(0, 4096, false)]
-		[InlineData(1, 4096, false)]
-		[InlineData(16121, 4096, false)]
-		[InlineData(16121, 1024, false)]
-		[InlineData(16121, 1023, false)]
-		[InlineData(16121, 1025, false)]
-		[InlineData(144, 4096, false)]
-		[InlineData(144, 1024, false)]
-		[InlineData(144, 1023, false)]
-		[InlineData(144, 1025, false)]
 		public async Task CanDecodeEncodedData(
 			int testDataSize, 
-			int appendBufferSize,
-			bool asyncVersion = true)
+			int appendBufferSize)
 		{
 			// Mockup
 			var httpSettings = HttpSettings.Default;
@@ -47,16 +36,8 @@ namespace MicroHttpd.Core.Tests
 				httpSettings
 				);
 
-			if(asyncVersion)
-			{
-				await encoder.AppendAsync(testData, appendBufferSize);
-				await encoder.CompleteAsync();
-			}
-			else
-			{
-				encoder.Append(testData, appendBufferSize);
-				encoder.Complete();
-			}
+			await encoder.AppendAsync(testData, appendBufferSize);
+			await encoder.CompleteAsync();
 
 			// Check
 			targetStream.Position = 0;

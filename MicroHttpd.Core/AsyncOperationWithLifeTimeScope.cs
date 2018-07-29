@@ -4,16 +4,16 @@ using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
 {
-	sealed class AsyncExecutableWithLifetimeScope : IAsyncExecutable
+	sealed class AsyncOperationWithLifeTimeScope : IAsyncOperation
 	{
-		readonly IAsyncExecutable _original;
+		readonly IAsyncOperation _original;
 
 		public ILifetimeScope LifetimeScope
 		{ get; }
 
-		public AsyncExecutableWithLifetimeScope(
+		public AsyncOperationWithLifeTimeScope(
 			ILifetimeScope scope,
-			IAsyncExecutable original)
+			IAsyncOperation original)
 		{
 			LifetimeScope = scope
 				?? throw new ArgumentNullException(nameof(scope));

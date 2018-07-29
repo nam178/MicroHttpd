@@ -132,7 +132,7 @@ namespace MicroHttpd.Core
 		{
 			if(Interlocked.CompareExchange(ref _disposed, 1, 0) == 0)
 			{
-				_requestBody.Dispose();
+				_requestBody?.Dispose();
 			}
 		}
 	}

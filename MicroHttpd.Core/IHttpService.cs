@@ -20,6 +20,13 @@ namespace MicroHttpd.Core
 		void AddVirtualHost(IVirtualHostConfigReadOnly virtualHostConfig);
 
 		/// <summary>
+		/// Configure SSL
+		/// </summary>
+		/// <param name="pfxCertificate">Relative or absolute path to a PFX certificate</param>
+		/// <param name="password">Password for the PFX certificate</param>
+		void AddSSL(string pfxCertificate, string password);
+
+		/// <summary>
 		/// Add an autofac module to extend or override the HTTP server's functionalities.
 		/// </summary>
 		void AddModule(IModule autofacModule);

@@ -58,7 +58,7 @@ namespace MicroHttpd.Core.Tests
 			var builder = HttpHeaderBuilderFactory.CreateRequestHeaderBuilder();
 			Assert.True(builder.AppendBuffer(msg.ToBytes(), 3, msg.ToBytes().Length - 3 -5, out _));
 			Assert.True(builder.Result.GetFirst("key") == "value1");
-			Assert.Equal("get", builder.Result.Verb, true);
+			Assert.Equal(HttpRequestMethod.GET, builder.Result.Method);
 		}
     }
 }

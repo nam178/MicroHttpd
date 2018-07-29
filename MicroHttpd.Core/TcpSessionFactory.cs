@@ -14,22 +14,22 @@ namespace MicroHttpd.Core
 				?? throw new ArgumentNullException(nameof(rootLifeTimeScope));
 		}
 
-		public IAsyncExecutable Create(ITcpClient client, Stream connection)
+		public IAsyncOperation Create(ITcpClient client, Stream connection)
 		{
 			var child = _rootLifeTimeScope.BeginLifetimeScope(
 				Module.Tags.TcpSession, 
 				x => AddInstanceToRegistration(x, client, connection));
-			return new AsyncExecutableWithLifetimeScope(
+			return new AsyncOperationWithLifeTimeScope(
 				child,
 				child.Resolve<HttpConnectionLoop>()
 				);
 		}
 
-		public void Destroy(IAsyncExecutable tcpSession)
+		public void Destroy(IAsyncOperation tcpSession)
 		{
 			// We just need to dispose the LifetimeScope,
 			// it will then dispose all services resolved from it.
-			((AsyncExecutableWithLifetimeScope)tcpSession).LifetimeScope.Dispose();
+			((AsyncOperationWithLifeTimeScope)tcpSession).LifetimeScope.Dispose();
 		}
 
 		static void AddInstanceToRegistration(ContainerBuilder builder, ITcpClient client, Stream stream)
@@ -43,9 +43,8 @@ namespace MicroHttpd.Core
 
 			builder
 				.RegisterInstance(stream)
-				.AsSelf()
-				.AsImplementedInterfaces()
-				.ExternallyOwned() // we don't own this ITcpClient, the caller does.
+				.As<Stream>()
+				.ExternallyOwned() // we don't own this stream, the caller does.
 				.SingleInstance(); // Single instance for this TCP session
 		}
 	}
