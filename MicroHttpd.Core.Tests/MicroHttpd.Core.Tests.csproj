@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MockData\HttpGetMessage1.txt" />
+    <None Remove="MockData\HttpPostMessage1.txt" />
+    <None Remove="MockData\HttpPostMessage2.txt" />
+    <None Remove="MockData\HttpPostMessage3.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="Moq" Version="4.8.3" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MockData\HttpGetMessage1.txt" />
+    <EmbeddedResource Include="MockData\HttpPostMessage1.txt" />
+    <EmbeddedResource Include="MockData\HttpPostMessage2.txt" />
+    <EmbeddedResource Include="MockData\HttpPostMessage3.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MicroHttpd.Core\MicroHttpd.Core.csproj" />
+  </ItemGroup>
+
+</Project>

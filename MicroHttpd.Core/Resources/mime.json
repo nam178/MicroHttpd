@@ -1,0 +1,3422 @@
+[
+  {
+    "name": "3D Crossword Plugin",
+    "httpContentType": "application/vnd.hzn-3d-crossword",
+    "fileExtension": ".x3d"
+  },
+  {
+    "name": "3GP",
+    "httpContentType": "video/3gpp",
+    "fileExtension": ".3gp"
+  },
+  {
+    "name": "3GP2",
+    "httpContentType": "video/3gpp2",
+    "fileExtension": ".3g2"
+  },
+  {
+    "name": "3GPP MSEQ File",
+    "httpContentType": "application/vnd.mseq",
+    "fileExtension": ".mseq"
+  },
+  {
+    "name": "3M Post It Notes",
+    "httpContentType": "application/vnd.3m.post-it-notes",
+    "fileExtension": ".pwn"
+  },
+  {
+    "name": "3rd Generation Partnership Project – Pic Large",
+    "httpContentType": "application/vnd.3gpp.pic-bw-large",
+    "fileExtension": ".plb"
+  },
+  {
+    "name": "3rd Generation Partnership Project – Pic Small",
+    "httpContentType": "application/vnd.3gpp.pic-bw-small",
+    "fileExtension": ".psb"
+  },
+  {
+    "name": "3rd Generation Partnership Project – Pic Var",
+    "httpContentType": "application/vnd.3gpp.pic-bw-var",
+    "fileExtension": ".pvb"
+  },
+  {
+    "name": "3rd Generation Partnership Project – Transaction Capabilities Application Part",
+    "httpContentType": "application/vnd.3gpp2.tcap",
+    "fileExtension": ".tcap"
+  },
+  {
+    "name": "7-Zip",
+    "httpContentType": "application/x-7z-compressed",
+    "fileExtension": ".7z"
+  },
+  {
+    "name": "AbiWord",
+    "httpContentType": "application/x-abiword",
+    "fileExtension": ".abw"
+  },
+  {
+    "name": "Ace Archive",
+    "httpContentType": "application/x-ace-compressed",
+    "fileExtension": ".ace"
+  },
+  {
+    "name": "Active Content Compression",
+    "httpContentType": "application/vnd.americandynamics.acc",
+    "fileExtension": ".acc"
+  },
+  {
+    "name": "ACU Cobol",
+    "httpContentType": "application/vnd.acucobol",
+    "fileExtension": ".acu"
+  },
+  {
+    "name": "ACU Cobol",
+    "httpContentType": "application/vnd.acucorp",
+    "fileExtension": ".atc"
+  },
+  {
+    "name": "Adaptive differential pulse-code modulation",
+    "httpContentType": "audio/adpcm",
+    "fileExtension": ".adp"
+  },
+  {
+    "name": "Adobe (Macropedia) Authorware – Binary File",
+    "httpContentType": "application/x-authorware-bin",
+    "fileExtension": ".aab"
+  },
+  {
+    "name": "Adobe (Macropedia) Authorware – Map",
+    "httpContentType": "application/x-authorware-map",
+    "fileExtension": ".aam"
+  },
+  {
+    "name": "Adobe (Macropedia) Authorware – Segment File",
+    "httpContentType": "application/x-authorware-seg",
+    "fileExtension": ".aas"
+  },
+  {
+    "name": "Adobe AIR Application",
+    "httpContentType": "application/vnd.adobe.air-application-installer-package+zip",
+    "fileExtension": ".air"
+  },
+  {
+    "name": "Adobe Flash",
+    "httpContentType": "application/x-shockwave-flash",
+    "fileExtension": ".swf"
+  },
+  {
+    "name": "Adobe Flex Project",
+    "httpContentType": "application/vnd.adobe.fxp",
+    "fileExtension": ".fxp"
+  },
+  {
+    "name": "Adobe Portable Document Format",
+    "httpContentType": "application/pdf",
+    "fileExtension": ".pdf"
+  },
+  {
+    "name": "Adobe PostScript Printer Description File Format",
+    "httpContentType": "application/vnd.cups-ppd",
+    "fileExtension": ".ppd"
+  },
+  {
+    "name": "Adobe Shockwave Player",
+    "httpContentType": "application/x-director",
+    "fileExtension": ".dir"
+  },
+  {
+    "name": "Adobe XML Data Package",
+    "httpContentType": "application/vnd.adobe.xdp+xml",
+    "fileExtension": ".xdp"
+  },
+  {
+    "name": "Adobe XML Forms Data Format",
+    "httpContentType": "application/vnd.adobe.xfdf",
+    "fileExtension": ".xfdf"
+  },
+  {
+    "name": "Advanced Audio Coding (AAC)",
+    "httpContentType": "audio/x-aac",
+    "fileExtension": ".aac"
+  },
+  {
+    "name": "Ahead AIR Application",
+    "httpContentType": "application/vnd.ahead.space",
+    "fileExtension": ".ahead"
+  },
+  {
+    "name": "AirZip FileSECURE",
+    "httpContentType": "application/vnd.airzip.filesecure.azf",
+    "fileExtension": ".azf"
+  },
+  {
+    "name": "AirZip FileSECURE",
+    "httpContentType": "application/vnd.airzip.filesecure.azs",
+    "fileExtension": ".azs"
+  },
+  {
+    "name": "Amazon Kindle eBook format",
+    "httpContentType": "application/vnd.amazon.ebook",
+    "fileExtension": ".azw"
+  },
+  {
+    "name": "AmigaDE",
+    "httpContentType": "application/vnd.amiga.ami",
+    "fileExtension": ".ami"
+  },
+  {
+    "name": "Andrew Toolkit",
+    "httpContentType": "application/andrew-inset",
+    "fileExtension": "N/A"
+  },
+  {
+    "name": "Android Package Archive",
+    "httpContentType": "application/vnd.android.package-archive",
+    "fileExtension": ".apk"
+  },
+  {
+    "name": "ANSER-WEB Terminal Client – Certificate Issue",
+    "httpContentType": "application/vnd.anser-web-certificate-issue-initiation",
+    "fileExtension": ".cii"
+  },
+  {
+    "name": "ANSER-WEB Terminal Client – Web Funds Transfer",
+    "httpContentType": "application/vnd.anser-web-funds-transfer-initiation",
+    "fileExtension": ".fti"
+  },
+  {
+    "name": "Antix Game Player",
+    "httpContentType": "application/vnd.antix.game-component",
+    "fileExtension": ".atx"
+  },
+  {
+    "name": "Apple Installer Package",
+    "httpContentType": "application/vnd.apple.installer+xml",
+    "fileExtension": ".mpkg"
+  },
+  {
+    "name": "Applixware",
+    "httpContentType": "application/applixware",
+    "fileExtension": ".aw"
+  },
+  {
+    "name": "Archipelago Lesson Player",
+    "httpContentType": "application/vnd.hhe.lesson-player",
+    "fileExtension": ".les"
+  },
+  {
+    "name": "Arista Networks Software Image",
+    "httpContentType": "application/vnd.aristanetworks.swi",
+    "fileExtension": ".swi"
+  },
+  {
+    "name": "Assembler Source File",
+    "httpContentType": "text/x-asm",
+    "fileExtension": ".s"
+  },
+  {
+    "name": "Atom Publishing Protocol",
+    "httpContentType": "application/atomcat+xml",
+    "fileExtension": ".atomcat"
+  },
+  {
+    "name": "Atom Publishing Protocol Service Document",
+    "httpContentType": "application/atomsvc+xml",
+    "fileExtension": ".atomsvc"
+  },
+  {
+    "name": "Atom Syndication Format",
+    "httpContentType": "application/atom+xml",
+    "fileExtension": ".atom, .xml"
+  },
+  {
+    "name": "Attribute Certificate",
+    "httpContentType": "application/pkix-attr-cert",
+    "fileExtension": ".ac"
+  },
+  {
+    "name": "Audio Interchange File Format",
+    "httpContentType": "audio/x-aiff",
+    "fileExtension": ".aif"
+  },
+  {
+    "name": "Audio Video Interleave (AVI)",
+    "httpContentType": "video/x-msvideo",
+    "fileExtension": ".avi"
+  },
+  {
+    "name": "Audiograph",
+    "httpContentType": "application/vnd.audiograph",
+    "fileExtension": ".aep"
+  },
+  {
+    "name": "AutoCAD DXF",
+    "httpContentType": "image/vnd.dxf",
+    "fileExtension": ".dxf"
+  },
+  {
+    "name": "Autodesk Design Web Format (DWF)",
+    "httpContentType": "model/vnd.dwf",
+    "fileExtension": ".dwf"
+  },
+  {
+    "name": "BAS Partitur Format",
+    "httpContentType": "text/plain-bas",
+    "fileExtension": ".par"
+  },
+  {
+    "name": "Binary CPIO Archive",
+    "httpContentType": "application/x-bcpio",
+    "fileExtension": ".bcpio"
+  },
+  {
+    "name": "Binary Data",
+    "httpContentType": "application/octet-stream",
+    "fileExtension": ".bin"
+  },
+  {
+    "name": "Bitmap Image File",
+    "httpContentType": "image/bmp",
+    "fileExtension": ".bmp"
+  },
+  {
+    "name": "BitTorrent",
+    "httpContentType": "application/x-bittorrent",
+    "fileExtension": ".torrent"
+  },
+  {
+    "name": "Blackberry COD File",
+    "httpContentType": "application/vnd.rim.cod",
+    "fileExtension": ".cod"
+  },
+  {
+    "name": "Blueice Research Multipass",
+    "httpContentType": "application/vnd.blueice.multipass",
+    "fileExtension": ".mpm"
+  },
+  {
+    "name": "BMI Drawing Data Interchange",
+    "httpContentType": "application/vnd.bmi",
+    "fileExtension": ".bmi"
+  },
+  {
+    "name": "Bourne Shell Script",
+    "httpContentType": "application/x-sh",
+    "fileExtension": ".sh"
+  },
+  {
+    "name": "BTIF",
+    "httpContentType": "image/prs.btif",
+    "fileExtension": ".btif"
+  },
+  {
+    "name": "BusinessObjects",
+    "httpContentType": "application/vnd.businessobjects",
+    "fileExtension": ".rep"
+  },
+  {
+    "name": "Bzip Archive",
+    "httpContentType": "application/x-bzip",
+    "fileExtension": ".bz"
+  },
+  {
+    "name": "Bzip2 Archive",
+    "httpContentType": "application/x-bzip2",
+    "fileExtension": ".bz2"
+  },
+  {
+    "name": "C Shell Script",
+    "httpContentType": "application/x-csh",
+    "fileExtension": ".csh"
+  },
+  {
+    "name": "C Source File",
+    "httpContentType": "text/x-c",
+    "fileExtension": ".c"
+  },
+  {
+    "name": "CambridgeSoft Chem Draw",
+    "httpContentType": "application/vnd.chemdraw+xml",
+    "fileExtension": ".cdxml"
+  },
+  {
+    "name": "Cascading Style Sheets (CSS)",
+    "httpContentType": "text/css",
+    "fileExtension": ".css"
+  },
+  {
+    "name": "ChemDraw eXchange file",
+    "httpContentType": "chemical/x-cdx",
+    "fileExtension": ".cdx"
+  },
+  {
+    "name": "Chemical Markup Language",
+    "httpContentType": "chemical/x-cml",
+    "fileExtension": ".cml"
+  },
+  {
+    "name": "Chemical Style Markup Language",
+    "httpContentType": "chemical/x-csml",
+    "fileExtension": ".csml"
+  },
+  {
+    "name": "CIM Database",
+    "httpContentType": "application/vnd.contact.cmsg",
+    "fileExtension": ".cdbcmsg"
+  },
+  {
+    "name": "Claymore Data Files",
+    "httpContentType": "application/vnd.claymore",
+    "fileExtension": ".cla"
+  },
+  {
+    "name": "Clonk Game",
+    "httpContentType": "application/vnd.clonk.c4group",
+    "fileExtension": ".c4g"
+  },
+  {
+    "name": "Close Captioning – Subtitle",
+    "httpContentType": "image/vnd.dvb.subtitle",
+    "fileExtension": ".sub"
+  },
+  {
+    "name": "Cloud Data Management Interface (CDMI) – Capability",
+    "httpContentType": "application/cdmi-capability",
+    "fileExtension": ".cdmia"
+  },
+  {
+    "name": "Cloud Data Management Interface (CDMI) – Contaimer",
+    "httpContentType": "application/cdmi-container",
+    "fileExtension": ".cdmic"
+  },
+  {
+    "name": "Cloud Data Management Interface (CDMI) – Domain",
+    "httpContentType": "application/cdmi-domain",
+    "fileExtension": ".cdmid"
+  },
+  {
+    "name": "Cloud Data Management Interface (CDMI) – Object",
+    "httpContentType": "application/cdmi-object",
+    "fileExtension": ".cdmio"
+  },
+  {
+    "name": "Cloud Data Management Interface (CDMI) – Queue",
+    "httpContentType": "application/cdmi-queue",
+    "fileExtension": ".cdmiq"
+  },
+  {
+    "name": "ClueTrust CartoMobile – Config",
+    "httpContentType": "application/vnd.cluetrust.cartomobile-config",
+    "fileExtension": ".c11amc"
+  },
+  {
+    "name": "ClueTrust CartoMobile – Config Package",
+    "httpContentType": "application/vnd.cluetrust.cartomobile-config-pkg",
+    "fileExtension": ".c11amz"
+  },
+  {
+    "name": "CMU Image",
+    "httpContentType": "image/x-cmu-raster",
+    "fileExtension": ".ras"
+  },
+  {
+    "name": "COLLADA",
+    "httpContentType": "model/vnd.collada+xml",
+    "fileExtension": ".dae"
+  },
+  {
+    "name": "Comma-Seperated Values",
+    "httpContentType": "text/csv",
+    "fileExtension": ".csv"
+  },
+  {
+    "name": "Compact Pro",
+    "httpContentType": "application/mac-compactpro",
+    "fileExtension": ".cpt"
+  },
+  {
+    "name": "Compiled Wireless Markup Language (WMLC)",
+    "httpContentType": "application/vnd.wap.wmlc",
+    "fileExtension": ".wmlc"
+  },
+  {
+    "name": "Computer Graphics Metafile",
+    "httpContentType": "image/cgm",
+    "fileExtension": ".cgm"
+  },
+  {
+    "name": "CoolTalk",
+    "httpContentType": "x-conference/x-cooltalk",
+    "fileExtension": ".ice"
+  },
+  {
+    "name": "Corel Metafile Exchange (CMX)",
+    "httpContentType": "image/x-cmx",
+    "fileExtension": ".cmx"
+  },
+  {
+    "name": "CorelXARA",
+    "httpContentType": "application/vnd.xara",
+    "fileExtension": ".xar"
+  },
+  {
+    "name": "CosmoCaller",
+    "httpContentType": "application/vnd.cosmocaller",
+    "fileExtension": ".cmc"
+  },
+  {
+    "name": "CPIO Archive",
+    "httpContentType": "application/x-cpio",
+    "fileExtension": ".cpio"
+  },
+  {
+    "name": "CrickSoftware – Clicker",
+    "httpContentType": "application/vnd.crick.clicker",
+    "fileExtension": ".clkx"
+  },
+  {
+    "name": "CrickSoftware – Clicker – Keyboard",
+    "httpContentType": "application/vnd.crick.clicker.keyboard",
+    "fileExtension": ".clkk"
+  },
+  {
+    "name": "CrickSoftware – Clicker – Palette",
+    "httpContentType": "application/vnd.crick.clicker.palette",
+    "fileExtension": ".clkp"
+  },
+  {
+    "name": "CrickSoftware – Clicker – Template",
+    "httpContentType": "application/vnd.crick.clicker.template",
+    "fileExtension": ".clkt"
+  },
+  {
+    "name": "CrickSoftware – Clicker – Wordbank",
+    "httpContentType": "application/vnd.crick.clicker.wordbank",
+    "fileExtension": ".clkw"
+  },
+  {
+    "name": "Critical Tools – PERT Chart EXPERT",
+    "httpContentType": "application/vnd.criticaltools.wbs+xml",
+    "fileExtension": ".wbs"
+  },
+  {
+    "name": "CryptoNote",
+    "httpContentType": "application/vnd.rig.cryptonote",
+    "fileExtension": ".cryptonote"
+  },
+  {
+    "name": "Crystallographic Interchange Format",
+    "httpContentType": "chemical/x-cif",
+    "fileExtension": ".cif"
+  },
+  {
+    "name": "CrystalMaker Data Format",
+    "httpContentType": "chemical/x-cmdf",
+    "fileExtension": ".cmdf"
+  },
+  {
+    "name": "CU-SeeMe",
+    "httpContentType": "application/cu-seeme",
+    "fileExtension": ".cu"
+  },
+  {
+    "name": "CU-Writer",
+    "httpContentType": "application/prs.cww",
+    "fileExtension": ".cww"
+  },
+  {
+    "name": "Curl – Applet",
+    "httpContentType": "text/vnd.curl",
+    "fileExtension": ".curl"
+  },
+  {
+    "name": "Curl – Detached Applet",
+    "httpContentType": "text/vnd.curl.dcurl",
+    "fileExtension": ".dcurl"
+  },
+  {
+    "name": "Curl – Manifest File",
+    "httpContentType": "text/vnd.curl.mcurl",
+    "fileExtension": ".mcurl"
+  },
+  {
+    "name": "Curl – Source Code",
+    "httpContentType": "text/vnd.curl.scurl",
+    "fileExtension": ".scurl"
+  },
+  {
+    "name": "CURL Applet",
+    "httpContentType": "application/vnd.curl.car",
+    "fileExtension": ".car"
+  },
+  {
+    "name": "CURL Applet",
+    "httpContentType": "application/vnd.curl.pcurl",
+    "fileExtension": ".pcurl"
+  },
+  {
+    "name": "CustomMenu",
+    "httpContentType": "application/vnd.yellowriver-custom-menu",
+    "fileExtension": ".cmp"
+  },
+  {
+    "name": "Data Structure for the Security Suitability of Cryptographic Algorithms",
+    "httpContentType": "application/dssc+der",
+    "fileExtension": ".dssc"
+  },
+  {
+    "name": "Data Structure for the Security Suitability of Cryptographic Algorithms",
+    "httpContentType": "application/dssc+xml",
+    "fileExtension": ".xdssc"
+  },
+  {
+    "name": "Debian Package",
+    "httpContentType": "application/x-debian-package",
+    "fileExtension": ".deb"
+  },
+  {
+    "name": "DECE Audio",
+    "httpContentType": "audio/vnd.dece.audio",
+    "fileExtension": ".uva"
+  },
+  {
+    "name": "DECE Graphic",
+    "httpContentType": "image/vnd.dece.graphic",
+    "fileExtension": ".uvi"
+  },
+  {
+    "name": "DECE High Definition Video",
+    "httpContentType": "video/vnd.dece.hd",
+    "fileExtension": ".uvh"
+  },
+  {
+    "name": "DECE Mobile Video",
+    "httpContentType": "video/vnd.dece.mobile",
+    "fileExtension": ".uvm"
+  },
+  {
+    "name": "DECE MP4",
+    "httpContentType": "video/vnd.uvvu.mp4",
+    "fileExtension": ".uvu"
+  },
+  {
+    "name": "DECE PD Video",
+    "httpContentType": "video/vnd.dece.pd",
+    "fileExtension": ".uvp"
+  },
+  {
+    "name": "DECE SD Video",
+    "httpContentType": "video/vnd.dece.sd",
+    "fileExtension": ".uvs"
+  },
+  {
+    "name": "DECE Video",
+    "httpContentType": "video/vnd.dece.video",
+    "fileExtension": ".uvv"
+  },
+  {
+    "name": "Device Independent File Format (DVI)",
+    "httpContentType": "application/x-dvi",
+    "fileExtension": ".dvi"
+  },
+  {
+    "name": "Digital Siesmograph Networks – SEED Datafiles",
+    "httpContentType": "application/vnd.fdsn.seed",
+    "fileExtension": ".seed"
+  },
+  {
+    "name": "Digital Talking Book",
+    "httpContentType": "application/x-dtbook+xml",
+    "fileExtension": ".dtb"
+  },
+  {
+    "name": "Digital Talking Book – Resource File",
+    "httpContentType": "application/x-dtbresource+xml",
+    "fileExtension": ".res"
+  },
+  {
+    "name": "Digital Video Broadcasting",
+    "httpContentType": "application/vnd.dvb.ait",
+    "fileExtension": ".ait"
+  },
+  {
+    "name": "Digital Video Broadcasting",
+    "httpContentType": "application/vnd.dvb.service",
+    "fileExtension": ".svc"
+  },
+  {
+    "name": "Digital Winds Music",
+    "httpContentType": "audio/vnd.digital-winds",
+    "fileExtension": ".eol"
+  },
+  {
+    "name": "DjVu",
+    "httpContentType": "image/vnd.djvu",
+    "fileExtension": ".djvu"
+  },
+  {
+    "name": "Document Type Definition",
+    "httpContentType": "application/xml-dtd",
+    "fileExtension": ".dtd"
+  },
+  {
+    "name": "Dolby Meridian Lossless Packing",
+    "httpContentType": "application/vnd.dolby.mlp",
+    "fileExtension": ".mlp"
+  },
+  {
+    "name": "Doom Video Game",
+    "httpContentType": "application/x-doom",
+    "fileExtension": ".wad"
+  },
+  {
+    "name": "DPGraph",
+    "httpContentType": "application/vnd.dpgraph",
+    "fileExtension": ".dpg"
+  },
+  {
+    "name": "DRA Audio",
+    "httpContentType": "audio/vnd.dra",
+    "fileExtension": ".dra"
+  },
+  {
+    "name": "DreamFactory",
+    "httpContentType": "application/vnd.dreamfactory",
+    "fileExtension": ".dfac"
+  },
+  {
+    "name": "DTS Audio",
+    "httpContentType": "audio/vnd.dts",
+    "fileExtension": ".dts"
+  },
+  {
+    "name": "DTS High Definition Audio",
+    "httpContentType": "audio/vnd.dts.hd",
+    "fileExtension": ".dtshd"
+  },
+  {
+    "name": "DWG Drawing",
+    "httpContentType": "image/vnd.dwg",
+    "fileExtension": ".dwg"
+  },
+  {
+    "name": "DynaGeo",
+    "httpContentType": "application/vnd.dynageo",
+    "fileExtension": ".geo"
+  },
+  {
+    "name": "ECMAScript",
+    "httpContentType": "application/ecmascript",
+    "fileExtension": ".es"
+  },
+  {
+    "name": "EcoWin Chart",
+    "httpContentType": "application/vnd.ecowin.chart",
+    "fileExtension": ".mag"
+  },
+  {
+    "name": "EDMICS 2000",
+    "httpContentType": "image/vnd.fujixerox.edmics-mmr",
+    "fileExtension": ".mmr"
+  },
+  {
+    "name": "EDMICS 2000",
+    "httpContentType": "image/vnd.fujixerox.edmics-rlc",
+    "fileExtension": ".rlc"
+  },
+  {
+    "name": "Efficient XML Interchange",
+    "httpContentType": "application/exi",
+    "fileExtension": ".exi"
+  },
+  {
+    "name": "EFI Proteus",
+    "httpContentType": "application/vnd.proteus.magazine",
+    "fileExtension": ".mgz"
+  },
+  {
+    "name": "Electronic Publication",
+    "httpContentType": "application/epub+zip",
+    "fileExtension": ".epub"
+  },
+  {
+    "name": "Email Message",
+    "httpContentType": "message/rfc822",
+    "fileExtension": ".eml"
+  },
+  {
+    "name": "Enliven Viewer",
+    "httpContentType": "application/vnd.enliven",
+    "fileExtension": ".nml"
+  },
+  {
+    "name": "Express by Infoseek",
+    "httpContentType": "application/vnd.is-xpr",
+    "fileExtension": ".xpr"
+  },
+  {
+    "name": "eXtended Image File Format (XIFF)",
+    "httpContentType": "image/vnd.xiff",
+    "fileExtension": ".xif"
+  },
+  {
+    "name": "Extensible Forms Description Language",
+    "httpContentType": "application/vnd.xfdl",
+    "fileExtension": ".xfdl"
+  },
+  {
+    "name": "Extensible MultiModal Annotation",
+    "httpContentType": "application/emma+xml",
+    "fileExtension": ".emma"
+  },
+  {
+    "name": "EZPix Secure Photo Album",
+    "httpContentType": "application/vnd.ezpix-album",
+    "fileExtension": ".ez2"
+  },
+  {
+    "name": "EZPix Secure Photo Album",
+    "httpContentType": "application/vnd.ezpix-package",
+    "fileExtension": ".ez3"
+  },
+  {
+    "name": "FAST Search & Transfer ASA",
+    "httpContentType": "image/vnd.fst",
+    "fileExtension": ".fst"
+  },
+  {
+    "name": "FAST Search & Transfer ASA",
+    "httpContentType": "video/vnd.fvt",
+    "fileExtension": ".fvt"
+  },
+  {
+    "name": "FastBid Sheet",
+    "httpContentType": "image/vnd.fastbidsheet",
+    "fileExtension": ".fbs"
+  },
+  {
+    "name": "FCS Express Layout Link",
+    "httpContentType": "application/vnd.denovo.fcselayout-link",
+    "fileExtension": ".fe_launch"
+  },
+  {
+    "name": "Flash Video",
+    "httpContentType": "video/x-f4v",
+    "fileExtension": ".f4v"
+  },
+  {
+    "name": "Flash Video",
+    "httpContentType": "video/x-flv",
+    "fileExtension": ".flv"
+  },
+  {
+    "name": "FlashPix",
+    "httpContentType": "image/vnd.fpx",
+    "fileExtension": ".fpx"
+  },
+  {
+    "name": "FlashPix",
+    "httpContentType": "image/vnd.net-fpx",
+    "fileExtension": ".npx"
+  },
+  {
+    "name": "FLEXSTOR",
+    "httpContentType": "text/vnd.fmi.flexstor",
+    "fileExtension": ".flx"
+  },
+  {
+    "name": "FLI/FLC Animation Format",
+    "httpContentType": "video/x-fli",
+    "fileExtension": ".fli"
+  },
+  {
+    "name": "FluxTime Clip",
+    "httpContentType": "application/vnd.fluxtime.clip",
+    "fileExtension": ".ftc"
+  },
+  {
+    "name": "Forms Data Format",
+    "httpContentType": "application/vnd.fdf",
+    "fileExtension": ".fdf"
+  },
+  {
+    "name": "Fortran Source File",
+    "httpContentType": "text/x-fortran",
+    "fileExtension": ".f"
+  },
+  {
+    "name": "FrameMaker Interchange Format",
+    "httpContentType": "application/vnd.mif",
+    "fileExtension": ".mif"
+  },
+  {
+    "name": "FrameMaker Normal Format",
+    "httpContentType": "application/vnd.framemaker",
+    "fileExtension": ".fm"
+  },
+  {
+    "name": "FreeHand MX",
+    "httpContentType": "image/x-freehand",
+    "fileExtension": ".fh"
+  },
+  {
+    "name": "Friendly Software Corporation",
+    "httpContentType": "application/vnd.fsc.weblaunch",
+    "fileExtension": ".fsc"
+  },
+  {
+    "name": "Frogans Player",
+    "httpContentType": "application/vnd.frogans.fnc",
+    "fileExtension": ".fnc"
+  },
+  {
+    "name": "Frogans Player",
+    "httpContentType": "application/vnd.frogans.ltf",
+    "fileExtension": ".ltf"
+  },
+  {
+    "name": "Fujitsu – Xerox 2D CAD Data",
+    "httpContentType": "application/vnd.fujixerox.ddd",
+    "fileExtension": ".ddd"
+  },
+  {
+    "name": "Fujitsu – Xerox DocuWorks",
+    "httpContentType": "application/vnd.fujixerox.docuworks",
+    "fileExtension": ".xdw"
+  },
+  {
+    "name": "Fujitsu – Xerox DocuWorks Binder",
+    "httpContentType": "application/vnd.fujixerox.docuworks.binder",
+    "fileExtension": ".xbd"
+  },
+  {
+    "name": "Fujitsu Oasys",
+    "httpContentType": "application/vnd.fujitsu.oasys",
+    "fileExtension": ".oas"
+  },
+  {
+    "name": "Fujitsu Oasys",
+    "httpContentType": "application/vnd.fujitsu.oasys2",
+    "fileExtension": ".oa2"
+  },
+  {
+    "name": "Fujitsu Oasys",
+    "httpContentType": "application/vnd.fujitsu.oasys3",
+    "fileExtension": ".oa3"
+  },
+  {
+    "name": "Fujitsu Oasys",
+    "httpContentType": "application/vnd.fujitsu.oasysgp",
+    "fileExtension": ".fg5"
+  },
+  {
+    "name": "Fujitsu Oasys",
+    "httpContentType": "application/vnd.fujitsu.oasysprs",
+    "fileExtension": ".bh2"
+  },
+  {
+    "name": "FutureSplash Animator",
+    "httpContentType": "application/x-futuresplash",
+    "fileExtension": ".spl"
+  },
+  {
+    "name": "FuzzySheet",
+    "httpContentType": "application/vnd.fuzzysheet",
+    "fileExtension": ".fzs"
+  },
+  {
+    "name": "G3 Fax Image",
+    "httpContentType": "image/g3fax",
+    "fileExtension": ".g3"
+  },
+  {
+    "name": "GameMaker ActiveX",
+    "httpContentType": "application/vnd.gmx",
+    "fileExtension": ".gmx"
+  },
+  {
+    "name": "Gen-Trix Studio",
+    "httpContentType": "model/vnd.gtw",
+    "fileExtension": ".gtw"
+  },
+  {
+    "name": "Genomatix Tuxedo Framework",
+    "httpContentType": "application/vnd.genomatix.tuxedo",
+    "fileExtension": ".txd"
+  },
+  {
+    "name": "GeoGebra",
+    "httpContentType": "application/vnd.geogebra.file",
+    "fileExtension": ".ggb"
+  },
+  {
+    "name": "GeoGebra",
+    "httpContentType": "application/vnd.geogebra.tool",
+    "fileExtension": ".ggt"
+  },
+  {
+    "name": "Geometric Description Language (GDL)",
+    "httpContentType": "model/vnd.gdl",
+    "fileExtension": ".gdl"
+  },
+  {
+    "name": "GeoMetry Explorer",
+    "httpContentType": "application/vnd.geometry-explorer",
+    "fileExtension": ".gex"
+  },
+  {
+    "name": "GEONExT and JSXGraph",
+    "httpContentType": "application/vnd.geonext",
+    "fileExtension": ".gxt"
+  },
+  {
+    "name": "GeoplanW",
+    "httpContentType": "application/vnd.geoplan",
+    "fileExtension": ".g2w"
+  },
+  {
+    "name": "GeospacW",
+    "httpContentType": "application/vnd.geospace",
+    "fileExtension": ".g3w"
+  },
+  {
+    "name": "Ghostscript Font",
+    "httpContentType": "application/x-font-ghostscript",
+    "fileExtension": ".gsf"
+  },
+  {
+    "name": "Glyph Bitmap Distribution Format",
+    "httpContentType": "application/x-font-bdf",
+    "fileExtension": ".bdf"
+  },
+  {
+    "name": "GNU Tar Files",
+    "httpContentType": "application/x-gtar",
+    "fileExtension": ".gtar"
+  },
+  {
+    "name": "GNU Texinfo Document",
+    "httpContentType": "application/x-texinfo",
+    "fileExtension": ".texinfo"
+  },
+  {
+    "name": "Gnumeric",
+    "httpContentType": "application/x-gnumeric",
+    "fileExtension": ".gnumeric"
+  },
+  {
+    "name": "Google Earth – KML",
+    "httpContentType": "application/vnd.google-earth.kml+xml",
+    "fileExtension": ".kml"
+  },
+  {
+    "name": "Google Earth – Zipped KML",
+    "httpContentType": "application/vnd.google-earth.kmz",
+    "fileExtension": ".kmz"
+  },
+  {
+    "name": "GrafEq",
+    "httpContentType": "application/vnd.grafeq",
+    "fileExtension": ".gqf"
+  },
+  {
+    "name": "Graphics Interchange Format",
+    "httpContentType": "image/gif",
+    "fileExtension": ".gif"
+  },
+  {
+    "name": "Graphviz",
+    "httpContentType": "text/vnd.graphviz",
+    "fileExtension": ".gv"
+  },
+  {
+    "name": "Groove – Account",
+    "httpContentType": "application/vnd.groove-account",
+    "fileExtension": ".gac"
+  },
+  {
+    "name": "Groove – Help",
+    "httpContentType": "application/vnd.groove-help",
+    "fileExtension": ".ghf"
+  },
+  {
+    "name": "Groove – Identity Message",
+    "httpContentType": "application/vnd.groove-identity-message",
+    "fileExtension": ".gim"
+  },
+  {
+    "name": "Groove – Injector",
+    "httpContentType": "application/vnd.groove-injector",
+    "fileExtension": ".grv"
+  },
+  {
+    "name": "Groove – Tool Message",
+    "httpContentType": "application/vnd.groove-tool-message",
+    "fileExtension": ".gtm"
+  },
+  {
+    "name": "Groove – Tool Template",
+    "httpContentType": "application/vnd.groove-tool-template",
+    "fileExtension": ".tpl"
+  },
+  {
+    "name": "Groove – Vcard",
+    "httpContentType": "application/vnd.groove-vcard",
+    "fileExtension": ".vcg"
+  },
+  {
+    "name": "H.261",
+    "httpContentType": "video/h261",
+    "fileExtension": ".h261"
+  },
+  {
+    "name": "H.263",
+    "httpContentType": "video/h263",
+    "fileExtension": ".h263"
+  },
+  {
+    "name": "H.264",
+    "httpContentType": "video/h264",
+    "fileExtension": ".h264"
+  },
+  {
+    "name": "Hewlett Packard Instant Delivery",
+    "httpContentType": "application/vnd.hp-hpid",
+    "fileExtension": ".hpid"
+  },
+  {
+    "name": "Hewlett-Packard’s WebPrintSmart",
+    "httpContentType": "application/vnd.hp-hps",
+    "fileExtension": ".hps"
+  },
+  {
+    "name": "Hierarchical Data Format",
+    "httpContentType": "application/x-hdf",
+    "fileExtension": ".hdf"
+  },
+  {
+    "name": "Hit’n’Mix",
+    "httpContentType": "audio/vnd.rip",
+    "fileExtension": ".rip"
+  },
+  {
+    "name": "Homebanking Computer Interface (HBCI)",
+    "httpContentType": "application/vnd.hbci",
+    "fileExtension": ".hbci"
+  },
+  {
+    "name": "HP Indigo Digital Press – Job Layout Languate",
+    "httpContentType": "application/vnd.hp-jlyt",
+    "fileExtension": ".jlt"
+  },
+  {
+    "name": "HP Printer Command Language",
+    "httpContentType": "application/vnd.hp-pcl",
+    "fileExtension": ".pcl"
+  },
+  {
+    "name": "HP-GL/2 and HP RTL",
+    "httpContentType": "application/vnd.hp-hpgl",
+    "fileExtension": ".hpgl"
+  },
+  {
+    "name": "HV Script",
+    "httpContentType": "application/vnd.yamaha.hv-script",
+    "fileExtension": ".hvs"
+  },
+  {
+    "name": "HV Voice Dictionary",
+    "httpContentType": "application/vnd.yamaha.hv-dic",
+    "fileExtension": ".hvd"
+  },
+  {
+    "name": "HV Voice Parameter",
+    "httpContentType": "application/vnd.yamaha.hv-voice",
+    "fileExtension": ".hvp"
+  },
+  {
+    "name": "Hydrostatix Master Suite",
+    "httpContentType": "application/vnd.hydrostatix.sof-data",
+    "fileExtension": ".sfd-hdstx"
+  },
+  {
+    "name": "Hyperstudio",
+    "httpContentType": "application/hyperstudio",
+    "fileExtension": ".stk"
+  },
+  {
+    "name": "Hypertext Application Language",
+    "httpContentType": "application/vnd.hal+xml",
+    "fileExtension": ".hal"
+  },
+  {
+    "name": "HyperText Markup Language (HTML)",
+    "httpContentType": "text/html",
+    "fileExtension": ".html"
+  },
+  {
+    "name": "IBM DB2 Rights Manager",
+    "httpContentType": "application/vnd.ibm.rights-management",
+    "fileExtension": ".irm"
+  },
+  {
+    "name": "IBM Electronic Media Management System – Secure Container",
+    "httpContentType": "application/vnd.ibm.secure-container",
+    "fileExtension": ".sc"
+  },
+  {
+    "name": "iCalendar",
+    "httpContentType": "text/calendar",
+    "fileExtension": ".ics"
+  },
+  {
+    "name": "ICC profile",
+    "httpContentType": "application/vnd.iccprofile",
+    "fileExtension": ".icc"
+  },
+  {
+    "name": "Icon Image",
+    "httpContentType": "image/x-icon",
+    "fileExtension": ".ico"
+  },
+  {
+    "name": "igLoader",
+    "httpContentType": "application/vnd.igloader",
+    "fileExtension": ".igl"
+  },
+  {
+    "name": "Image Exchange Format",
+    "httpContentType": "image/ief",
+    "fileExtension": ".ief"
+  },
+  {
+    "name": "ImmerVision PURE Players",
+    "httpContentType": "application/vnd.immervision-ivp",
+    "fileExtension": ".ivp"
+  },
+  {
+    "name": "ImmerVision PURE Players",
+    "httpContentType": "application/vnd.immervision-ivu",
+    "fileExtension": ".ivu"
+  },
+  {
+    "name": "IMS Networks",
+    "httpContentType": "application/reginfo+xml",
+    "fileExtension": ".rif"
+  },
+  {
+    "name": "In3D – 3DML",
+    "httpContentType": "text/vnd.in3d.3dml",
+    "fileExtension": ".3dml"
+  },
+  {
+    "name": "In3D – 3DML",
+    "httpContentType": "text/vnd.in3d.spot",
+    "fileExtension": ".spot"
+  },
+  {
+    "name": "Initial Graphics Exchange Specification (IGES)",
+    "httpContentType": "model/iges",
+    "fileExtension": ".igs"
+  },
+  {
+    "name": "Interactive Geometry Software",
+    "httpContentType": "application/vnd.intergeo",
+    "fileExtension": ".i2g"
+  },
+  {
+    "name": "Interactive Geometry Software Cinderella",
+    "httpContentType": "application/vnd.cinderella",
+    "fileExtension": ".cdy"
+  },
+  {
+    "name": "Intercon FormNet",
+    "httpContentType": "application/vnd.intercon.formnet",
+    "fileExtension": ".xpw"
+  },
+  {
+    "name": "International Society for Advancement of Cytometry",
+    "httpContentType": "application/vnd.isac.fcs",
+    "fileExtension": ".fcs"
+  },
+  {
+    "name": "Internet Protocol Flow Information Export",
+    "httpContentType": "application/ipfix",
+    "fileExtension": ".ipfix"
+  },
+  {
+    "name": "Internet Public Key Infrastructure – Certificate",
+    "httpContentType": "application/pkix-cert",
+    "fileExtension": ".cer"
+  },
+  {
+    "name": "Internet Public Key Infrastructure – Certificate Management Protocole",
+    "httpContentType": "application/pkixcmp",
+    "fileExtension": ".pki"
+  },
+  {
+    "name": "Internet Public Key Infrastructure – Certificate Revocation Lists",
+    "httpContentType": "application/pkix-crl",
+    "fileExtension": ".crl"
+  },
+  {
+    "name": "Internet Public Key Infrastructure – Certification Path",
+    "httpContentType": "application/pkix-pkipath",
+    "fileExtension": ".pkipath"
+  },
+  {
+    "name": "IOCOM Visimeet",
+    "httpContentType": "application/vnd.insors.igm",
+    "fileExtension": ".igm"
+  },
+  {
+    "name": "IP Unplugged Roaming Client",
+    "httpContentType": "application/vnd.ipunplugged.rcprofile",
+    "fileExtension": ".rcprofile"
+  },
+  {
+    "name": "iRepository / Lucidoc Editor",
+    "httpContentType": "application/vnd.irepository.package+xml",
+    "fileExtension": ".irp"
+  },
+  {
+    "name": "J2ME App Descriptor",
+    "httpContentType": "text/vnd.sun.j2me.app-descriptor",
+    "fileExtension": ".jad"
+  },
+  {
+    "name": "Java Archive",
+    "httpContentType": "application/java-archive",
+    "fileExtension": ".jar"
+  },
+  {
+    "name": "Java Bytecode File",
+    "httpContentType": "application/java-vm",
+    "fileExtension": ".class"
+  },
+  {
+    "name": "Java Network Launching Protocol",
+    "httpContentType": "application/x-java-jnlp-file",
+    "fileExtension": ".jnlp"
+  },
+  {
+    "name": "Java Serialized Object",
+    "httpContentType": "application/java-serialized-object",
+    "fileExtension": ".ser"
+  },
+  {
+    "name": "Java Source File",
+    "httpContentType": "text/x-java-source,java",
+    "fileExtension": ".java"
+  },
+  {
+    "name": "JavaScript",
+    "httpContentType": "application/javascript",
+    "fileExtension": ".js"
+  },
+  {
+    "name": "JavaScript Object Notation (JSON)",
+    "httpContentType": "application/json",
+    "fileExtension": ".json"
+  },
+  {
+    "name": "Joda Archive",
+    "httpContentType": "application/vnd.joost.joda-archive",
+    "fileExtension": ".joda"
+  },
+  {
+    "name": "JPEG 2000 Compound Image File Format",
+    "httpContentType": "video/jpm",
+    "fileExtension": ".jpm"
+  },
+  {
+    "name": "JPEG Image",
+    "httpContentType": "image/jpeg",
+    "fileExtension": ".jpeg, .jpg"
+  },
+  {
+    "name": "JPGVideo",
+    "httpContentType": "video/jpeg",
+    "fileExtension": ".jpgv"
+  },
+  {
+    "name": "Kahootz",
+    "httpContentType": "application/vnd.kahootz",
+    "fileExtension": ".ktz"
+  },
+  {
+    "name": "Karaoke on Chipnuts Chipsets",
+    "httpContentType": "application/vnd.chipnuts.karaoke-mmd",
+    "fileExtension": ".mmd"
+  },
+  {
+    "name": "KDE KOffice Office Suite – Karbon",
+    "httpContentType": "application/vnd.kde.karbon",
+    "fileExtension": ".karbon"
+  },
+  {
+    "name": "KDE KOffice Office Suite – KChart",
+    "httpContentType": "application/vnd.kde.kchart",
+    "fileExtension": ".chrt"
+  },
+  {
+    "name": "KDE KOffice Office Suite – Kformula",
+    "httpContentType": "application/vnd.kde.kformula",
+    "fileExtension": ".kfo"
+  },
+  {
+    "name": "KDE KOffice Office Suite – Kivio",
+    "httpContentType": "application/vnd.kde.kivio",
+    "fileExtension": ".flw"
+  },
+  {
+    "name": "KDE KOffice Office Suite – Kontour",
+    "httpContentType": "application/vnd.kde.kontour",
+    "fileExtension": ".kon"
+  },
+  {
+    "name": "KDE KOffice Office Suite – Kpresenter",
+    "httpContentType": "application/vnd.kde.kpresenter",
+    "fileExtension": ".kpr"
+  },
+  {
+    "name": "KDE KOffice Office Suite – Kspread",
+    "httpContentType": "application/vnd.kde.kspread",
+    "fileExtension": ".ksp"
+  },
+  {
+    "name": "KDE KOffice Office Suite – Kword",
+    "httpContentType": "application/vnd.kde.kword",
+    "fileExtension": ".kwd"
+  },
+  {
+    "name": "Kenamea App",
+    "httpContentType": "application/vnd.kenameaapp",
+    "fileExtension": ".htke"
+  },
+  {
+    "name": "Kidspiration",
+    "httpContentType": "application/vnd.kidspiration",
+    "fileExtension": ".kia"
+  },
+  {
+    "name": "Kinar Applications",
+    "httpContentType": "application/vnd.kinar",
+    "fileExtension": ".kne"
+  },
+  {
+    "name": "Kodak Storyshare",
+    "httpContentType": "application/vnd.kodak-descriptor",
+    "fileExtension": ".sse"
+  },
+  {
+    "name": "Laser App Enterprise",
+    "httpContentType": "application/vnd.las.las+xml",
+    "fileExtension": ".lasxml"
+  },
+  {
+    "name": "LaTeX",
+    "httpContentType": "application/x-latex",
+    "fileExtension": ".latex"
+  },
+  {
+    "name": "Life Balance – Desktop Edition",
+    "httpContentType": "application/vnd.llamagraphics.life-balance.desktop",
+    "fileExtension": ".lbd"
+  },
+  {
+    "name": "Life Balance – Exchange Format",
+    "httpContentType": "application/vnd.llamagraphics.life-balance.exchange+xml",
+    "fileExtension": ".lbe"
+  },
+  {
+    "name": "Lightspeed Audio Lab",
+    "httpContentType": "application/vnd.jam",
+    "fileExtension": ".jam"
+  },
+  {
+    "name": "Lotus 1-2-3",
+    "httpContentType": "application/vnd.lotus-1-2-3",
+    "fileExtension": ".123"
+  },
+  {
+    "name": "Lotus Approach",
+    "httpContentType": "application/vnd.lotus-approach",
+    "fileExtension": ".apr"
+  },
+  {
+    "name": "Lotus Freelance",
+    "httpContentType": "application/vnd.lotus-freelance",
+    "fileExtension": ".pre"
+  },
+  {
+    "name": "Lotus Notes",
+    "httpContentType": "application/vnd.lotus-notes",
+    "fileExtension": ".nsf"
+  },
+  {
+    "name": "Lotus Organizer",
+    "httpContentType": "application/vnd.lotus-organizer",
+    "fileExtension": ".org"
+  },
+  {
+    "name": "Lotus Screencam",
+    "httpContentType": "application/vnd.lotus-screencam",
+    "fileExtension": ".scm"
+  },
+  {
+    "name": "Lotus Wordpro",
+    "httpContentType": "application/vnd.lotus-wordpro",
+    "fileExtension": ".lwp"
+  },
+  {
+    "name": "Lucent Voice",
+    "httpContentType": "audio/vnd.lucent.voice",
+    "fileExtension": ".lvp"
+  },
+  {
+    "name": "M3U (Multimedia Playlist)",
+    "httpContentType": "audio/x-mpegurl",
+    "fileExtension": ".m3u"
+  },
+  {
+    "name": "M4v",
+    "httpContentType": "video/x-m4v",
+    "fileExtension": ".m4v"
+  },
+  {
+    "name": "Macintosh BinHex 4.0",
+    "httpContentType": "application/mac-binhex40",
+    "fileExtension": ".hqx"
+  },
+  {
+    "name": "MacPorts Port System",
+    "httpContentType": "application/vnd.macports.portpkg",
+    "fileExtension": ".portpkg"
+  },
+  {
+    "name": "MapGuide DBXML",
+    "httpContentType": "application/vnd.osgeo.mapguide.package",
+    "fileExtension": ".mgp"
+  },
+  {
+    "name": "MARC Formats",
+    "httpContentType": "application/marc",
+    "fileExtension": ".mrc"
+  },
+  {
+    "name": "MARC21 XML Schema",
+    "httpContentType": "application/marcxml+xml",
+    "fileExtension": ".mrcx"
+  },
+  {
+    "name": "Material Exchange Format",
+    "httpContentType": "application/mxf",
+    "fileExtension": ".mxf"
+  },
+  {
+    "name": "Mathematica Notebook Player",
+    "httpContentType": "application/vnd.wolfram.player",
+    "fileExtension": ".nbp"
+  },
+  {
+    "name": "Mathematica Notebooks",
+    "httpContentType": "application/mathematica",
+    "fileExtension": ".ma"
+  },
+  {
+    "name": "Mathematical Markup Language",
+    "httpContentType": "application/mathml+xml",
+    "fileExtension": ".mathml"
+  },
+  {
+    "name": "Mbox database files",
+    "httpContentType": "application/mbox",
+    "fileExtension": ".mbox"
+  },
+  {
+    "name": "MedCalc",
+    "httpContentType": "application/vnd.medcalcdata",
+    "fileExtension": ".mc1"
+  },
+  {
+    "name": "Media Server Control Markup Language",
+    "httpContentType": "application/mediaservercontrol+xml",
+    "fileExtension": ".mscml"
+  },
+  {
+    "name": "MediaRemote",
+    "httpContentType": "application/vnd.mediastation.cdkey",
+    "fileExtension": ".cdkey"
+  },
+  {
+    "name": "Medical Waveform Encoding Format",
+    "httpContentType": "application/vnd.mfer",
+    "fileExtension": ".mwf"
+  },
+  {
+    "name": "Melody Format for Mobile Platform",
+    "httpContentType": "application/vnd.mfmp",
+    "fileExtension": ".mfm"
+  },
+  {
+    "name": "Mesh Data Type",
+    "httpContentType": "model/mesh",
+    "fileExtension": ".msh"
+  },
+  {
+    "name": "Metadata Authority Description Schema",
+    "httpContentType": "application/mads+xml",
+    "fileExtension": ".mads"
+  },
+  {
+    "name": "Metadata Encoding and Transmission Standard",
+    "httpContentType": "application/mets+xml",
+    "fileExtension": ".mets"
+  },
+  {
+    "name": "Metadata Object Description Schema",
+    "httpContentType": "application/mods+xml",
+    "fileExtension": ".mods"
+  },
+  {
+    "name": "Metalink",
+    "httpContentType": "application/metalink4+xml",
+    "fileExtension": ".meta4"
+  },
+  {
+    "name": "Micosoft PowerPoint – Macro-Enabled Template File",
+    "httpContentType": "application/vnd.ms-powerpoint.template.macroenabled.12",
+    "fileExtension": ".potm"
+  },
+  {
+    "name": "Micosoft Word – Macro-Enabled Document",
+    "httpContentType": "application/vnd.ms-word.document.macroenabled.12",
+    "fileExtension": ".docm"
+  },
+  {
+    "name": "Micosoft Word – Macro-Enabled Template",
+    "httpContentType": "application/vnd.ms-word.template.macroenabled.12",
+    "fileExtension": ".dotm"
+  },
+  {
+    "name": "Micro CADAM Helix D&D",
+    "httpContentType": "application/vnd.mcd",
+    "fileExtension": ".mcd"
+  },
+  {
+    "name": "Micrografx",
+    "httpContentType": "application/vnd.micrografx.flo",
+    "fileExtension": ".flo"
+  },
+  {
+    "name": "Micrografx iGrafx Professional",
+    "httpContentType": "application/vnd.micrografx.igx",
+    "fileExtension": ".igx"
+  },
+  {
+    "name": "MICROSEC e-Szign¢",
+    "httpContentType": "application/vnd.eszigno3+xml",
+    "fileExtension": ".es3"
+  },
+  {
+    "name": "Microsoft Access",
+    "httpContentType": "application/x-msaccess",
+    "fileExtension": ".mdb"
+  },
+  {
+    "name": "Microsoft Advanced Systems Format (ASF)",
+    "httpContentType": "video/x-ms-asf",
+    "fileExtension": ".asf"
+  },
+  {
+    "name": "Microsoft Application",
+    "httpContentType": "application/x-msdownload",
+    "fileExtension": ".exe"
+  },
+  {
+    "name": "Microsoft Artgalry",
+    "httpContentType": "application/vnd.ms-artgalry",
+    "fileExtension": ".cil"
+  },
+  {
+    "name": "Microsoft Cabinet File",
+    "httpContentType": "application/vnd.ms-cab-compressed",
+    "fileExtension": ".cab"
+  },
+  {
+    "name": "Microsoft Class Server",
+    "httpContentType": "application/vnd.ms-ims",
+    "fileExtension": ".ims"
+  },
+  {
+    "name": "Microsoft ClickOnce",
+    "httpContentType": "application/x-ms-application",
+    "fileExtension": ".application"
+  },
+  {
+    "name": "Microsoft Clipboard Clip",
+    "httpContentType": "application/x-msclip",
+    "fileExtension": ".clp"
+  },
+  {
+    "name": "Microsoft Document Imaging Format",
+    "httpContentType": "image/vnd.ms-modi",
+    "fileExtension": ".mdi"
+  },
+  {
+    "name": "Microsoft Embedded OpenType",
+    "httpContentType": "application/vnd.ms-fontobject",
+    "fileExtension": ".eot"
+  },
+  {
+    "name": "Microsoft Excel",
+    "httpContentType": "application/vnd.ms-excel",
+    "fileExtension": ".xls"
+  },
+  {
+    "name": "Microsoft Excel – Add-In File",
+    "httpContentType": "application/vnd.ms-excel.addin.macroenabled.12",
+    "fileExtension": ".xlam"
+  },
+  {
+    "name": "Microsoft Excel – Binary Workbook",
+    "httpContentType": "application/vnd.ms-excel.sheet.binary.macroenabled.12",
+    "fileExtension": ".xlsb"
+  },
+  {
+    "name": "Microsoft Excel – Macro-Enabled Template File",
+    "httpContentType": "application/vnd.ms-excel.template.macroenabled.12",
+    "fileExtension": ".xltm"
+  },
+  {
+    "name": "Microsoft Excel – Macro-Enabled Workbook",
+    "httpContentType": "application/vnd.ms-excel.sheet.macroenabled.12",
+    "fileExtension": ".xlsm"
+  },
+  {
+    "name": "Microsoft Html Help File",
+    "httpContentType": "application/vnd.ms-htmlhelp",
+    "fileExtension": ".chm"
+  },
+  {
+    "name": "Microsoft Information Card",
+    "httpContentType": "application/x-mscardfile",
+    "fileExtension": ".crd"
+  },
+  {
+    "name": "Microsoft Learning Resource Module",
+    "httpContentType": "application/vnd.ms-lrm",
+    "fileExtension": ".lrm"
+  },
+  {
+    "name": "Microsoft MediaView",
+    "httpContentType": "application/x-msmediaview",
+    "fileExtension": ".mvb"
+  },
+  {
+    "name": "Microsoft Money",
+    "httpContentType": "application/x-msmoney",
+    "fileExtension": ".mny"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Presentation",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    "fileExtension": ".pptx"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Presentation (Slide)",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.presentationml.slide",
+    "fileExtension": ".sldx"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Presentation (Slideshow)",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.presentationml.slideshow",
+    "fileExtension": ".ppsx"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Presentation Template",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.presentationml.template",
+    "fileExtension": ".potx"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Spreadsheet",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "fileExtension": ".xlsx"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Spreadsheet Teplate",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.template",
+    "fileExtension": ".xltx"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Word Document",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "fileExtension": ".docx"
+  },
+  {
+    "name": "Microsoft Office – OOXML – Word Document Template",
+    "httpContentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.template",
+    "fileExtension": ".dotx"
+  },
+  {
+    "name": "Microsoft Office Binder",
+    "httpContentType": "application/x-msbinder",
+    "fileExtension": ".obd"
+  },
+  {
+    "name": "Microsoft Office System Release Theme",
+    "httpContentType": "application/vnd.ms-officetheme",
+    "fileExtension": ".thmx"
+  },
+  {
+    "name": "Microsoft OneNote",
+    "httpContentType": "application/onenote",
+    "fileExtension": ".onetoc"
+  },
+  {
+    "name": "Microsoft PlayReady Ecosystem",
+    "httpContentType": "audio/vnd.ms-playready.media.pya",
+    "fileExtension": ".pya"
+  },
+  {
+    "name": "Microsoft PlayReady Ecosystem Video",
+    "httpContentType": "video/vnd.ms-playready.media.pyv",
+    "fileExtension": ".pyv"
+  },
+  {
+    "name": "Microsoft PowerPoint",
+    "httpContentType": "application/vnd.ms-powerpoint",
+    "fileExtension": ".ppt"
+  },
+  {
+    "name": "Microsoft PowerPoint – Add-in file",
+    "httpContentType": "application/vnd.ms-powerpoint.addin.macroenabled.12",
+    "fileExtension": ".ppam"
+  },
+  {
+    "name": "Microsoft PowerPoint – Macro-Enabled Open XML Slide",
+    "httpContentType": "application/vnd.ms-powerpoint.slide.macroenabled.12",
+    "fileExtension": ".sldm"
+  },
+  {
+    "name": "Microsoft PowerPoint – Macro-Enabled Presentation File",
+    "httpContentType": "application/vnd.ms-powerpoint.presentation.macroenabled.12",
+    "fileExtension": ".pptm"
+  },
+  {
+    "name": "Microsoft PowerPoint – Macro-Enabled Slide Show File",
+    "httpContentType": "application/vnd.ms-powerpoint.slideshow.macroenabled.12",
+    "fileExtension": ".ppsm"
+  },
+  {
+    "name": "Microsoft Project",
+    "httpContentType": "application/vnd.ms-project",
+    "fileExtension": ".mpp"
+  },
+  {
+    "name": "Microsoft Publisher",
+    "httpContentType": "application/x-mspublisher",
+    "fileExtension": ".pub"
+  },
+  {
+    "name": "Microsoft Schedule+",
+    "httpContentType": "application/x-msschedule",
+    "fileExtension": ".scd"
+  },
+  {
+    "name": "Microsoft Silverlight",
+    "httpContentType": "application/x-silverlight-app",
+    "fileExtension": ".xap"
+  },
+  {
+    "name": "Microsoft Trust UI Provider – Certificate Trust Link",
+    "httpContentType": "application/vnd.ms-pki.stl",
+    "fileExtension": ".stl"
+  },
+  {
+    "name": "Microsoft Trust UI Provider – Security Catalog",
+    "httpContentType": "application/vnd.ms-pki.seccat",
+    "fileExtension": ".cat"
+  },
+  {
+    "name": "Microsoft Visio",
+    "httpContentType": "application/vnd.visio",
+    "fileExtension": ".vsd"
+  },
+  {
+    "name": "Microsoft Windows Media",
+    "httpContentType": "video/x-ms-wm",
+    "fileExtension": ".wm"
+  },
+  {
+    "name": "Microsoft Windows Media Audio",
+    "httpContentType": "audio/x-ms-wma",
+    "fileExtension": ".wma"
+  },
+  {
+    "name": "Microsoft Windows Media Audio Redirector",
+    "httpContentType": "audio/x-ms-wax",
+    "fileExtension": ".wax"
+  },
+  {
+    "name": "Microsoft Windows Media Audio/Video Playlist",
+    "httpContentType": "video/x-ms-wmx",
+    "fileExtension": ".wmx"
+  },
+  {
+    "name": "Microsoft Windows Media Player Download Package",
+    "httpContentType": "application/x-ms-wmd",
+    "fileExtension": ".wmd"
+  },
+  {
+    "name": "Microsoft Windows Media Player Playlist",
+    "httpContentType": "application/vnd.ms-wpl",
+    "fileExtension": ".wpl"
+  },
+  {
+    "name": "Microsoft Windows Media Player Skin Package",
+    "httpContentType": "application/x-ms-wmz",
+    "fileExtension": ".wmz"
+  },
+  {
+    "name": "Microsoft Windows Media Video",
+    "httpContentType": "video/x-ms-wmv",
+    "fileExtension": ".wmv"
+  },
+  {
+    "name": "Microsoft Windows Media Video Playlist",
+    "httpContentType": "video/x-ms-wvx",
+    "fileExtension": ".wvx"
+  },
+  {
+    "name": "Microsoft Windows Metafile",
+    "httpContentType": "application/x-msmetafile",
+    "fileExtension": ".wmf"
+  },
+  {
+    "name": "Microsoft Windows Terminal Services",
+    "httpContentType": "application/x-msterminal",
+    "fileExtension": ".trm"
+  },
+  {
+    "name": "Microsoft Word",
+    "httpContentType": "application/msword",
+    "fileExtension": ".doc"
+  },
+  {
+    "name": "Microsoft Wordpad",
+    "httpContentType": "application/x-mswrite",
+    "fileExtension": ".wri"
+  },
+  {
+    "name": "Microsoft Works",
+    "httpContentType": "application/vnd.ms-works",
+    "fileExtension": ".wps"
+  },
+  {
+    "name": "Microsoft XAML Browser Application",
+    "httpContentType": "application/x-ms-xbap",
+    "fileExtension": ".xbap"
+  },
+  {
+    "name": "Microsoft XML Paper Specification",
+    "httpContentType": "application/vnd.ms-xpsdocument",
+    "fileExtension": ".xps"
+  },
+  {
+    "name": "MIDI – Musical Instrument Digital Interface",
+    "httpContentType": "audio/midi",
+    "fileExtension": ".mid"
+  },
+  {
+    "name": "MiniPay",
+    "httpContentType": "application/vnd.ibm.minipay",
+    "fileExtension": ".mpy"
+  },
+  {
+    "name": "MO:DCA-P",
+    "httpContentType": "application/vnd.ibm.modcap",
+    "fileExtension": ".afp"
+  },
+  {
+    "name": "Mobile Information Device Profile",
+    "httpContentType": "application/vnd.jcp.javame.midlet-rms",
+    "fileExtension": ".rms"
+  },
+  {
+    "name": "MobileTV",
+    "httpContentType": "application/vnd.tmobile-livetv",
+    "fileExtension": ".tmo"
+  },
+  {
+    "name": "Mobipocket",
+    "httpContentType": "application/x-mobipocket-ebook",
+    "fileExtension": ".prc"
+  },
+  {
+    "name": "Mobius Management Systems – Basket file",
+    "httpContentType": "application/vnd.mobius.mbk",
+    "fileExtension": ".mbk"
+  },
+  {
+    "name": "Mobius Management Systems – Distribution Database",
+    "httpContentType": "application/vnd.mobius.dis",
+    "fileExtension": ".dis"
+  },
+  {
+    "name": "Mobius Management Systems – Policy Definition Language File",
+    "httpContentType": "application/vnd.mobius.plc",
+    "fileExtension": ".plc"
+  },
+  {
+    "name": "Mobius Management Systems – Query File",
+    "httpContentType": "application/vnd.mobius.mqy",
+    "fileExtension": ".mqy"
+  },
+  {
+    "name": "Mobius Management Systems – Script Language",
+    "httpContentType": "application/vnd.mobius.msl",
+    "fileExtension": ".msl"
+  },
+  {
+    "name": "Mobius Management Systems – Topic Index File",
+    "httpContentType": "application/vnd.mobius.txf",
+    "fileExtension": ".txf"
+  },
+  {
+    "name": "Mobius Management Systems – UniversalArchive",
+    "httpContentType": "application/vnd.mobius.daf",
+    "fileExtension": ".daf"
+  },
+  {
+    "name": "mod_fly / fly.cgi",
+    "httpContentType": "text/vnd.fly",
+    "fileExtension": ".fly"
+  },
+  {
+    "name": "Mophun Certificate",
+    "httpContentType": "application/vnd.mophun.certificate",
+    "fileExtension": ".mpc"
+  },
+  {
+    "name": "Mophun VM",
+    "httpContentType": "application/vnd.mophun.application",
+    "fileExtension": ".mpn"
+  },
+  {
+    "name": "Motion JPEG 2000",
+    "httpContentType": "video/mj2",
+    "fileExtension": ".mj2"
+  },
+  {
+    "name": "MPEG Audio",
+    "httpContentType": "audio/mpeg",
+    "fileExtension": ".mpga"
+  },
+  {
+    "name": "MPEG Url",
+    "httpContentType": "video/vnd.mpegurl",
+    "fileExtension": ".mxu"
+  },
+  {
+    "name": "MPEG Video",
+    "httpContentType": "video/mpeg",
+    "fileExtension": ".mpeg"
+  },
+  {
+    "name": "MPEG-21",
+    "httpContentType": "application/mp21",
+    "fileExtension": ".m21"
+  },
+  {
+    "name": "MPEG-4 Audio",
+    "httpContentType": "audio/mp4",
+    "fileExtension": ".mp4a"
+  },
+  {
+    "name": "MPEG-4 Video",
+    "httpContentType": "video/mp4",
+    "fileExtension": ".mp4"
+  },
+  {
+    "name": "MPEG4",
+    "httpContentType": "application/mp4",
+    "fileExtension": ".mp4"
+  },
+  {
+    "name": "Multimedia Playlist Unicode",
+    "httpContentType": "application/vnd.apple.mpegurl",
+    "fileExtension": ".m3u8"
+  },
+  {
+    "name": "MUsical Score Interpreted Code Invented for the ASCII designation of Notation",
+    "httpContentType": "application/vnd.musician",
+    "fileExtension": ".mus"
+  },
+  {
+    "name": "Muvee Automatic Video Editing",
+    "httpContentType": "application/vnd.muvee.style",
+    "fileExtension": ".msty"
+  },
+  {
+    "name": "MXML",
+    "httpContentType": "application/xv+xml",
+    "fileExtension": ".mxml"
+  },
+  {
+    "name": "N-Gage Game Data",
+    "httpContentType": "application/vnd.nokia.n-gage.data",
+    "fileExtension": ".ngdat"
+  },
+  {
+    "name": "N-Gage Game Installer",
+    "httpContentType": "application/vnd.nokia.n-gage.symbian.install",
+    "fileExtension": ".n-gage"
+  },
+  {
+    "name": "Navigation Control file for XML (for ePub)",
+    "httpContentType": "application/x-dtbncx+xml",
+    "fileExtension": ".ncx"
+  },
+  {
+    "name": "Network Common Data Form (NetCDF)",
+    "httpContentType": "application/x-netcdf",
+    "fileExtension": ".nc"
+  },
+  {
+    "name": "neuroLanguage",
+    "httpContentType": "application/vnd.neurolanguage.nlu",
+    "fileExtension": ".nlu"
+  },
+  {
+    "name": "New Moon Liftoff/DNA",
+    "httpContentType": "application/vnd.dna",
+    "fileExtension": ".dna"
+  },
+  {
+    "name": "NobleNet Directory",
+    "httpContentType": "application/vnd.noblenet-directory",
+    "fileExtension": ".nnd"
+  },
+  {
+    "name": "NobleNet Sealer",
+    "httpContentType": "application/vnd.noblenet-sealer",
+    "fileExtension": ".nns"
+  },
+  {
+    "name": "NobleNet Web",
+    "httpContentType": "application/vnd.noblenet-web",
+    "fileExtension": ".nnw"
+  },
+  {
+    "name": "Nokia Radio Application – Preset",
+    "httpContentType": "application/vnd.nokia.radio-preset",
+    "fileExtension": ".rpst"
+  },
+  {
+    "name": "Nokia Radio Application – Preset",
+    "httpContentType": "application/vnd.nokia.radio-presets",
+    "fileExtension": ".rpss"
+  },
+  {
+    "name": "Notation3",
+    "httpContentType": "text/n3",
+    "fileExtension": ".n3"
+  },
+  {
+    "name": "Novadigm’s RADIA and EDM products",
+    "httpContentType": "application/vnd.novadigm.edm",
+    "fileExtension": ".edm"
+  },
+  {
+    "name": "Novadigm’s RADIA and EDM products",
+    "httpContentType": "application/vnd.novadigm.edx",
+    "fileExtension": ".edx"
+  },
+  {
+    "name": "Novadigm’s RADIA and EDM products",
+    "httpContentType": "application/vnd.novadigm.ext",
+    "fileExtension": ".ext"
+  },
+  {
+    "name": "NpGraphIt",
+    "httpContentType": "application/vnd.flographit",
+    "fileExtension": ".gph"
+  },
+  {
+    "name": "Nuera ECELP 4800",
+    "httpContentType": "audio/vnd.nuera.ecelp4800",
+    "fileExtension": ".ecelp4800"
+  },
+  {
+    "name": "Nuera ECELP 7470",
+    "httpContentType": "audio/vnd.nuera.ecelp7470",
+    "fileExtension": ".ecelp7470"
+  },
+  {
+    "name": "Nuera ECELP 9600",
+    "httpContentType": "audio/vnd.nuera.ecelp9600",
+    "fileExtension": ".ecelp9600"
+  },
+  {
+    "name": "Office Document Architecture",
+    "httpContentType": "application/oda",
+    "fileExtension": ".oda"
+  },
+  {
+    "name": "Ogg",
+    "httpContentType": "application/ogg",
+    "fileExtension": ".ogx"
+  },
+  {
+    "name": "Ogg Audio",
+    "httpContentType": "audio/ogg",
+    "fileExtension": ".oga"
+  },
+  {
+    "name": "Ogg Video",
+    "httpContentType": "video/ogg",
+    "fileExtension": ".ogv"
+  },
+  {
+    "name": "OMA Download Agents",
+    "httpContentType": "application/vnd.oma.dd2+xml",
+    "fileExtension": ".dd2"
+  },
+  {
+    "name": "Open Document Text Web",
+    "httpContentType": "application/vnd.oasis.opendocument.text-web",
+    "fileExtension": ".oth"
+  },
+  {
+    "name": "Open eBook Publication Structure",
+    "httpContentType": "application/oebps-package+xml",
+    "fileExtension": ".opf"
+  },
+  {
+    "name": "Open Financial Exchange",
+    "httpContentType": "application/vnd.intu.qbo",
+    "fileExtension": ".qbo"
+  },
+  {
+    "name": "Open Office Extension",
+    "httpContentType": "application/vnd.openofficeorg.extension",
+    "fileExtension": ".oxt"
+  },
+  {
+    "name": "Open Score Format",
+    "httpContentType": "application/vnd.yamaha.openscoreformat",
+    "fileExtension": ".osf"
+  },
+  {
+    "name": "Open Web Media Project – Audio",
+    "httpContentType": "audio/webm",
+    "fileExtension": ".weba"
+  },
+  {
+    "name": "Open Web Media Project – Video",
+    "httpContentType": "video/webm",
+    "fileExtension": ".webm"
+  },
+  {
+    "name": "OpenDocument Chart",
+    "httpContentType": "application/vnd.oasis.opendocument.chart",
+    "fileExtension": ".odc"
+  },
+  {
+    "name": "OpenDocument Chart Template",
+    "httpContentType": "application/vnd.oasis.opendocument.chart-template",
+    "fileExtension": ".otc"
+  },
+  {
+    "name": "OpenDocument Database",
+    "httpContentType": "application/vnd.oasis.opendocument.database",
+    "fileExtension": ".odb"
+  },
+  {
+    "name": "OpenDocument Formula",
+    "httpContentType": "application/vnd.oasis.opendocument.formula",
+    "fileExtension": ".odf"
+  },
+  {
+    "name": "OpenDocument Formula Template",
+    "httpContentType": "application/vnd.oasis.opendocument.formula-template",
+    "fileExtension": ".odft"
+  },
+  {
+    "name": "OpenDocument Graphics",
+    "httpContentType": "application/vnd.oasis.opendocument.graphics",
+    "fileExtension": ".odg"
+  },
+  {
+    "name": "OpenDocument Graphics Template",
+    "httpContentType": "application/vnd.oasis.opendocument.graphics-template",
+    "fileExtension": ".otg"
+  },
+  {
+    "name": "OpenDocument Image",
+    "httpContentType": "application/vnd.oasis.opendocument.image",
+    "fileExtension": ".odi"
+  },
+  {
+    "name": "OpenDocument Image Template",
+    "httpContentType": "application/vnd.oasis.opendocument.image-template",
+    "fileExtension": ".oti"
+  },
+  {
+    "name": "OpenDocument Presentation",
+    "httpContentType": "application/vnd.oasis.opendocument.presentation",
+    "fileExtension": ".odp"
+  },
+  {
+    "name": "OpenDocument Presentation Template",
+    "httpContentType": "application/vnd.oasis.opendocument.presentation-template",
+    "fileExtension": ".otp"
+  },
+  {
+    "name": "OpenDocument Spreadsheet",
+    "httpContentType": "application/vnd.oasis.opendocument.spreadsheet",
+    "fileExtension": ".ods"
+  },
+  {
+    "name": "OpenDocument Spreadsheet Template",
+    "httpContentType": "application/vnd.oasis.opendocument.spreadsheet-template",
+    "fileExtension": ".ots"
+  },
+  {
+    "name": "OpenDocument Text",
+    "httpContentType": "application/vnd.oasis.opendocument.text",
+    "fileExtension": ".odt"
+  },
+  {
+    "name": "OpenDocument Text Master",
+    "httpContentType": "application/vnd.oasis.opendocument.text-master",
+    "fileExtension": ".odm"
+  },
+  {
+    "name": "OpenDocument Text Template",
+    "httpContentType": "application/vnd.oasis.opendocument.text-template",
+    "fileExtension": ".ott"
+  },
+  {
+    "name": "OpenGL Textures (KTX)",
+    "httpContentType": "image/ktx",
+    "fileExtension": ".ktx"
+  },
+  {
+    "name": "OpenOffice – Calc (Spreadsheet)",
+    "httpContentType": "application/vnd.sun.xml.calc",
+    "fileExtension": ".sxc"
+  },
+  {
+    "name": "OpenOffice – Calc Template (Spreadsheet)",
+    "httpContentType": "application/vnd.sun.xml.calc.template",
+    "fileExtension": ".stc"
+  },
+  {
+    "name": "OpenOffice – Draw (Graphics)",
+    "httpContentType": "application/vnd.sun.xml.draw",
+    "fileExtension": ".sxd"
+  },
+  {
+    "name": "OpenOffice – Draw Template (Graphics)",
+    "httpContentType": "application/vnd.sun.xml.draw.template",
+    "fileExtension": ".std"
+  },
+  {
+    "name": "OpenOffice – Impress (Presentation)",
+    "httpContentType": "application/vnd.sun.xml.impress",
+    "fileExtension": ".sxi"
+  },
+  {
+    "name": "OpenOffice – Impress Template (Presentation)",
+    "httpContentType": "application/vnd.sun.xml.impress.template",
+    "fileExtension": ".sti"
+  },
+  {
+    "name": "OpenOffice – Math (Formula)",
+    "httpContentType": "application/vnd.sun.xml.math",
+    "fileExtension": ".sxm"
+  },
+  {
+    "name": "OpenOffice – Writer (Text – HTML)",
+    "httpContentType": "application/vnd.sun.xml.writer",
+    "fileExtension": ".sxw"
+  },
+  {
+    "name": "OpenOffice – Writer (Text – HTML)",
+    "httpContentType": "application/vnd.sun.xml.writer.global",
+    "fileExtension": ".sxg"
+  },
+  {
+    "name": "OpenOffice – Writer Template (Text – HTML)",
+    "httpContentType": "application/vnd.sun.xml.writer.template",
+    "fileExtension": ".stw"
+  },
+  {
+    "name": "OpenType Font File",
+    "httpContentType": "application/x-font-otf",
+    "fileExtension": ".otf"
+  },
+  {
+    "name": "OSFPVG",
+    "httpContentType": "application/vnd.yamaha.openscoreformat.osfpvg+xml",
+    "fileExtension": ".osfpvg"
+  },
+  {
+    "name": "OSGi Deployment Package",
+    "httpContentType": "application/vnd.osgi.dp",
+    "fileExtension": ".dp"
+  },
+  {
+    "name": "PalmOS Data",
+    "httpContentType": "application/vnd.palm",
+    "fileExtension": ".pdb"
+  },
+  {
+    "name": "Pascal Source File",
+    "httpContentType": "text/x-pascal",
+    "fileExtension": ".p"
+  },
+  {
+    "name": "PawaaFILE",
+    "httpContentType": "application/vnd.pawaafile",
+    "fileExtension": ".paw"
+  },
+  {
+    "name": "PCL 6 Enhanced (Formely PCL XL)",
+    "httpContentType": "application/vnd.hp-pclxl",
+    "fileExtension": ".pclxl"
+  },
+  {
+    "name": "Pcsel eFIF File",
+    "httpContentType": "application/vnd.picsel",
+    "fileExtension": ".efif"
+  },
+  {
+    "name": "PCX Image",
+    "httpContentType": "image/x-pcx",
+    "fileExtension": ".pcx"
+  },
+  {
+    "name": "Photoshop Document",
+    "httpContentType": "image/vnd.adobe.photoshop",
+    "fileExtension": ".psd"
+  },
+  {
+    "name": "PICSRules",
+    "httpContentType": "application/pics-rules",
+    "fileExtension": ".prf"
+  },
+  {
+    "name": "PICT Image",
+    "httpContentType": "image/x-pict",
+    "fileExtension": ".pic"
+  },
+  {
+    "name": "pIRCh",
+    "httpContentType": "application/x-chat",
+    "fileExtension": ".chat"
+  },
+  {
+    "name": "PKCS #10 – Certification Request Standard",
+    "httpContentType": "application/pkcs10",
+    "fileExtension": ".p10"
+  },
+  {
+    "name": "PKCS #12 – Personal Information Exchange Syntax Standard",
+    "httpContentType": "application/x-pkcs12",
+    "fileExtension": ".p12"
+  },
+  {
+    "name": "PKCS #7 – Cryptographic Message Syntax Standard",
+    "httpContentType": "application/pkcs7-mime",
+    "fileExtension": ".p7m"
+  },
+  {
+    "name": "PKCS #7 – Cryptographic Message Syntax Standard",
+    "httpContentType": "application/pkcs7-signature",
+    "fileExtension": ".p7s"
+  },
+  {
+    "name": "PKCS #7 – Cryptographic Message Syntax Standard (Certificate Request Response)",
+    "httpContentType": "application/x-pkcs7-certreqresp",
+    "fileExtension": ".p7r"
+  },
+  {
+    "name": "PKCS #7 – Cryptographic Message Syntax Standard (Certificates)",
+    "httpContentType": "application/x-pkcs7-certificates",
+    "fileExtension": ".p7b"
+  },
+  {
+    "name": "PKCS #8 – Private-Key Information Syntax Standard",
+    "httpContentType": "application/pkcs8",
+    "fileExtension": ".p8"
+  },
+  {
+    "name": "PocketLearn Viewers",
+    "httpContentType": "application/vnd.pocketlearn",
+    "fileExtension": ".plf"
+  },
+  {
+    "name": "Portable Anymap Image",
+    "httpContentType": "image/x-portable-anymap",
+    "fileExtension": ".pnm"
+  },
+  {
+    "name": "Portable Bitmap Format",
+    "httpContentType": "image/x-portable-bitmap",
+    "fileExtension": ".pbm"
+  },
+  {
+    "name": "Portable Compiled Format",
+    "httpContentType": "application/x-font-pcf",
+    "fileExtension": ".pcf"
+  },
+  {
+    "name": "Portable Font Resource",
+    "httpContentType": "application/font-tdpfr",
+    "fileExtension": ".pfr"
+  },
+  {
+    "name": "Portable Game Notation (Chess Games)",
+    "httpContentType": "application/x-chess-pgn",
+    "fileExtension": ".pgn"
+  },
+  {
+    "name": "Portable Graymap Format",
+    "httpContentType": "image/x-portable-graymap",
+    "fileExtension": ".pgm"
+  },
+  {
+    "name": "Portable Network Graphics (PNG)",
+    "httpContentType": "image/png",
+    "fileExtension": ".png"
+  },
+  {
+    "name": "Portable Pixmap Format",
+    "httpContentType": "image/x-portable-pixmap",
+    "fileExtension": ".ppm"
+  },
+  {
+    "name": "Portable Symmetric Key Container",
+    "httpContentType": "application/pskc+xml",
+    "fileExtension": ".pskcxml"
+  },
+  {
+    "name": "PosML",
+    "httpContentType": "application/vnd.ctc-posml",
+    "fileExtension": ".pml"
+  },
+  {
+    "name": "PostScript",
+    "httpContentType": "application/postscript",
+    "fileExtension": ".ai"
+  },
+  {
+    "name": "PostScript Fonts",
+    "httpContentType": "application/x-font-type1",
+    "fileExtension": ".pfa"
+  },
+  {
+    "name": "PowerBuilder",
+    "httpContentType": "application/vnd.powerbuilder6",
+    "fileExtension": ".pbd"
+  },
+  {
+    "name": "Pretty Good Privacy – Signature",
+    "httpContentType": "application/pgp-signature",
+    "fileExtension": ".pgp"
+  },
+  {
+    "name": "Preview Systems ZipLock/VBox",
+    "httpContentType": "application/vnd.previewsystems.box",
+    "fileExtension": ".box"
+  },
+  {
+    "name": "Princeton Video Image",
+    "httpContentType": "application/vnd.pvi.ptid1",
+    "fileExtension": ".ptid"
+  },
+  {
+    "name": "Pronunciation Lexicon Specification",
+    "httpContentType": "application/pls+xml",
+    "fileExtension": ".pls"
+  },
+  {
+    "name": "Proprietary P&G Standard Reporting System",
+    "httpContentType": "application/vnd.pg.format",
+    "fileExtension": ".str"
+  },
+  {
+    "name": "Proprietary P&G Standard Reporting System",
+    "httpContentType": "application/vnd.pg.osasli",
+    "fileExtension": ".ei6"
+  },
+  {
+    "name": "PRS Lines Tag",
+    "httpContentType": "text/prs.lines.tag",
+    "fileExtension": ".dsc"
+  },
+  {
+    "name": "PSF Fonts",
+    "httpContentType": "application/x-font-linux-psf",
+    "fileExtension": ".psf"
+  },
+  {
+    "name": "PubliShare Objects",
+    "httpContentType": "application/vnd.publishare-delta-tree",
+    "fileExtension": ".qps"
+  },
+  {
+    "name": "Qualcomm’s Plaza Mobile Internet",
+    "httpContentType": "application/vnd.pmi.widget",
+    "fileExtension": ".wg"
+  },
+  {
+    "name": "QuarkXpress",
+    "httpContentType": "application/vnd.quark.quarkxpress",
+    "fileExtension": ".qxd"
+  },
+  {
+    "name": "QUASS Stream Player",
+    "httpContentType": "application/vnd.epson.esf",
+    "fileExtension": ".esf"
+  },
+  {
+    "name": "QUASS Stream Player",
+    "httpContentType": "application/vnd.epson.msf",
+    "fileExtension": ".msf"
+  },
+  {
+    "name": "QUASS Stream Player",
+    "httpContentType": "application/vnd.epson.ssf",
+    "fileExtension": ".ssf"
+  },
+  {
+    "name": "QuickAnime Player",
+    "httpContentType": "application/vnd.epson.quickanime",
+    "fileExtension": ".qam"
+  },
+  {
+    "name": "Quicken",
+    "httpContentType": "application/vnd.intu.qfx",
+    "fileExtension": ".qfx"
+  },
+  {
+    "name": "Quicktime Video",
+    "httpContentType": "video/quicktime",
+    "fileExtension": ".qt"
+  },
+  {
+    "name": "RAR Archive",
+    "httpContentType": "application/x-rar-compressed",
+    "fileExtension": ".rar"
+  },
+  {
+    "name": "Real Audio Sound",
+    "httpContentType": "audio/x-pn-realaudio",
+    "fileExtension": ".ram"
+  },
+  {
+    "name": "Real Audio Sound",
+    "httpContentType": "audio/x-pn-realaudio-plugin",
+    "fileExtension": ".rmp"
+  },
+  {
+    "name": "Really Simple Discovery",
+    "httpContentType": "application/rsd+xml",
+    "fileExtension": ".rsd"
+  },
+  {
+    "name": "RealMedia",
+    "httpContentType": "application/vnd.rn-realmedia",
+    "fileExtension": ".rm"
+  },
+  {
+    "name": "RealVNC",
+    "httpContentType": "application/vnd.realvnc.bed",
+    "fileExtension": ".bed"
+  },
+  {
+    "name": "Recordare Applications",
+    "httpContentType": "application/vnd.recordare.musicxml",
+    "fileExtension": ".mxl"
+  },
+  {
+    "name": "Recordare Applications",
+    "httpContentType": "application/vnd.recordare.musicxml+xml",
+    "fileExtension": ".musicxml"
+  },
+  {
+    "name": "Relax NG Compact Syntax",
+    "httpContentType": "application/relax-ng-compact-syntax",
+    "fileExtension": ".rnc"
+  },
+  {
+    "name": "RemoteDocs R-Viewer",
+    "httpContentType": "application/vnd.data-vision.rdz",
+    "fileExtension": ".rdz"
+  },
+  {
+    "name": "Resource Description Framework",
+    "httpContentType": "application/rdf+xml",
+    "fileExtension": ".rdf"
+  },
+  {
+    "name": "RetroPlatform Player",
+    "httpContentType": "application/vnd.cloanto.rp9",
+    "fileExtension": ".rp9"
+  },
+  {
+    "name": "RhymBox",
+    "httpContentType": "application/vnd.jisp",
+    "fileExtension": ".jisp"
+  },
+  {
+    "name": "Rich Text Format",
+    "httpContentType": "application/rtf",
+    "fileExtension": ".rtf"
+  },
+  {
+    "name": "Rich Text Format (RTF)",
+    "httpContentType": "text/richtext",
+    "fileExtension": ".rtx"
+  },
+  {
+    "name": "ROUTE 66 Location Based Services",
+    "httpContentType": "application/vnd.route66.link66+xml",
+    "fileExtension": ".link66"
+  },
+  {
+    "name": "RSS – Really Simple Syndication",
+    "httpContentType": "application/rss+xml",
+    "fileExtension": ".rss, .xml"
+  },
+  {
+    "name": "S Hexdump Format",
+    "httpContentType": "application/shf+xml",
+    "fileExtension": ".shf"
+  },
+  {
+    "name": "SailingTracker",
+    "httpContentType": "application/vnd.sailingtracker.track",
+    "fileExtension": ".st"
+  },
+  {
+    "name": "Scalable Vector Graphics (SVG)",
+    "httpContentType": "image/svg+xml",
+    "fileExtension": ".svg"
+  },
+  {
+    "name": "ScheduleUs",
+    "httpContentType": "application/vnd.sus-calendar",
+    "fileExtension": ".sus"
+  },
+  {
+    "name": "Search/Retrieve via URL Response Format",
+    "httpContentType": "application/sru+xml",
+    "fileExtension": ".sru"
+  },
+  {
+    "name": "Secure Electronic Transaction – Payment",
+    "httpContentType": "application/set-payment-initiation",
+    "fileExtension": ".setpay"
+  },
+  {
+    "name": "Secure Electronic Transaction – Registration",
+    "httpContentType": "application/set-registration-initiation",
+    "fileExtension": ".setreg"
+  },
+  {
+    "name": "Secured eMail",
+    "httpContentType": "application/vnd.sema",
+    "fileExtension": ".sema"
+  },
+  {
+    "name": "Secured eMail",
+    "httpContentType": "application/vnd.semd",
+    "fileExtension": ".semd"
+  },
+  {
+    "name": "Secured eMail",
+    "httpContentType": "application/vnd.semf",
+    "fileExtension": ".semf"
+  },
+  {
+    "name": "SeeMail",
+    "httpContentType": "application/vnd.seemail",
+    "fileExtension": ".see"
+  },
+  {
+    "name": "Server Normal Format",
+    "httpContentType": "application/x-font-snf",
+    "fileExtension": ".snf"
+  },
+  {
+    "name": "Server-Based Certificate Validation Protocol – Validation Policies – Request",
+    "httpContentType": "application/scvp-vp-request",
+    "fileExtension": ".spq"
+  },
+  {
+    "name": "Server-Based Certificate Validation Protocol – Validation Policies – Response",
+    "httpContentType": "application/scvp-vp-response",
+    "fileExtension": ".spp"
+  },
+  {
+    "name": "Server-Based Certificate Validation Protocol – Validation Request",
+    "httpContentType": "application/scvp-cv-request",
+    "fileExtension": ".scq"
+  },
+  {
+    "name": "Server-Based Certificate Validation Protocol – Validation Response",
+    "httpContentType": "application/scvp-cv-response",
+    "fileExtension": ".scs"
+  },
+  {
+    "name": "Session Description Protocol",
+    "httpContentType": "application/sdp",
+    "fileExtension": ".sdp"
+  },
+  {
+    "name": "Setext",
+    "httpContentType": "text/x-setext",
+    "fileExtension": ".etx"
+  },
+  {
+    "name": "SGI Movie",
+    "httpContentType": "video/x-sgi-movie",
+    "fileExtension": ".movie"
+  },
+  {
+    "name": "Shana Informed Filler",
+    "httpContentType": "application/vnd.shana.informed.formdata",
+    "fileExtension": ".ifm"
+  },
+  {
+    "name": "Shana Informed Filler",
+    "httpContentType": "application/vnd.shana.informed.formtemplate",
+    "fileExtension": ".itp"
+  },
+  {
+    "name": "Shana Informed Filler",
+    "httpContentType": "application/vnd.shana.informed.interchange",
+    "fileExtension": ".iif"
+  },
+  {
+    "name": "Shana Informed Filler",
+    "httpContentType": "application/vnd.shana.informed.package",
+    "fileExtension": ".ipk"
+  },
+  {
+    "name": "Sharing Transaction Fraud Data",
+    "httpContentType": "application/thraud+xml",
+    "fileExtension": ".tfi"
+  },
+  {
+    "name": "Shell Archive",
+    "httpContentType": "application/x-shar",
+    "fileExtension": ".shar"
+  },
+  {
+    "name": "Silicon Graphics RGB Bitmap",
+    "httpContentType": "image/x-rgb",
+    "fileExtension": ".rgb"
+  },
+  {
+    "name": "SimpleAnimeLite Player",
+    "httpContentType": "application/vnd.epson.salt",
+    "fileExtension": ".slt"
+  },
+  {
+    "name": "Simply Accounting",
+    "httpContentType": "application/vnd.accpac.simply.aso",
+    "fileExtension": ".aso"
+  },
+  {
+    "name": "Simply Accounting – Data Import",
+    "httpContentType": "application/vnd.accpac.simply.imp",
+    "fileExtension": ".imp"
+  },
+  {
+    "name": "SimTech MindMapper",
+    "httpContentType": "application/vnd.simtech-mindmapper",
+    "fileExtension": ".twd"
+  },
+  {
+    "name": "Sixth Floor Media – CommonSpace",
+    "httpContentType": "application/vnd.commonspace",
+    "fileExtension": ".csp"
+  },
+  {
+    "name": "SMAF Audio",
+    "httpContentType": "application/vnd.yamaha.smaf-audio",
+    "fileExtension": ".saf"
+  },
+  {
+    "name": "SMAF File",
+    "httpContentType": "application/vnd.smaf",
+    "fileExtension": ".mmf"
+  },
+  {
+    "name": "SMAF Phrase",
+    "httpContentType": "application/vnd.yamaha.smaf-phrase",
+    "fileExtension": ".spf"
+  },
+  {
+    "name": "SMART Technologies Apps",
+    "httpContentType": "application/vnd.smart.teacher",
+    "fileExtension": ".teacher"
+  },
+  {
+    "name": "SourceView Document",
+    "httpContentType": "application/vnd.svd",
+    "fileExtension": ".svd"
+  },
+  {
+    "name": "SPARQL – Query",
+    "httpContentType": "application/sparql-query",
+    "fileExtension": ".rq"
+  },
+  {
+    "name": "SPARQL – Results",
+    "httpContentType": "application/sparql-results+xml",
+    "fileExtension": ".srx"
+  },
+  {
+    "name": "Speech Recognition Grammar Specification",
+    "httpContentType": "application/srgs",
+    "fileExtension": ".gram"
+  },
+  {
+    "name": "Speech Recognition Grammar Specification – XML",
+    "httpContentType": "application/srgs+xml",
+    "fileExtension": ".grxml"
+  },
+  {
+    "name": "Speech Synthesis Markup Language",
+    "httpContentType": "application/ssml+xml",
+    "fileExtension": ".ssml"
+  },
+  {
+    "name": "SSEYO Koan Play File",
+    "httpContentType": "application/vnd.koan",
+    "fileExtension": ".skp"
+  },
+  {
+    "name": "Standard Generalized Markup Language (SGML)",
+    "httpContentType": "text/sgml",
+    "fileExtension": ".sgml"
+  },
+  {
+    "name": "StarOffice – Calc",
+    "httpContentType": "application/vnd.stardivision.calc",
+    "fileExtension": ".sdc"
+  },
+  {
+    "name": "StarOffice – Draw",
+    "httpContentType": "application/vnd.stardivision.draw",
+    "fileExtension": ".sda"
+  },
+  {
+    "name": "StarOffice – Impress",
+    "httpContentType": "application/vnd.stardivision.impress",
+    "fileExtension": ".sdd"
+  },
+  {
+    "name": "StarOffice – Math",
+    "httpContentType": "application/vnd.stardivision.math",
+    "fileExtension": ".smf"
+  },
+  {
+    "name": "StarOffice – Writer",
+    "httpContentType": "application/vnd.stardivision.writer",
+    "fileExtension": ".sdw"
+  },
+  {
+    "name": "StarOffice – Writer (Global)",
+    "httpContentType": "application/vnd.stardivision.writer-global",
+    "fileExtension": ".sgl"
+  },
+  {
+    "name": "StepMania",
+    "httpContentType": "application/vnd.stepmania.stepchart",
+    "fileExtension": ".sm"
+  },
+  {
+    "name": "Stuffit Archive",
+    "httpContentType": "application/x-stuffit",
+    "fileExtension": ".sit"
+  },
+  {
+    "name": "Stuffit Archive",
+    "httpContentType": "application/x-stuffitx",
+    "fileExtension": ".sitx"
+  },
+  {
+    "name": "SudokuMagic",
+    "httpContentType": "application/vnd.solent.sdkm+xml",
+    "fileExtension": ".sdkm"
+  },
+  {
+    "name": "Sugar Linux Application Bundle",
+    "httpContentType": "application/vnd.olpc-sugar",
+    "fileExtension": ".xo"
+  },
+  {
+    "name": "Sun Audio – Au file format",
+    "httpContentType": "audio/basic",
+    "fileExtension": ".au"
+  },
+  {
+    "name": "SundaHus WQ",
+    "httpContentType": "application/vnd.wqd",
+    "fileExtension": ".wqd"
+  },
+  {
+    "name": "Symbian Install Package",
+    "httpContentType": "application/vnd.symbian.install",
+    "fileExtension": ".sis"
+  },
+  {
+    "name": "Synchronized Multimedia Integration Language",
+    "httpContentType": "application/smil+xml",
+    "fileExtension": ".smi"
+  },
+  {
+    "name": "SyncML",
+    "httpContentType": "application/vnd.syncml+xml",
+    "fileExtension": ".xsm"
+  },
+  {
+    "name": "SyncML – Device Management",
+    "httpContentType": "application/vnd.syncml.dm+wbxml",
+    "fileExtension": ".bdm"
+  },
+  {
+    "name": "SyncML – Device Management",
+    "httpContentType": "application/vnd.syncml.dm+xml",
+    "fileExtension": ".xdm"
+  },
+  {
+    "name": "System V Release 4 CPIO Archive",
+    "httpContentType": "application/x-sv4cpio",
+    "fileExtension": ".sv4cpio"
+  },
+  {
+    "name": "System V Release 4 CPIO Checksum Data",
+    "httpContentType": "application/x-sv4crc",
+    "fileExtension": ".sv4crc"
+  },
+  {
+    "name": "Systems Biology Markup Language",
+    "httpContentType": "application/sbml+xml",
+    "fileExtension": ".sbml"
+  },
+  {
+    "name": "Tab Seperated Values",
+    "httpContentType": "text/tab-separated-values",
+    "fileExtension": ".tsv"
+  },
+  {
+    "name": "Tagged Image File Format",
+    "httpContentType": "image/tiff",
+    "fileExtension": ".tiff"
+  },
+  {
+    "name": "Tao Intent",
+    "httpContentType": "application/vnd.tao.intent-module-archive",
+    "fileExtension": ".tao"
+  },
+  {
+    "name": "Tar File (Tape Archive)",
+    "httpContentType": "application/x-tar",
+    "fileExtension": ".tar"
+  },
+  {
+    "name": "Tcl Script",
+    "httpContentType": "application/x-tcl",
+    "fileExtension": ".tcl"
+  },
+  {
+    "name": "TeX",
+    "httpContentType": "application/x-tex",
+    "fileExtension": ".tex"
+  },
+  {
+    "name": "TeX Font Metric",
+    "httpContentType": "application/x-tex-tfm",
+    "fileExtension": ".tfm"
+  },
+  {
+    "name": "Text Encoding and Interchange",
+    "httpContentType": "application/tei+xml",
+    "fileExtension": ".tei"
+  },
+  {
+    "name": "Text File",
+    "httpContentType": "text/plain",
+    "fileExtension": ".txt"
+  },
+  {
+    "name": "TIBCO Spotfire",
+    "httpContentType": "application/vnd.spotfire.dxp",
+    "fileExtension": ".dxp"
+  },
+  {
+    "name": "TIBCO Spotfire",
+    "httpContentType": "application/vnd.spotfire.sfs",
+    "fileExtension": ".sfs"
+  },
+  {
+    "name": "Time Stamped Data Envelope",
+    "httpContentType": "application/timestamped-data",
+    "fileExtension": ".tsd"
+  },
+  {
+    "name": "TRI Systems Config",
+    "httpContentType": "application/vnd.trid.tpt",
+    "fileExtension": ".tpt"
+  },
+  {
+    "name": "Triscape Map Explorer",
+    "httpContentType": "application/vnd.triscape.mxs",
+    "fileExtension": ".mxs"
+  },
+  {
+    "name": "troff",
+    "httpContentType": "text/troff",
+    "fileExtension": ".t"
+  },
+  {
+    "name": "True BASIC",
+    "httpContentType": "application/vnd.trueapp",
+    "fileExtension": ".tra"
+  },
+  {
+    "name": "TrueType Font",
+    "httpContentType": "application/x-font-ttf",
+    "fileExtension": ".ttf"
+  },
+  {
+    "name": "Turtle (Terse RDF Triple Language)",
+    "httpContentType": "text/turtle",
+    "fileExtension": ".ttl"
+  },
+  {
+    "name": "UMAJIN",
+    "httpContentType": "application/vnd.umajin",
+    "fileExtension": ".umj"
+  },
+  {
+    "name": "Unique Object Markup Language",
+    "httpContentType": "application/vnd.uoml+xml",
+    "fileExtension": ".uoml"
+  },
+  {
+    "name": "Unity 3d",
+    "httpContentType": "application/vnd.unity",
+    "fileExtension": ".unityweb"
+  },
+  {
+    "name": "Universal Forms Description Language",
+    "httpContentType": "application/vnd.ufdl",
+    "fileExtension": ".ufd"
+  },
+  {
+    "name": "URI Resolution Services",
+    "httpContentType": "text/uri-list",
+    "fileExtension": ".uri"
+  },
+  {
+    "name": "User Interface Quartz – Theme (Symbian)",
+    "httpContentType": "application/vnd.uiq.theme",
+    "fileExtension": ".utz"
+  },
+  {
+    "name": "Ustar (Uniform Standard Tape Archive)",
+    "httpContentType": "application/x-ustar",
+    "fileExtension": ".ustar"
+  },
+  {
+    "name": "UUEncode",
+    "httpContentType": "text/x-uuencode",
+    "fileExtension": ".uu"
+  },
+  {
+    "name": "vCalendar",
+    "httpContentType": "text/x-vcalendar",
+    "fileExtension": ".vcs"
+  },
+  {
+    "name": "vCard",
+    "httpContentType": "text/x-vcard",
+    "fileExtension": ".vcf"
+  },
+  {
+    "name": "Video CD",
+    "httpContentType": "application/x-cdlink",
+    "fileExtension": ".vcd"
+  },
+  {
+    "name": "Viewport+",
+    "httpContentType": "application/vnd.vsf",
+    "fileExtension": ".vsf"
+  },
+  {
+    "name": "Virtual Reality Modeling Language",
+    "httpContentType": "model/vrml",
+    "fileExtension": ".wrl"
+  },
+  {
+    "name": "VirtualCatalog",
+    "httpContentType": "application/vnd.vcx",
+    "fileExtension": ".vcx"
+  },
+  {
+    "name": "Virtue MTS",
+    "httpContentType": "model/vnd.mts",
+    "fileExtension": ".mts"
+  },
+  {
+    "name": "Virtue VTU",
+    "httpContentType": "model/vnd.vtu",
+    "fileExtension": ".vtu"
+  },
+  {
+    "name": "Visionary",
+    "httpContentType": "application/vnd.visionary",
+    "fileExtension": ".vis"
+  },
+  {
+    "name": "Vivo",
+    "httpContentType": "video/vnd.vivo",
+    "fileExtension": ".viv"
+  },
+  {
+    "name": "Voice Browser Call Control",
+    "httpContentType": "application/ccxml+xml,",
+    "fileExtension": ".ccxml"
+  },
+  {
+    "name": "VoiceXML",
+    "httpContentType": "application/voicexml+xml",
+    "fileExtension": ".vxml"
+  },
+  {
+    "name": "WAIS Source",
+    "httpContentType": "application/x-wais-source",
+    "fileExtension": ".src"
+  },
+  {
+    "name": "WAP Binary XML (WBXML)",
+    "httpContentType": "application/vnd.wap.wbxml",
+    "fileExtension": ".wbxml"
+  },
+  {
+    "name": "WAP Bitamp (WBMP)",
+    "httpContentType": "image/vnd.wap.wbmp",
+    "fileExtension": ".wbmp"
+  },
+  {
+    "name": "Waveform Audio File Format (WAV)",
+    "httpContentType": "audio/x-wav",
+    "fileExtension": ".wav"
+  },
+  {
+    "name": "Web Distributed Authoring and Versioning",
+    "httpContentType": "application/davmount+xml",
+    "fileExtension": ".davmount"
+  },
+  {
+    "name": "Web Open Font Format",
+    "httpContentType": "application/x-font-woff",
+    "fileExtension": ".woff"
+  },
+  {
+    "name": "Web Services Policy",
+    "httpContentType": "application/wspolicy+xml",
+    "fileExtension": ".wspolicy"
+  },
+  {
+    "name": "WebP Image",
+    "httpContentType": "image/webp",
+    "fileExtension": ".webp"
+  },
+  {
+    "name": "WebTurbo",
+    "httpContentType": "application/vnd.webturbo",
+    "fileExtension": ".wtb"
+  },
+  {
+    "name": "Widget Packaging and XML Configuration",
+    "httpContentType": "application/widget",
+    "fileExtension": ".wgt"
+  },
+  {
+    "name": "WinHelp",
+    "httpContentType": "application/winhlp",
+    "fileExtension": ".hlp"
+  },
+  {
+    "name": "Wireless Markup Language (WML)",
+    "httpContentType": "text/vnd.wap.wml",
+    "fileExtension": ".wml"
+  },
+  {
+    "name": "Wireless Markup Language Script (WMLScript)",
+    "httpContentType": "text/vnd.wap.wmlscript",
+    "fileExtension": ".wmls"
+  },
+  {
+    "name": "WMLScript",
+    "httpContentType": "application/vnd.wap.wmlscriptc",
+    "fileExtension": ".wmlsc"
+  },
+  {
+    "name": "Wordperfect",
+    "httpContentType": "application/vnd.wordperfect",
+    "fileExtension": ".wpd"
+  },
+  {
+    "name": "Worldtalk",
+    "httpContentType": "application/vnd.wt.stf",
+    "fileExtension": ".stf"
+  },
+  {
+    "name": "WSDL – Web Services Description Language",
+    "httpContentType": "application/wsdl+xml",
+    "fileExtension": ".wsdl"
+  },
+  {
+    "name": "X BitMap",
+    "httpContentType": "image/x-xbitmap",
+    "fileExtension": ".xbm"
+  },
+  {
+    "name": "X PixMap",
+    "httpContentType": "image/x-xpixmap",
+    "fileExtension": ".xpm"
+  },
+  {
+    "name": "X Window Dump",
+    "httpContentType": "image/x-xwindowdump",
+    "fileExtension": ".xwd"
+  },
+  {
+    "name": "X.509 Certificate",
+    "httpContentType": "application/x-x509-ca-cert",
+    "fileExtension": ".der"
+  },
+  {
+    "name": "Xfig",
+    "httpContentType": "application/x-xfig",
+    "fileExtension": ".fig"
+  },
+  {
+    "name": "XHTML – The Extensible HyperText Markup Language",
+    "httpContentType": "application/xhtml+xml",
+    "fileExtension": ".xhtml"
+  },
+  {
+    "name": "XML – Extensible Markup Language",
+    "httpContentType": "application/xml",
+    "fileExtension": ".xml"
+  },
+  {
+    "name": "XML Configuration Access Protocol – XCAP Diff",
+    "httpContentType": "application/xcap-diff+xml",
+    "fileExtension": ".xdf"
+  },
+  {
+    "name": "XML Encryption Syntax and Processing",
+    "httpContentType": "application/xenc+xml",
+    "fileExtension": ".xenc"
+  },
+  {
+    "name": "XML Patch Framework",
+    "httpContentType": "application/patch-ops-error+xml",
+    "fileExtension": ".xer"
+  },
+  {
+    "name": "XML Resource Lists",
+    "httpContentType": "application/resource-lists+xml",
+    "fileExtension": ".rl"
+  },
+  {
+    "name": "XML Resource Lists",
+    "httpContentType": "application/rls-services+xml",
+    "fileExtension": ".rs"
+  },
+  {
+    "name": "XML Resource Lists Diff",
+    "httpContentType": "application/resource-lists-diff+xml",
+    "fileExtension": ".rld"
+  },
+  {
+    "name": "XML Transformations",
+    "httpContentType": "application/xslt+xml",
+    "fileExtension": ".xslt"
+  },
+  {
+    "name": "XML-Binary Optimized Packaging",
+    "httpContentType": "application/xop+xml",
+    "fileExtension": ".xop"
+  },
+  {
+    "name": "XPInstall – Mozilla",
+    "httpContentType": "application/x-xpinstall",
+    "fileExtension": ".xpi"
+  },
+  {
+    "name": "XSPF – XML Shareable Playlist Format",
+    "httpContentType": "application/xspf+xml",
+    "fileExtension": ".xspf"
+  },
+  {
+    "name": "XUL – XML User Interface Language",
+    "httpContentType": "application/vnd.mozilla.xul+xml",
+    "fileExtension": ".xul"
+  },
+  {
+    "name": "XYZ File Format",
+    "httpContentType": "chemical/x-xyz",
+    "fileExtension": ".xyz"
+  },
+  {
+    "name": "YAML Ain’t Markup Language / Yet Another Markup Language",
+    "httpContentType": "text/yaml",
+    "fileExtension": ".yaml"
+  },
+  {
+    "name": "YANG Data Modeling Language",
+    "httpContentType": "application/yang",
+    "fileExtension": ".yang"
+  },
+  {
+    "name": "YIN (YANG – XML)",
+    "httpContentType": "application/yin+xml",
+    "fileExtension": ".yin"
+  },
+  {
+    "name": "Z.U.L. Geometry",
+    "httpContentType": "application/vnd.zul",
+    "fileExtension": ".zir"
+  },
+  {
+    "name": "Zip Archive",
+    "httpContentType": "application/zip",
+    "fileExtension": ".zip"
+  },
+  {
+    "name": "ZVUE Media Manager",
+    "httpContentType": "application/vnd.handheld-entertainment+xml",
+    "fileExtension": ".zmm"
+  },
+  {
+    "name": "Zzazz Deck",
+    "httpContentType": "application/vnd.zzazz.deck+xml",
+    "fileExtension": ".zaz"
+  }
+]

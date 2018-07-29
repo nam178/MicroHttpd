@@ -1,0 +1,8 @@
+﻿POST /auth/index?redirect=https%3A%2F%2Fau_alpha.catapultsports.com%2F HTTP/1.1
+Host: google.com
+Connection: keep-alive
+Pragma: no-cache
+Content-Length: 58
+Cache-Control: no-cache
+
+This message ends prematurelly
