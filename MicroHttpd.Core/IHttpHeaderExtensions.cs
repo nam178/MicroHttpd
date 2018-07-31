@@ -44,14 +44,14 @@ namespace MicroHttpd.Core
 
 		static void ThrowForInvalidContentLengthHeaderField(string actualValue)
 		{
-			throw new HttpInvalidMessageException(
+			throw new HttpBadRequestException(
 				$"Invalid Content-length header field: {actualValue}"
 				);
 		}
 
 		static void ThrowForMultipleContentLengthWithDifferentValue()
 		{
-			throw new HttpInvalidMessageException(
+			throw new HttpBadRequestException(
 				"Multiple Content-Length header fields present with different value"
 				);
 		}

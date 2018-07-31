@@ -59,7 +59,7 @@ namespace MicroHttpd.Core
 				return;
 			}
 
-			throw new HttpInvalidMessageException(
+			throw new HttpBadRequestException(
 				$"Invalid request line: {startLine}"
 				);
 		}

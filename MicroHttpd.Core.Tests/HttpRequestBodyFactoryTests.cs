@@ -25,7 +25,7 @@ namespace MicroHttpd.Core.Tests
 		internal void ThrowsInvalidHttpException(HttpHeaderEntries entries)
 		{
 			var inst = new HttpRequestBodyFactory();
-			Assert.Throws<HttpInvalidMessageException>(delegate
+			Assert.Throws<HttpBadRequestException>(delegate
 			{
 				inst.Create(
 				TcpSettings.Default,

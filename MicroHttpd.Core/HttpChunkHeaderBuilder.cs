@@ -74,13 +74,13 @@ namespace MicroHttpd.Core
 				}
 				catch(ArgumentException ex)
 				{
-					throw new HttpInvalidMessageException(
+					throw new HttpBadRequestException(
 						$"Failed building chunk header: {ex.Message}", 
 						ex);
 				}
 				
 			}
-			throw new HttpInvalidMessageException(
+			throw new HttpBadRequestException(
 				$"Invalid chunk header '{chunkHeaderLine}'"
 				);
 		}
@@ -95,7 +95,7 @@ namespace MicroHttpd.Core
 				out result
 				))
 			{
-				throw new HttpInvalidMessageException(
+				throw new HttpBadRequestException(
 					$"Invalid chunk length hex string {chunkLengthHexString}"
 					);
 			}

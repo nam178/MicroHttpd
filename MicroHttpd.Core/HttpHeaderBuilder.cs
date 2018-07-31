@@ -107,7 +107,7 @@ namespace MicroHttpd.Core
 		void RequireNonNullRequestLine()
 		{
 			if(null == _requestLine)
-				throw new HttpInvalidMessageException(
+				throw new HttpBadRequestException(
 					"Http header contains no request line."
 					);
 		}

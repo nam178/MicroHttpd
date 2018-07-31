@@ -73,7 +73,7 @@ namespace MicroHttpd.Core
 					_keepAliveService.Register(_connection);
 				}
 			}
-			catch(HttpInvalidMessageException ex)
+			catch(HttpBadRequestException ex)
 			{
 				// Caused by malformed HTTP request message
 				// sent by the client;
@@ -130,7 +130,7 @@ namespace MicroHttpd.Core
 		/// <returns></returns>
 		async Task ProcessRequestResponseAsync()
 		{
-			if(false == await _content.WriteContentAsync(_request, _response))
+			if(false == await _content.ServeAsync(_request, _response))
 			{
 				// Content hasn't been served to the client,
 				// This indicates a programming error

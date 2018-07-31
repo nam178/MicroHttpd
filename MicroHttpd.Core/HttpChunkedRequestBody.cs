@@ -145,7 +145,7 @@ namespace MicroHttpd.Core
 			HttpPrematureFinishException.ThrowIfZero(bytesRead);
 			if(false == _lineBuilder.AppendBuffer(_readBuffer, 0, bytesRead, out int nextLineStartIndex))
 			{
-				throw new HttpInvalidMessageException(
+				throw new HttpBadRequestException(
 					"Chunk body must end with an empty line"
 					);
 			}

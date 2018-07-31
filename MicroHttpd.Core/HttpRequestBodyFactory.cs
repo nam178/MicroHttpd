@@ -101,7 +101,7 @@ namespace MicroHttpd.Core
 
 		static void ThrowForLastTransferEncodingIsNotChunked()
 		{
-			throw new HttpInvalidMessageException(
+			throw new HttpBadRequestException(
 				$"The last {HttpKeys.TransferEncoding} header " +
 				$"value must be '{HttpKeys.ChunkedValue}'"
 				);

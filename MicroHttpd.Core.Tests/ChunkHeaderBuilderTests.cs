@@ -46,7 +46,7 @@ namespace MicroHttpd.Core.Tests
 		{
 			var buffer = hexString.ToBytes();
 			var builder = new HttpChunkHeaderBuilder();
-			Assert.Throws<HttpInvalidMessageException>(delegate
+			Assert.Throws<HttpBadRequestException>(delegate
 			{
 				builder.AppendBuffer(buffer, 0, buffer.Length, out _);
 			});

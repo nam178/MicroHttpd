@@ -8,7 +8,7 @@ namespace MicroHttpd.Core.Tests
 		public void ThrowsExceptionIfFirstLineIsBlank()
 		{
 			var builder = HttpHeaderBuilderFactory.CreateRequestHeaderBuilder();
-			Assert.Throws<HttpInvalidMessageException>(delegate
+			Assert.Throws<HttpBadRequestException>(delegate
 			{
 				var d = "\r\nGET /\r\n".ToBytes();
 				builder.AppendBuffer(d, 0, d.Length, out _);

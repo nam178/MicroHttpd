@@ -24,7 +24,7 @@ namespace MicroHttpd.Core
 
 		static void ThrowForInvalidHeaderSeperator(string headerLine)
 		{
-			throw new HttpInvalidMessageException(
+			throw new HttpBadRequestException(
 				$"Invalid header '{headerLine}'"
 				);
 		}

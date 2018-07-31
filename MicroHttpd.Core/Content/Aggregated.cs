@@ -14,13 +14,13 @@ namespace MicroHttpd.Core.Content
 				?? throw new ArgumentNullException(nameof(contents));
 		}
 
-		public async Task<bool> WriteContentAsync(
+		public async Task<bool> ServeAsync(
 			IHttpRequest request, 
 			IHttpResponse response)
 		{
 			for(var i = 0; i < _contents.Count; i++)
 			{
-				if(await _contents[i].WriteContentAsync(request, response))
+				if(await _contents[i].ServeAsync(request, response))
 				{
 					return true;
 				}

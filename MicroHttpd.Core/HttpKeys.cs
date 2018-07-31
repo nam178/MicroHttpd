@@ -11,5 +11,7 @@
 		public static readonly StringCI CloseValue = "close";
 		public static readonly StringCI ChunkedValue = "chunked";
 		public static readonly StringCI ContentType = "Content-Type";
+		public static readonly StringCI Range = "range";
+		public static readonly StringCI ContentRange = "Content-Range";
 	}
 }

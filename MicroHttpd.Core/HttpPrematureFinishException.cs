@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace MicroHttpd.Core
 {
 	[Serializable]
-	class HttpPrematureFinishException : HttpInvalidMessageException
+	class HttpPrematureFinishException : HttpBadRequestException
 	{
 		public HttpPrematureFinishException()
 		{

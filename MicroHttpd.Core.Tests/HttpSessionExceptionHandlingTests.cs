@@ -23,7 +23,7 @@ namespace MicroHttpd.Core.Tests
 				TcpSettings.Default,
 				HttpSettings.Default);
 			mockContent
-				.Setup(inst => inst.WriteContentAsync(It.IsAny<IHttpRequest>(), It.IsAny<IHttpResponse>()))
+				.Setup(inst => inst.ServeAsync(It.IsAny<IHttpRequest>(), It.IsAny<IHttpResponse>()))
 				.Callback(() => throw new Exception("My Custom Message"));
 			var session = new HttpSession(
 				new MemoryStream(),

@@ -21,7 +21,7 @@ namespace MicroHttpd.Core.Content
 		readonly byte[] _notFoundText = Encoding.UTF8.GetBytes(
 			@"<h1>404 - Not Found</h1>");
 
-		public async Task<bool> WriteContentAsync(
+		public async Task<bool> ServeAsync(
 			IHttpRequest request, 
 			IHttpResponse response)
 		{

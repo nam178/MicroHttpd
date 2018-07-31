@@ -88,7 +88,7 @@ namespace MicroHttpd.Core.Tests
 				HttpSettings.Default);
 			mockResponse = mockResponseTmp;
 			mockContent
-				.Setup(inst => inst.WriteContentAsync(
+				.Setup(inst => inst.ServeAsync(
 					mockRequest,
 					mockResponseTmp))
 				.Returns(Task.FromResult(true));

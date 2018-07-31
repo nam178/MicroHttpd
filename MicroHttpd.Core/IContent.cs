@@ -4,7 +4,7 @@ namespace MicroHttpd.Core
 {
 	public interface IContent
 	{
-		Task<bool> WriteContentAsync(
+		Task<bool> ServeAsync(
 			IHttpRequest request, 
 			IHttpResponse response
 			);
