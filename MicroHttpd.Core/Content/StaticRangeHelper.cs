@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace MicroHttpd.Core.Content
 {
@@ -56,6 +57,46 @@ namespace MicroHttpd.Core.Content
 			{
 				return new StaticRangeRequest(from, long.MinValue);
 			}
+		}
+
+		public static void RequireValidRange(this StaticRangeRequest rangeRequest)
+		{
+			if(rangeRequest.To < rangeRequest.From)
+				throw new HttpBadRequestException($"Invalid range requested {rangeRequest}");
+		}
+
+		public static void RequireValidRangeWithin(this StaticRangeRequest rangeRequest, long contentLength)
+		{
+			if(rangeRequest.From < 0
+				|| rangeRequest.From >= contentLength
+				|| rangeRequest.To < 0
+				|| rangeRequest.To >= contentLength)
+			{
+				throw new StaticRangeNotSatisfiableException();
+			}
+		}
+
+		public static string Str(this long to) => to.ToString(CultureInfo.InvariantCulture);
+
+		public static Task Return416Async(this IHttpResponse response)
+		{
+			if(response.IsHeaderSent)
+				throw new InvalidOperationException();
+			ClearHeader(response, HttpKeys.ContentType);
+			ClearHeader(response, HttpKeys.ContentLength);
+			response.Header.StatusCode = 416;
+			return response.SendHeaderAsync();
+		}
+
+		public static void ClearHeader(this IHttpResponse response, StringCI key)
+		{
+			if(response.Header.ContainsKey(key))
+				response.Header.Remove(key);
+		}
+
+		public static string GenerateRangeHeader(this StaticRangeRequest rangeRequest, long length)
+		{
+			return $"{HttpKeys.ContentRange}: bytes {rangeRequest.From.Str()}-{rangeRequest.To.Str()}/{length.Str()}";
 		}
 	}
 }

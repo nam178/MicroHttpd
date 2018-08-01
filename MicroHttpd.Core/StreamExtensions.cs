@@ -23,5 +23,21 @@ namespace MicroHttpd.Core
 				bytesWritten += bytesToWrite;
 			}
 		}
+
+		public static async Task CopyToAsync(this Stream target, Stream src, long count, int bufferSize)
+		{
+			Validation.RequireValidBufferSize(bufferSize);
+			var bytesCopied = 0L;
+			var buffer = new byte[bufferSize];
+			while(bytesCopied < count)
+			{
+				var desiredBytesToCopy = (int)Math.Min(buffer.Length, count - bytesCopied);
+				var actualBytesToCopy = await src.ReadAsync(buffer, 0, desiredBytesToCopy);
+				if(actualBytesToCopy == 0)
+					throw new EndOfStreamException("Unexpected end of source stream");
+				await target.WriteAsync(buffer, 0, actualBytesToCopy);
+				bytesCopied += actualBytesToCopy;
+			}
+		}
 	}
 }

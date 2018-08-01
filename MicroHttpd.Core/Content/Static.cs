@@ -17,7 +17,7 @@ namespace MicroHttpd.Core.Content
 
 		public Static(IStaticFileServer fileServer, TcpSettings tcpSettings)
 		{
-			Validation.RequireValidTcpSettings(S);
+			Validation.RequireValidTcpSettings(tcpSettings);
 			_fileServer = fileServer 
 				?? throw new ArgumentNullException(nameof(fileServer));
 			_tcpSettings = tcpSettings;

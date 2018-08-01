@@ -17,9 +17,5 @@ namespace MicroHttpd.Core
 		public VirtualHostConfigException(string message, Exception innerException) : base(message, innerException)
 		{
 		}
-
-		protected VirtualHostConfigException(SerializationInfo info, StreamingContext context) : base(info, context)
-		{
-		}
 	}
 }

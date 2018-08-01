@@ -17,9 +17,5 @@ namespace MicroHttpd.Core.Content
 		public StaticRangeNotSatisfiableException(string message, Exception innerException) : base(message, innerException)
 		{
 		}
-
-		protected StaticRangeNotSatisfiableException(SerializationInfo info, StreamingContext context) : base(info, context)
-		{
-		}
 	}
 }
