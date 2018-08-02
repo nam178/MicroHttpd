@@ -17,7 +17,7 @@ namespace MicroHttpd.Core.Tests
 			long expectedRangeTo)
 		{
 			Assert.Equal(
-				StaticRangeHelper.GetRequestedRanges(headerField)[0],
+				StaticRangeUtils.GetRequestedRanges(headerField)[0],
 				new StaticRangeRequest(expectedRangeFrom, expectedRangeTo)
 				);
 		}
@@ -26,7 +26,7 @@ namespace MicroHttpd.Core.Tests
 		public void CanParseValidMultiRange()
 		{
 			Assert.True(
-				StaticRangeHelper.GetRequestedRanges("bytes=11-22, 22-33, 44-55")
+				StaticRangeUtils.GetRequestedRanges("bytes=11-22, 22-33, 44-55")
 					.SequenceEqual(
 					new StaticRangeRequest[]
 					{
@@ -45,7 +45,7 @@ namespace MicroHttpd.Core.Tests
 		{
 			Assert.Throws<ArgumentException>(delegate
 			{
-				StaticRangeHelper.GetRequestedRanges(headerField);
+				StaticRangeUtils.GetRequestedRanges(headerField);
 			});
 		}
     }

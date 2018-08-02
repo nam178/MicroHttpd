@@ -1,11 +1,13 @@
-﻿namespace MicroHttpd.Core
+﻿using System.IO;
+
+namespace MicroHttpd.Core
 {
 	public interface IHttpRequest
 	{
 		IHttpRequestHeader Header
 		{ get; }
 
-		ReadOnlyStream Body
+		Stream Body
 		{ get; }
 	}
 }

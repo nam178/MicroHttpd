@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Autofac;
+using MicroHttpd.Core.Content;
 
 namespace MicroHttpd.Core
 {
@@ -77,11 +78,14 @@ namespace MicroHttpd.Core
 				.SingleInstance();
 
 			// Contents
+			builder.RegisterType<Content.StaticRange>().AsSelf();
 			builder.RegisterType<Content.Static>().AsSelf();
 			builder.RegisterType<Content.NoContent>().AsSelf();
 			builder
 				.Register(x => new Content.Aggregated(new IContent[]
 				{
+					// Order matters!
+					x.Resolve<Content.StaticRange>(),
 					x.Resolve<Content.Static>(),
 					x.Resolve<Content.NoContent>()
 				}))
@@ -113,6 +117,11 @@ namespace MicroHttpd.Core
 			builder
 				.RegisterType<HttpRequestBodyFactory>()
 				.AsImplementedInterfaces()
+				.SingleInstance();
+
+			builder
+				.RegisterType<StaticFileServer>()
+				.AsSelf().AsImplementedInterfaces()
 				.SingleInstance();
 		}
 

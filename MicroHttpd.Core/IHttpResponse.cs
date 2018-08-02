@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.IO;
+using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
 {
@@ -10,7 +11,7 @@ namespace MicroHttpd.Core
 		IHttpResponseHeader Header
 		{ get; }
 
-		WriteOnlyStream Body
+		Stream Body
 		{ get; }
 
 		Task SendHeaderAsync();

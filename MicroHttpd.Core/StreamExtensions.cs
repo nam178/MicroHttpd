@@ -24,7 +24,7 @@ namespace MicroHttpd.Core
 			}
 		}
 
-		public static async Task CopyToAsync(this Stream target, Stream src, long count, int bufferSize)
+		public static async Task CopyToAsync(this Stream src, Stream target, long count, int bufferSize)
 		{
 			Validation.RequireValidBufferSize(bufferSize);
 			var bytesCopied = 0L;

@@ -24,7 +24,7 @@ namespace MicroHttpd.Core
 		public HttpResponseBody Body
 		{ get { return _body; } }
 
-		WriteOnlyStream IHttpResponse.Body
+		Stream IHttpResponse.Body
 		{ get { return _body; } }
 
 		public bool IsHeaderSent
@@ -73,7 +73,7 @@ namespace MicroHttpd.Core
 			// Get a reference to request body,
 			// also be aware of InvalidOperationException due to
 			// accessing of body on a malformed request.
-			ReadOnlyStream body;
+			Stream body;
 			try
 			{
 				body = _request.Body;

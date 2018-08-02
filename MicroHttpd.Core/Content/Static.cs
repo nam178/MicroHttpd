@@ -10,7 +10,6 @@ namespace MicroHttpd.Core.Content
 {
 	sealed class Static : IContent
 	{
-		
 		readonly ILog _logger = LogManager.GetLogger(typeof(Static));
 		readonly IStaticFileServer _fileServer;
 		readonly TcpSettings _tcpSettings;

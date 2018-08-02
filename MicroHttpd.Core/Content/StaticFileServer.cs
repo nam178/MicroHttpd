@@ -64,21 +64,43 @@ namespace MicroHttpd.Core.Content
 				);
 		}
 
+		readonly static IReadOnlyList<string> _defaults = new List<string>
+		{
+			"index.html",
+			"index.htm"
+		};
+
 		static bool IsValidFileUri(
 			string documentRoot,
-			string path,
+			string uri,
 			out string resolvedPath)
 		{
 			resolvedPath = null;
 
+			// Default page:
+			if(string.IsNullOrWhiteSpace(uri)
+				|| string.Equals(uri, "/", StringComparison.InvariantCultureIgnoreCase))
+			{
+				for(var i = 0; i < _defaults.Count; i++)
+				{
+					var t = Path.Combine(documentRoot, _defaults[i]);
+					if(File.Exists(t))
+					{
+						resolvedPath = t;
+						return true;
+					}
+				}
+				return false;
+			}
+
 			// We don't accept absolute path,
 			// i.e. GET /my.jpeg is valid, but not GET C:\my.jpeg
-			if(Path.IsPathRooted(path))
+			if(Path.IsPathRooted(uri))
 				return false;
 
 			// We don't accept path outside of the document root folder,
 			// i.e. GET /hack/../../my.jpeg
-			var fullPath = Path.GetFullPath(Path.Combine(documentRoot, path));
+			var fullPath = Path.GetFullPath(Path.Combine(documentRoot, uri));
 			if(false == fullPath.StartsWith(documentRoot, StringComparison.InvariantCulture))
 				return false;
 

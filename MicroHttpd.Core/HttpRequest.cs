@@ -27,7 +27,7 @@ namespace MicroHttpd.Core
 		}
 
 		ReadOnlyStream _requestBody;
-		public ReadOnlyStream Body
+		public Stream Body
 		{
 			get {
 				RequireNonDispose();
