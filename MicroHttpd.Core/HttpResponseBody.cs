@@ -246,11 +246,8 @@ namespace MicroHttpd.Core
 			{
 				CompleteAsync().Wait();
 			}
-			catch(AggregateException ex)
-			{
-				if(ex.InnerException != null)
-					ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
-				throw;
+			catch(AggregateException ex) {
+				_logger.Warn(ex.InnerException.Message);
 			}
 		}
 

@@ -25,7 +25,7 @@ namespace MicroHttpd.Core.Content
 					return true;
 				}
 			}
-			return true;
+			return false;
 		}
 	}
 }
