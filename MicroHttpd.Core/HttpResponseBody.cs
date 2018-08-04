@@ -247,7 +247,8 @@ namespace MicroHttpd.Core
 				CompleteAsync().Wait();
 			}
 			catch(AggregateException ex) {
-				_logger.Warn(ex.InnerException.Message);
+				if(false == (ex.InnerException is TcpException))
+					_logger.Warn(ex.InnerException.Message, ex.InnerException);
 			}
 		}
 

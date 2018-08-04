@@ -13,6 +13,12 @@ namespace MicroHttpd.Core
 		readonly MemoryStream _lineBuilder = new MemoryStream();
 		readonly Encoding _encoding;
 
+		/// <summary>
+		/// To prevent deny of service hacks, 
+		/// We'll limit the length for each line.
+		/// </summary>
+		const int MaximumLineLength = 16 * 1024;
+
 		string _result;
 		public string Result
 		{
@@ -35,7 +41,8 @@ namespace MicroHttpd.Core
 		// HTTP spec, header should be in ASCII,
 		// however ASCII have the exact same encoding as UTF8,
 		// so let's default to UTF8
-		public HttpLineBuilder() : this(Encoding.UTF8)
+		public HttpLineBuilder() 
+			: this(Encoding.UTF8)
 		{
 
 		}
@@ -60,6 +67,7 @@ namespace MicroHttpd.Core
 		{
 			RequireNonDisposed();
 			RequireResultNull();
+			RequireLength(count);
 			Validation.RequireValidBuffer(buffer, offset, count);
 
 			// Append those bytes to our temporary line
@@ -104,6 +112,14 @@ namespace MicroHttpd.Core
 		{
 			return ((currentCharIndex - 1) >= 0) 
 				&& (lineBuffer[currentCharIndex - 1] == SpecialChars.CR);
+		}
+
+		void RequireLength(int count)
+		{
+			if((_lineBuilder.Length + count) >= MaximumLineLength)
+				throw new HttpPayloadTooLargeException(
+					$"Reached maximum line length of {MaximumLineLength}"
+					);
 		}
 
 		void RequireResultNotNull()

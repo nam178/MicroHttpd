@@ -93,6 +93,9 @@ namespace MicroHttpd.Core
 				await TryRespondErrorAsync(
 					500, 
 					$"<h1>Internal Server Error</h1><br />{ex.ToString()}");
+				// Let the connection loop handle this exception,
+				// probably by closing the connection.
+				throw;
 			}
 		}
 		

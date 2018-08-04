@@ -2,20 +2,37 @@
 <html>
 <head>
 	<title>MicroHttp | Your Own Minimal Web Server</title>
+	<link rel="stylesheet" href="/Reset.css">
+	<link rel="stylesheet" href="/Style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
 </head>
 <body>
-	<h1>HTTP/1.1 200 OK</h1>
-	<p>Hello,</p>
-	<p>This website is served by MicroHttpd, a minimal web server written in .NET Core.</p>
-	<p>Currently, it supports</p>
-	<ul>
-		<li>SSL.</li>
-		<li>Asynchronous IO.</li>
-		<li>Byte-range request.</li>
-		<li>Static and dynamic contents.</li>
-		<li>Fixed length as well as dynamic length contents (Chunked Transfer-Encoding).</li>
-	</ul>
-	<p>The source code is made extensible and is available on GitHub.</p>
-	<a href="https://github.com/nam178/MicroHttpd">https://github.com/nam178/MicroHttpd</a>
+	<div id="container-info" class="container">
+		<h1>HTTP/1.1 200 OK</h1>
+		<p>Hello,</p>
+		<p>This website is served by MicroHttpd, a minimal web server written in .NET Core.</p>
+		<p>Currently, it supports</p>
+		<ul>
+			<li>SSL.</li>
+			<li>Asynchronous IO.</li>
+			<li>Byte-range request.</li>
+			<li>Static and dynamic contents.</li>
+			<li>Fixed length as well as dynamic length contents (Chunked Transfer-Encoding).</li>
+		</ul>
+	</div>
+	<div id="container-source">
+		<h1>Soure Code</h1>
+		<p>The source code is made extensible and is available on GitHub.</p>
+		<a href="https://github.com/nam178/MicroHttpd">https://github.com/nam178/MicroHttpd</a>
+	</div>
+	
+	<div id="container-video-demo">
+		<h1>Video Streaming Demo</h1>
+		<p>This server supports byte-range request for video too!</p>
+		<p>Click play and try out yourself!</p>
+		<video width="320" height="240" controls>
+			<source src="BigBuckBunny_320x180.mp4" type="video/mp4">
+		</video>
+	</div>
 </body>
 </html>

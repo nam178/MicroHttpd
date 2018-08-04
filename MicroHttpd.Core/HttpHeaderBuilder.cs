@@ -7,9 +7,16 @@ namespace MicroHttpd.Core
 		readonly HttpLineBuilder _lineBuilder = new HttpLineBuilder();
 		readonly HttpHeaderEntries _entries = new HttpHeaderEntries();
 		readonly ActivateHeader _activator;
+
 		string _requestLine;
+		int _totalLines = 0;
 
 		public delegate THeader ActivateHeader(string startLine, HttpHeaderEntries headerEntries);
+
+		/// <summary>
+		/// To prevent hacks, we'll have a maximum number of lines a request header can have.
+		/// </summary>
+		const int MaxHeaderLines = 1024;
 
 		THeader _result;
 		public THeader Result
@@ -46,6 +53,8 @@ namespace MicroHttpd.Core
 			int nextLineStartIndex;
 			while(_lineBuilder.AppendBuffer(buffer, start, count, out nextLineStartIndex))
 			{
+				RequireTotalLinesLessThanLimit(_totalLines);
+
 				// Process this line:
 				// AppendResult() returns false indicates
 				// header ends here. Body starts on the next line.
@@ -77,6 +86,14 @@ namespace MicroHttpd.Core
 		{
 			RequireNonNullRequestLine();
 			_result = _activator.Invoke(_requestLine, _entries);
+		}
+
+		static void RequireTotalLinesLessThanLimit(int totalLines)
+		{
+			if(totalLines >= MaxHeaderLines)
+				throw new HttpPayloadTooLargeException(
+					$"Reached maximum header lines of {MaxHeaderLines}"
+					);
 		}
 
 		static bool AppendResult(

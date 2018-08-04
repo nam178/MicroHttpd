@@ -80,15 +80,17 @@ namespace MicroHttpd.Core
 			{
 				ApplyTcpSettings(client, _tcpSettings);
 
+				Stream stream = client.GetStream();
+
+				// Wrap with SSL, if required.
+				if(_sslService.IsAvailable)
+					stream = await _sslService.AddSslAsync(stream);
+
 				// Get the raw tcp stream.
 				// For better exception handling and tracking of idle session,
 				// we wrap it with our custom TcpStream.
-				var stream = (Stream)new TcpExceptionStreamDecorator(
-					new WatchDogStreamDecorator(client.GetStream(), networkActivityWatchDog));
-
-				// Wrap again with SSL, if required.
-				if(_sslService.IsAvailable)
-					stream = await _sslService.AddSslAsync(stream);
+				stream = (Stream)new TcpExceptionStreamDecorator(
+					new WatchDogStreamDecorator(stream, networkActivityWatchDog));
 
 				// Create a TCP session and execute it
 				var session = _tcpSessionFactory.Create(client, stream);

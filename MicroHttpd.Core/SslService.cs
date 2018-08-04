@@ -19,7 +19,7 @@ namespace MicroHttpd.Core
 
 		public SslService(ILifetimeScope di)
 		{
-			if(di.IsRegistered<X509Certificate>())
+			if(di.IsRegistered<X509Certificate2>())
 				_certificate = di.Resolve<X509Certificate2>();
 		}
 

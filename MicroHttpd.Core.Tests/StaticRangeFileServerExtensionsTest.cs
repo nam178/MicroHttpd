@@ -22,7 +22,7 @@ namespace MicroHttpd.Core.Tests
 				);
 
 			// Test
-			await StaticRangeFileServerExtensions.ServeSingleRangeAsync(
+			await StaticRangeSingleRangeWriter.ServeSingleRangeAsync(
 				mockStaticFileServer.Object,
 				new StaticRangeRequest(3, 7),
 				mockResponse.Object,
@@ -48,9 +48,9 @@ namespace MicroHttpd.Core.Tests
 				);
 
 			// Test
-			await StaticRangeFileServerExtensions.ServeMultiRangeAsync(
+			await StaticRangeSingleRangeWriter.ServeMultiRangeAsync(
 				mockStaticFileServer.Object,
-				new List<StaticRangeRequest>
+				new StaticRangeRequest[]
 				{
 					new StaticRangeRequest(3, 7),
 					new StaticRangeRequest(8, 9),

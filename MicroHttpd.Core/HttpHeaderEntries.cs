@@ -10,7 +10,7 @@ namespace MicroHttpd.Core
 	/// Notes: Http header keys are case insensitive.
 	/// </summary>
 	/// <remarks>Not thread safe.</remarks>
-	sealed class HttpHeaderEntries :  System.Collections.IEnumerable
+	sealed class HttpHeaderEntries : IEnumerable
 	{
 		readonly Dictionary<StringCI, List<string>> _entries;
 		readonly List<StringCI> _keys = new List<StringCI>();

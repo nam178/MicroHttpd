@@ -293,7 +293,7 @@ namespace MicroHttpd.Core.Tests
 		}
 
 		[Fact]
-		async Task LogErrorIfWriteLessThanPromisedEncodingOnDisposeMethod()
+		async Task LogWarningIfWriteLessThanPromisedEncodingOnDisposeMethod()
 		{
 			// Mockup
 			MockUp(10000,
@@ -318,7 +318,7 @@ namespace MicroHttpd.Core.Tests
 			}
 			// Check logger
 			logger.Verify(
-				l => l.Error(It.IsAny<string>(), It.Is<Exception>(e => e is InvalidOperationException)),
+				l => l.Warn(It.IsAny<string>(), It.Is<Exception>(e => e is InvalidOperationException)),
 				Times.Once);
 		}
 

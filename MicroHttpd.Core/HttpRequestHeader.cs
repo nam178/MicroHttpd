@@ -42,6 +42,10 @@ namespace MicroHttpd.Core
 			GetMethodAndUri(startLine, out _cachedMethod, out _cachedUri);
 		}
 
+		static readonly Regex _methodAndUriRegex = new Regex(@"^\s*([^\s]+)\s+([^\s]+)");
+		static readonly Regex _protocolRegex = new Regex(@"HTTP\/(\d+)\.(\d+)\s*$", 
+			RegexOptions.IgnoreCase);
+
 		static void GetMethodAndUri(
 			string startLine, 
 			out HttpRequestMethod method, 
@@ -51,7 +55,7 @@ namespace MicroHttpd.Core
 				throw new InvalidOperationException(
 					"Start line must be set first"
 					);
-			var match = Regex.Match(startLine, @"^\s*([^\s]+)\s+([^\s]+)");
+			var match = _methodAndUriRegex.Match(startLine);
 			if((match != null) && (match.Groups.Count == 3))
 			{
 				method = HttpRequestMethodHelper.FromString(match.Groups[1].Value);
@@ -69,7 +73,7 @@ namespace MicroHttpd.Core
 			if(startLine == null)
 				throw new ArgumentNullException(nameof(startLine));
 
-			var match = Regex.Match(startLine, @"HTTP\/(\d+)\.(\d+)\s*$", RegexOptions.IgnoreCase);
+			var match = _protocolRegex.Match(startLine);
 			if ((match != null) && (match.Groups != null) && (match.Groups.Count == 3))
 			{
 				var major = match.Groups[1].Value;

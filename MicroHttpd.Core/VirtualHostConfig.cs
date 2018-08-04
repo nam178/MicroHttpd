@@ -43,7 +43,7 @@ namespace MicroHttpd.Core
 					throw new ArgumentException(value);
 				if(false == Directory.Exists(value))
 					throw new DirectoryNotFoundException($"Directory not found {value}");
-				_documentRoot = value;
+				_documentRoot = Path.GetFullPath(value);
 			}
 		}
 

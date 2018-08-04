@@ -25,7 +25,7 @@ namespace MicroHttpd.Core.Content
 			IHttpRequest request, 
 			IHttpResponse response)
 		{
-			response.Header[HttpKeys.ContentType] = $"text/html; charset={_contentSettings}";
+			response.Header[HttpKeys.ContentType] = $"text/html; charset={_contentSettings.DefaultCharsetForTextContents}";
 			response.Header.StatusCode = 404;
 			await response.Body.WriteAsync(_notFoundText, _tcpSettings.ReadWriteBufferSize);
 			return true;

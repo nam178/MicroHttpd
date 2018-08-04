@@ -13,6 +13,13 @@ namespace MicroHttpd.Core.Content
 		// go crazy seeking back and forth.
 		const int MaxRangeCount = 32;
 
+		/// <summary>
+		/// Maximum length of range header value we accept,
+		/// To prevent clients from sending extremerly large 
+		/// value causing the regex to crash.
+		/// </summary>
+		const int MaxRangeHeaderValueLength = 1024;
+
 		public StaticRange(IStaticFileServer staticFileServer, TcpSettings tcpSettings)
 		{
 			Validation.RequireValidTcpSettings(tcpSettings);
@@ -28,7 +35,7 @@ namespace MicroHttpd.Core.Content
 			try
 			{
 				// Handle the request if client requested range
-				if(request.Header.Method == HttpRequestMethod.GET
+				if(IsGetOrHead(request)
 					&& request.Header.ContainsKey(HttpKeys.Range)
 					&& _staticFileServer.TryResolve(request, out string resolvedFile))
 				{
@@ -53,26 +60,39 @@ namespace MicroHttpd.Core.Content
 			string pathToContentFile)
 		{
 			// Get and validate the range
-			var requestedRanges = StaticRangeUtils.GetRequestedRanges(request.Header[HttpKeys.Range]);
-			if(requestedRanges.Count == 0 || requestedRanges.Count > MaxRangeCount)
+			var rangeHeaderValie = request.Header[HttpKeys.Range];
+			if(rangeHeaderValie.Length >= MaxRangeHeaderValueLength)
+				throw new HttpPayloadTooLargeException(
+					$"Range header value length reached maximum value of {MaxRangeHeaderValueLength}"
+					);
+			var requestedRanges = StaticRangeValueParserUtils.GetRequestedRanges(rangeHeaderValie);
+			if(requestedRanges.Length == 0 || requestedRanges.Length > MaxRangeCount)
 				throw new StaticRangeNotSatisfiableException();
 
 			// Range is good, from this point forward,
 			// we will be serving partial content.
 			response.Header.StatusCode = 206;
 
-			if(requestedRanges.Count == 1)
-				return _staticFileServer.ServeSingleRangeAsync(
+			if(requestedRanges.Length == 1)
+				return _staticFileServer.WriteAsync(
+					request,
 					requestedRanges[0], 
 					response, 
 					pathToContentFile, _tcpSettings.ReadWriteBufferSize
 					);
 			else
-				return _staticFileServer.ServeMultiRangeAsync(
+				return _staticFileServer.WriteAsync(
+					request,
 					requestedRanges, 
 					response, 
 					pathToContentFile, _tcpSettings.ReadWriteBufferSize
 					);
+		}
+
+		static bool IsGetOrHead(IHttpRequest request)
+		{
+			return request.Header.Method == HttpRequestMethod.GET
+				|| request.Header.Method == HttpRequestMethod.HEAD;
 		}
 	}
 }
