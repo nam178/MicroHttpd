@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: "microsoft/dotnet:2.1-runtime"
-  steps:
+    steps:
       - checkout
       - run: echo "Sir, checkout completed."
       - run: dotnet publish --configuration=Release
