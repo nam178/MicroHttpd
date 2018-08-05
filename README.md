@@ -18,7 +18,7 @@ Extend the code to do your own things that a normal web server wouldn't support,
 
 * Matching virtual host by cookies.
 * HTTP over UDP.
-* Optimizing performance or one specific use-case.
+* Optimizing performance for one specific use-case.
 * Building your own MVC framework.
 
 # Using The Code
