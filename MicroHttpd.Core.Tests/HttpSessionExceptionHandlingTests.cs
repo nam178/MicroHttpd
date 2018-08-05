@@ -9,7 +9,7 @@ namespace MicroHttpd.Core.Tests
 	public class HttpSessionExceptionHandlingTests
     {
 		[Fact]
-		public async Task Returns500ErrorsOnUnhandledExceptions()
+		public void Returns500ErrorsOnUnhandledExceptions()
 		{
 			var mockResponseStream = new MemoryStream();
 			var mockContent = new Mock<IContent>();
@@ -36,7 +36,10 @@ namespace MicroHttpd.Core.Tests
 				);
 
 			// Test
-			await session.ExecuteAsync();
+			Assert.Throws<AggregateException>(delegate
+			{
+				Assert.True(session.ExecuteAsync().Wait(TimeSpan.FromSeconds(5)));
+			});
 
 			// Check
 			mockResponseStream.ReadResponseHeader(out HttpResponseHeader responseHeader);

@@ -15,6 +15,7 @@ namespace MicroHttpd.Core.Tests
 		public async Task ServeSingleRangeAsync()
 		{
 			MockUp(
+				out Mock<IHttpRequest> request,
 				out Mock<IStaticFileServer> mockStaticFileServer,
 				out Mock<IHttpResponse> mockResponse,
 				out MemoryStream mockResponseBody,
@@ -22,8 +23,9 @@ namespace MicroHttpd.Core.Tests
 				);
 
 			// Test
-			await StaticRangeSingleRangeWriter.ServeSingleRangeAsync(
+			await StaticRangeSingleRangeWriter.WriteAsync(
 				mockStaticFileServer.Object,
+				request.Object,
 				new StaticRangeRequest(3, 7),
 				mockResponse.Object,
 				"foo.txt",
@@ -41,6 +43,7 @@ namespace MicroHttpd.Core.Tests
 		public async Task ServeMultiRangeAsync()
 		{
 			MockUp(
+				out Mock<IHttpRequest> request,
 				out Mock<IStaticFileServer> mockStaticFileServer, 
 				out Mock<IHttpResponse> mockResponse, 
 				out MemoryStream mockResponseBody, 
@@ -48,8 +51,9 @@ namespace MicroHttpd.Core.Tests
 				);
 
 			// Test
-			await StaticRangeSingleRangeWriter.ServeMultiRangeAsync(
+			await StaticRangeMultiRangeWriter.WriteAsync(
 				mockStaticFileServer.Object,
+				request.Object,
 				new StaticRangeRequest[]
 				{
 					new StaticRangeRequest(3, 7),
@@ -78,12 +82,18 @@ namespace MicroHttpd.Core.Tests
 		}
 
 		static void MockUp(
+			out Mock<IHttpRequest> request,
 			out Mock<IStaticFileServer> mockStaticFileServer, 
 			out Mock<IHttpResponse> mockResponse, 
 			out MemoryStream mockResponseBody, 
 			out HttpResponseHeader mockResponseHeader)
 		{
 			var content = Encoding.ASCII.GetBytes("0123456789");
+			request = new Mock<IHttpRequest>();
+			request
+				.Setup(x => x.Header)
+				.Returns(new HttpRequestHeader("GET / HTTP/1.1"));
+
 			mockStaticFileServer = new Mock<IStaticFileServer>();
 			mockStaticFileServer
 .Setup(x => x.OpenRead("foo.txt"))
