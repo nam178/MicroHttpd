@@ -9,4 +9,4 @@ jobs:
       - run: dotnet publish --configuration=Release
       - run: dotnet test --logger "trx;LogFileName=result.xml" MicroHttpd.Core.Tests;
       - store_test_results:
-        path: "MicroHttpd.Core.Tests/TestResults"
+          path: "MicroHttpd.Core.Tests/TestResults"
