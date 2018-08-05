@@ -2,8 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: "microsoft/dotnet:2.1-runtime"
-  steps:
+      - image: "microsoft/dotnet:2.1-sdk"
+    steps:
       - checkout
       - run: echo "Sir, checkout completed."
       - run: dotnet publish --configuration=Release
+      - run: dotnet test --logger "trx;LogFileName=junit/result.xml" MicroHttpd.Core.Tests;
+      - store_test_results:
+          path: "MicroHttpd.Core.Tests/TestResults" 
