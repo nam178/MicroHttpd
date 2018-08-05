@@ -1,4 +1,4 @@
-# MicroHttpd [![CircleCI](https://circleci.com/gh/nam178/MicroHttpd.svg?style=shield)](https://circleci.com/gh/nam178/MicroHttpd)
+# MicroHttpd - Web Server for .NET Core [![CircleCI](https://circleci.com/gh/nam178/MicroHttpd.svg?style=shield)](https://circleci.com/gh/nam178/MicroHttpd)
 MicroHttpd is a HTTP (Web) Server written in .NET Core.
 Currently, it supports:
 * SSL, using a PFX file.
