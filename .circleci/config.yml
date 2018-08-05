@@ -7,3 +7,4 @@ jobs:
       - checkout
       - run: echo "Sir, checkout completed."
       - run: dotnet publish --configuration=Release
+      - run: dotnet test MicroHttpd.Core.Tests
