@@ -83,8 +83,9 @@ namespace MicroHttpd.Core
 				Stream stream = client.GetStream();
 
 				// Wrap with SSL, if required.
-				if(_sslService.IsAvailable)
-					stream = await _sslService.AddSslAsync(stream);
+				var t = await _sslService.WrapSslAsync(client, stream);
+				if(t != null)
+					stream = t;
 
 				// Get the raw tcp stream.
 				// For better exception handling and tracking of idle session,

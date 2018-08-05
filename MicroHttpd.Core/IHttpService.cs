@@ -24,7 +24,7 @@ namespace MicroHttpd.Core
 		/// </summary>
 		/// <param name="pfxCertificate">Relative or absolute path to a PFX certificate</param>
 		/// <param name="password">Password for the PFX certificate</param>
-		void AddSSL(string pfxCertificate, string password);
+		void AddSSL(string pfxCertificate, string password, int port = 443);
 
 		/// <summary>
 		/// Add an autofac module to extend or override the HTTP server's functionalities.

@@ -12,26 +12,30 @@ namespace MicroHttpd.Core
 	/// </summary>
 	sealed class SslService : ISslService
 	{
-		readonly X509Certificate2 _certificate;
-
-		public bool IsAvailable
-		{ get => _certificate != null; }
+		readonly SslSettings[] _sslSettings;
 
 		public SslService(ILifetimeScope di)
 		{
-			if(di.IsRegistered<X509Certificate2>())
-				_certificate = di.Resolve<X509Certificate2>();
+			if(di.IsRegistered<SslSettings[]>())
+				_sslSettings = di.Resolve<SslSettings[]>();
+			else
+				_sslSettings = new SslSettings[0];
 		}
 
-		public Task<Stream> AddSslAsync(Stream src)
+		public async Task<Stream> WrapSslAsync(ITcpClient client, Stream stream)
 		{
-			if(false == IsAvailable)
-				throw new InvalidCredentialException("SSL has not been configured");
-			return AuthenticateAsServerAsync(
-				src,
-				_certificate,
-				SslProtocols.Default
-				);
+			for(var i = 0; i < _sslSettings.Length; i++)
+			{
+				if(_sslSettings[i].Port == client.LocalPort)
+				{
+					return await AuthenticateAsServerAsync(
+						stream,
+						_sslSettings[i].Cert,
+						SslProtocols.Default
+					);
+				}
+			}
+			return null;
 		}
 
 		async Task<Stream> AuthenticateAsServerAsync(

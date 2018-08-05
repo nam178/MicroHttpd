@@ -22,6 +22,9 @@ namespace MicroHttpd.Core
 		int ReceiveBufferSize
 		{ get; set; }
 
+		int LocalPort
+		{ get; }
+
 		Stream GetStream();
 
 		Task ConnectAsync(string host, int port);

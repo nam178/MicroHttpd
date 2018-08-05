@@ -20,13 +20,12 @@ namespace Demo
 			// it doesn't do anything until you configure and start it.
 			var httpService = HttpServiceFacade.Create();
 
-#if SSL
 			// Configure the server to use SSL,
 			// specifying path to the PFX file and its password.
 			httpService.AddSSL(
-				PathUtils.RelativeToAssembly("ssl/cert.pfx"), 
-				",g9e/~ArH=aH.k8C");
-#endif
+				PathUtils.RelativeToAssembly("ssl/microhttp.localhost.pfx"), 
+				",g9e/~ArH=aH.k8C",
+				8443);
 
 			// Configure virtual host - the domain name,
 			// the web root and ports.
@@ -44,7 +43,7 @@ namespace Demo
 				// Accept incoming connections on port 8443,
 				// If you want to use port 443 and/or 80, add them here.
 				// (You'll need to start the application as root)
-				ListenOnPorts = new int[] { 8443 }
+				ListenOnPorts = new int[] { 8443, 8080 }
 			});
 
 			// Start the server

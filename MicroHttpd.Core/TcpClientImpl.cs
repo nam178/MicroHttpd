@@ -2,7 +2,6 @@
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
@@ -38,25 +37,26 @@ namespace MicroHttpd.Core
 			set { _tcpClient.SendBufferSize = value; }
 		}
 
-		readonly Lazy<IPAddress> _remoteAddress;
 		public IPAddress RemoteAddress
-		{ get => _remoteAddress.Value; }
+		{ get; }
+
+		public int LocalPort
+		{ get; }
 
 		readonly string _debugName;
 
 		public TcpClientImpl()
+			: this(new TcpClient())
 		{
-			_tcpClient = new TcpClient();
-			_remoteAddress = new Lazy<IPAddress>(
-				() => ((IPEndPoint)_tcpClient.Client.RemoteEndPoint).Address,
-				LazyThreadSafetyMode.ExecutionAndPublication
-				);
-			_debugName = _tcpClient.Client.RemoteEndPoint.ToString();
 		}
 
 		public TcpClientImpl(TcpClient tcpClient)
 		{
-			_tcpClient = tcpClient;
+			_tcpClient = tcpClient 
+				?? throw new ArgumentNullException(nameof(tcpClient));
+			RemoteAddress = ((IPEndPoint)_tcpClient.Client.RemoteEndPoint).Address;
+			LocalPort = ((IPEndPoint)_tcpClient.Client.LocalEndPoint).Port;
+			_debugName = _tcpClient.Client.RemoteEndPoint.ToString();
 		}
 
 		public Stream GetStream()

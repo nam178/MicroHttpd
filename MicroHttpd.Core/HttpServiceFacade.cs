@@ -24,7 +24,7 @@ namespace MicroHttpd.Core
 
 		TcpSettings _tcpSettings = TcpSettings.Default;
 		HttpSettings _httpSettings = HttpSettings.Default;
-		X509Certificate2 _ssl;
+		SslSettings _ssl;
 
 		public static IHttpService Create() => new HttpServiceFacade();
 
@@ -95,14 +95,17 @@ namespace MicroHttpd.Core
 
 		public void Wait() => _waitHandle.WaitOne();
 
-		public void AddSSL(string pfxCertificate, string password)
+		public void AddSSL(string pfxCertificate, string password, int port)
 		{
-			if(false == Path.IsPathRooted(pfxCertificate))
-				pfxCertificate = Path.Combine(
-					Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), 
-					pfxCertificate
-					);
-			_ssl = new X509Certificate2(File.ReadAllBytes(pfxCertificate), password);
+			Validation.RequireValidPort(port);
+			_ssl = new SslSettings
+			{
+				Cert = new X509Certificate2(
+					File.ReadAllBytes(
+						PathUtils.RelativeToAssembly(pfxCertificate)), 
+						password),
+				Port = port
+			};
 		}
 
 		void RequireNotStarted()
@@ -141,11 +144,12 @@ namespace MicroHttpd.Core
 				.Register(x => httpSettings).AsSelf().SingleInstance();
 		}
 
-		static void RegisterSSL(ContainerBuilder containerBuilder, X509Certificate2 ssl)
+		static void RegisterSSL(ContainerBuilder containerBuilder, SslSettings? sslSettings)
 		{
-			if(ssl != null)
+			if(sslSettings != null)
 			{
-				containerBuilder.RegisterInstance(ssl).As<X509Certificate2>();
+				var t = (SslSettings)sslSettings;
+				containerBuilder.Register(x => t).AsSelf();
 			}
 		}
 	}
