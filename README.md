@@ -66,6 +66,8 @@ httpService.AddSSL(
   ",g9e/~ArH=aH.k8C"
   );
 ```
+Notes:
+I got missing DLL exception when starting .NET Core with SSL on Ubuntu, fixed by installing libcurl3 package.
 
 5. That's it. Now you can start the server.
 ```csharp
