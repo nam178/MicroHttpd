@@ -15,16 +15,22 @@
 
   <ItemGroup>
     <None Update="ssl\microhttp.localhost.pfx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="www\BigBuckBunny_320x180.mp4">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="www\Index.html">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    <None Update="www\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="www\maxresdefault.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="www\Reset.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="www\Style.css">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

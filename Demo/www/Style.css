@@ -1,4 +1,20 @@
-body{  background-color: #e3fb83; font-family: 'Montserrat', sans-serif;  } 
+html {
+	background-color: #e3fb83;
+	font-family: 'Montserrat', sans-serif;
+	background-image: url('maxresdefault.jpg') ;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment:fixed;
+} 
+h1 { font-size: 32px; color: #db4fe2;}
+div { margin: 25px; padding: 25px; background-color: white; width: 320px; float:left; }
+div > h1 { font-family: 'Oswald', sans-serif; }
+p { margin: 15px 0px; line-height: 150%;}
+ul { }
+ul > li { list-style-type:circle; margin-left: 25px; margin-bottom: 15px;}
+
+ } 
 h1 { font-size: 32px; color: #db4fe2;}
 div { margin: 25px; padding: 25px; background-color: white; width: 320px; float:left; }
 div > h1 { font-family: 'Oswald', sans-serif; }
