@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.IO;
 using System.Runtime.ExceptionServices;
@@ -14,8 +14,8 @@ namespace MicroHttpd.Core
 		readonly HttpSettings _httpSettings;
 		readonly TcpSettings _tcpSettings;
 		readonly IHttpResponse _response;
-		readonly ILog _logger;
-		readonly static ILog _staticLogger = LogManager.GetLogger(typeof(HttpResponseBody));
+		readonly ILogger _logger;
+		readonly static ILogger _staticLogger = LogManager.GetCurrentClassLogger();
 
 		IHttpResponseEncoder _encoder;
 		bool _isCompleted;
@@ -35,7 +35,7 @@ namespace MicroHttpd.Core
 			TcpSettings tcpSettings,
 			HttpSettings httpSettings, 
 			IHttpResponse response,
-			ILog logger)
+			ILogger logger)
 		{
 			Validation.RequireValidHttpSettings(httpSettings);
 			Validation.RequireValidTcpSettings(tcpSettings);

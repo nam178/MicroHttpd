@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using Moq;
 using System;
 using System.Globalization;
@@ -302,7 +302,7 @@ namespace MicroHttpd.Core.Tests
 				out Mock<IHttpResponse> mockHttpResponse,
 				out MemoryStream receiverData,
 				out HttpResponseHeader responseHeader);
-			var logger = new Mock<ILog>();
+			var logger = new Mock<ILogger>();
 
 			responseHeader["content-length"] = 10001.ToString(CultureInfo.InvariantCulture);
 

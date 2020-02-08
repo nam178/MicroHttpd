@@ -1,8 +1,6 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.IO;
-using System.Security.Authentication;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,9 +9,9 @@ namespace MicroHttpd.Core
 	/// <summary>
 	/// Designed to be a global singleton, threadsafe.
 	/// </summary>
-	sealed class TcpSessionInitializer : ITcpSessionInitializer, IDisposable
+	sealed class TcpClientHandler : ITcpClientHandler
     {
-		readonly ILog _logger = LogManager.GetLogger(typeof(TcpSessionInitializer));
+		readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 		readonly ISslService _sslService;
 		readonly ITcpSessionFactory _tcpSessionFactory;
 		readonly IWatchDog _tcpWatchDog;
@@ -24,13 +22,9 @@ namespace MicroHttpd.Core
 		/// </summary>
 		int _concurrentTcpSessionCount;
 
-		public bool IsLimitReached
-		{
-			get => Interlocked.CompareExchange(
-				ref _concurrentTcpSessionCount, 0, 0)  >= _tcpSettings.MaxTcpClients;
-		}
+		bool IsLimitReached => Interlocked.CompareExchange(ref _concurrentTcpSessionCount, 0, 0)  >= _tcpSettings.MaxTcpClients;
 
-		public TcpSessionInitializer(
+		public TcpClientHandler(
 			ISslService sslService,
 			ITcpSessionFactory tcpSessionFactory,
 			IWatchDog tcpWatchDog,
@@ -47,29 +41,33 @@ namespace MicroHttpd.Core
 			_tcpSettings = tcpSettings;
 		}
 
-		public async void InitializeNewTcpSession(ITcpClient client)
+		public async void Handle(ITcpClient client)
 		{
-			// Logging
-			Interlocked.Increment(ref _concurrentTcpSessionCount);
-			_logger.Debug(
-				$"Tcp client connected: {client}, total clients: {CountTotalClients()}"
-				);
-			try
+			using(client)
 			{
-				await Impl(client);
-			}
-			catch(TcpException ex) {
-				_logger.Warn(ex.Message);
-			}
-			catch(Exception ex) {
-				_logger.Error(ex);
-			}
-			finally {
-				Interlocked.Decrement(ref _concurrentTcpSessionCount);
-				// Logging
-				_logger.Debug(
-					$"Tcp client disconnected: {client}, total clients: {CountTotalClients()}"
-					);
+				_logger.Debug($"Tcp client connected: {client}, total clients: {CountTotalClients()}");
+
+				Interlocked.Increment(ref _concurrentTcpSessionCount);
+				try
+				{
+					await Impl(client);
+				}
+				catch(TcpException ex)
+				{
+					_logger.Warn(ex.Message);
+				}
+				catch(Exception ex)
+				{
+					_logger.Error(ex);
+				}
+				finally
+				{
+					Interlocked.Decrement(ref _concurrentTcpSessionCount);
+					// Logging
+					_logger.Debug(
+						$"Tcp client disconnected: {client}, total clients: {CountTotalClients()}"
+						);
+				}
 			}
 		}
 
@@ -116,15 +114,6 @@ namespace MicroHttpd.Core
 			client.GetStream().WriteTimeout = (int)tcpSettings.IdleTimeout.TotalMilliseconds;
 			client.SendBufferSize = tcpSettings.ReadWriteBufferSize;
 			client.ReceiveBufferSize = tcpSettings.ReadWriteBufferSize;
-		}
-		
-		int _disposed;
-		public void Dispose()
-		{
-			if(Interlocked.CompareExchange(ref _disposed, 1, 0) == 0)
-			{
-				_tcpWatchDog.Dispose();
-			}
 		}
 	}
 }

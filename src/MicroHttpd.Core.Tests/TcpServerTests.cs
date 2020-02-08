@@ -20,10 +20,10 @@ namespace MicroHttpd.Core.Tests
 			mockTcpListenerFactory
 				.Setup(inst => inst.Create(It.IsAny<string>(), 8443))
 				.Returns<string, int>((addr, port) => MockUpTcpClient(port, notifyTcpClientConnected8443));
-			var mockHandler = new Mock<ITcpClientConnectedEventHandler>();
+			var mockHandler = new Mock<ITcpClientHandler>();
 
 			// Create and start the server
-			var server = new TcpServer(
+			var server = new Server(
 				mockTcpListenerFactory.Object,
 				mockHandler.Object
 				);
@@ -98,12 +98,12 @@ namespace MicroHttpd.Core.Tests
 		}
 
 		static void VerifyConnectionsOnPort(
-			Mock<ITcpClientConnectedEventHandler> mockHandler, 
+			Mock<ITcpClientHandler> mockHandler, 
 			int port, 
 			Times times)
 		{
 			mockHandler
-				.Verify(inst => inst.TcpClientConnected(
+				.Verify(inst => inst.Handle(
 					It.Is<ITcpClient>(x => Mock.Get<ITcpClient>(x).Name == $"ConnectedOnPort:{port}")),
 					times
 					);

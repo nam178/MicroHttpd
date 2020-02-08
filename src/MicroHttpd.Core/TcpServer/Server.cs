@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.Linq;
 using System.Threading;
@@ -9,18 +9,18 @@ namespace MicroHttpd.Core
 	/// Accepts TCP connections
 	/// </summary>
 	/// <remarks>Thread safe</remarks>
-	sealed class TcpServer : IDisposable
+	sealed class Server : IDisposable
 	{
-		readonly ILog _logger = LogManager.GetLogger(typeof(TcpServer));
+		readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 		readonly ITcpListenerFactory _tcpListenerFactory;
-		readonly ITcpClientConnectedEventHandler _tcpClientConnectedEventHandler;
+		readonly ITcpClientHandler _tcpClientConnectedEventHandler;
 		readonly object _syncRoot = new object();
 
 		const string ListenAddress = "0.0.0.0";
 
-		public TcpServer(
+		public Server(
 			ITcpListenerFactory tcpListenerFactory,
-			ITcpClientConnectedEventHandler tcpClientConnectedEventHandler)
+			ITcpClientHandler tcpClientConnectedEventHandler)
 		{
 			_tcpListenerFactory = tcpListenerFactory 
 				?? throw new ArgumentNullException(nameof(tcpListenerFactory));
@@ -66,8 +66,8 @@ namespace MicroHttpd.Core
 
 		async void AcceptConnections(
 			ITcpListener tcpListener, 
-			ITcpClientConnectedEventHandler eventHandler, 
-			ILog logger)
+			ITcpClientHandler eventHandler, 
+			ILogger logger)
 		{
 			if(tcpListener == null)
 				throw new ArgumentNullException(nameof(tcpListener));
@@ -76,7 +76,7 @@ namespace MicroHttpd.Core
 			{
 				try
 				{
-					eventHandler.TcpClientConnected(
+					eventHandler.Handle(
 						await tcpListener.AcceptTcpClientAsync()
 						);
 				}

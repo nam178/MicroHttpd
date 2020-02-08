@@ -62,7 +62,7 @@ namespace MicroHttpd.Core
 
 			// register TcpSessionInitializer as a singleton
 			builder
-				.RegisterType<TcpSessionInitializer>()
+				.RegisterType<TcpClientHandler>()
 				.WithParameter( /* use the watch dog with TCP timeout */
 					(p, x) => p.ParameterType == typeof(IWatchDog),
 					(p, x) => x.ResolveNamed<IWatchDog>("TCP")
@@ -160,7 +160,7 @@ namespace MicroHttpd.Core
 		static void RegisterPerDependencyInstances(ContainerBuilder builder)
 		{
 			builder
-				.RegisterType<TcpServer>()
+				.RegisterType<Server>()
 				.AsSelf();
 
 			builder
@@ -168,14 +168,12 @@ namespace MicroHttpd.Core
 				.AsImplementedInterfaces();
 
 			builder
-				.RegisterType<TcpClientConnectedEventHandler>()
+				.RegisterType<TcpClientHandler>()
 				.AsImplementedInterfaces();
 
 			builder
 				.RegisterType<SslService>()
 				.AsImplementedInterfaces();
-
-			builder.RegisterType<WatchDog>().AsSelf();
 
 			builder.RegisterType<TimerFactory>().AsImplementedInterfaces();
 

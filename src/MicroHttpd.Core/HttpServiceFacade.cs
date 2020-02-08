@@ -74,7 +74,7 @@ namespace MicroHttpd.Core
 
 			// Start the TcpServer
 			_container = containerBuilder.Build();
-			_container.Resolve<TcpServer>().Start(
+			_container.Resolve<Server>().Start(
 				_container
 					.Resolve<IEnumerable<IVirtualHostConfigReadOnly>>()
 					.SelectMany(vhost => vhost.ListenOnPorts)

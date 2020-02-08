@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.IO;
 using System.Text;
@@ -15,7 +15,7 @@ namespace MicroHttpd.Core
 		readonly IHttpKeepAliveService _keepAliveService;
 		readonly IHttpRequestInternal _request;
 		readonly IHttpResponseInternal _response;
-		readonly ILog _logger = LogManager.GetLogger(typeof(HttpSession));
+		readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 
 		public HttpSession(
 			Stream connection,

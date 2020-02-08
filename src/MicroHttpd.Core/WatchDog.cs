@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ namespace MicroHttpd.Core
 {
 	sealed class WatchDog : IDisposable, IWatchDog
 	{
-		readonly ILog _logger = LogManager.GetLogger(typeof(WatchDog));
+		readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 		readonly List<WatchDogSession> _sessions = new List<WatchDogSession>();
 		readonly object _syncRoot = new object();
 		readonly ITimer _timer;
@@ -59,12 +59,12 @@ namespace MicroHttpd.Core
 			if (member == null)
 				throw new ArgumentNullException(nameof(member));
 
-			var membership = new WatchDogSession(member, Remove, _clock);
+			var session = new WatchDogSession(member, Remove, _clock);
 			lock(_syncRoot)
 			{
-				_sessions.Add(membership);
+				_sessions.Add(session);
 			}
-			return membership;
+			return session;
 		}
 
 		void Remove(WatchDogSession session)
@@ -86,7 +86,7 @@ namespace MicroHttpd.Core
 
 			lock (_syncRoot)
 			{
-				foreach (var session in _sessions.ToArray())
+				foreach(var session in _sessions.ToArray())
 				{
 					var age = now - session.LastActivityUnixTimestamp;
 

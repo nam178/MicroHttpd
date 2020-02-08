@@ -1,4 +1,4 @@
-using log4net;
+using NLog;
 using Moq;
 using System;
 using Xunit;

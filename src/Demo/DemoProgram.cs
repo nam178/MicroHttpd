@@ -1,8 +1,5 @@
-﻿using log4net;
-using log4net.Config;
-using MicroHttpd.Core;
+﻿using MicroHttpd.Core;
 using MicroHttpd.Core.StringMatch;
-using System.Reflection;
 
 namespace Demo
 {
@@ -10,11 +7,6 @@ namespace Demo
     {
 		static void Main(string[] args)
 		{
-			// Enable logging if you like
-			BasicConfigurator.Configure(
-				LogManager.CreateRepository(
-					Assembly.GetEntryAssembly(),
-					typeof(log4net.Repository.Hierarchy.Hierarchy)));
 
 			// Create the HTTP server, 
 			// it doesn't do anything until you configure and start it.

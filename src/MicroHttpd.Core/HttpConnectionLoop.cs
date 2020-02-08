@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -10,7 +10,7 @@ namespace MicroHttpd.Core
 		readonly Stream _connection;
 		readonly IHttpKeepAliveService _keepAliveService;
 		readonly IHttpSessionFactory _httpSessionFactory;
-		readonly ILog _logger = LogManager.GetLogger(typeof(HttpConnectionLoop));
+		readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 
 		public HttpConnectionLoop(
 			Stream tcpConnection,

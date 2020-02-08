@@ -1,4 +1,4 @@
-﻿using log4net;
+﻿using NLog;
 using System;
 using System.Globalization;
 using System.Threading.Tasks;
@@ -7,7 +7,7 @@ namespace MicroHttpd.Core.Content
 {
 	sealed class Static : IContent
 	{
-		readonly ILog _logger = LogManager.GetLogger(typeof(Static));
+		readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 		readonly IStaticFileServer _fileServer;
 		readonly TcpSettings _tcpSettings;
 
