@@ -1,13 +1,12 @@
 ﻿using NLog;
 using System;
 using System.IO;
-using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
 {
-	sealed class HttpResponseBody : WriteOnlyStream
+    sealed class HttpResponseBody : WriteOnlyStream
 	{
 		readonly MemoryStream _buffer;
 		readonly Stream _rawResponseStream;

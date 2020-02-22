@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Text;
 
 namespace MicroHttpd.Core.Tests
 {
-	public static class MockHttpChunkedMessageBody
+    public static class MockHttpChunkedMessageBody
 	{
 		/// <summary>
 		/// The new line character to use

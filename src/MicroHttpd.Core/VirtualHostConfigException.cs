@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace MicroHttpd.Core
 {
-	[Serializable]
+    [Serializable]
 	sealed class VirtualHostConfigException : Exception
 	{
 		public VirtualHostConfigException()

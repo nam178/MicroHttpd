@@ -4,17 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
 namespace MicroHttpd.Core
 {
-	/// <summary>
-	///  Use this to start/stop the HTTP server.
-	/// </summary>
-	/// <remarks>Not thread safe</remarks>
-	public sealed class HttpServiceFacade : IHttpService
+    /// <summary>
+    ///  Use this to start/stop the HTTP server.
+    /// </summary>
+    /// <remarks>Not thread safe</remarks>
+    public sealed class HttpServiceFacade : IHttpService
     {
 		readonly List<IVirtualHostConfigReadOnly> _vhosts = new List<IVirtualHostConfigReadOnly>();
 		readonly List<IModule> _autofacModules = new List<IModule>

@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace MicroHttpd.Core
+﻿namespace MicroHttpd.Core
 {
-	public interface IHttpHeader : IHttpHeaderReadOnly
+    public interface IHttpHeader : IHttpHeaderReadOnly
 	{
 		new string this[StringCI key]
 		{ get; set; }

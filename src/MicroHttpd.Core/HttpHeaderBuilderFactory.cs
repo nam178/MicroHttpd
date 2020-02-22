@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MicroHttpd.Core
+﻿namespace MicroHttpd.Core
 {
     static class HttpHeaderBuilderFactory
     {

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MicroHttpd.Core.Content
 {
-	sealed class StaticFileServer : IStaticFileServer
+    sealed class StaticFileServer : IStaticFileServer
     {
 		readonly IReadOnlyList<IVirtualHostConfigReadOnly> _vhosts;
 		readonly TcpSettings _tcpSettings;

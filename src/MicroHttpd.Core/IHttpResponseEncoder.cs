@@ -1,17 +1,15 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
 {
-	/// <summary>
-	/// Responsible for encoding the body of the Http message.
-	/// 
-	/// For instance we have a 'Passthrough' encoder which does 
-	/// nothing, used for fixed-length content (Content-Length header is set),
-	/// and a 'chunked' encoder, used when the length of content is unknown.
-	/// </summary>
-	interface IHttpResponseEncoder
+    /// <summary>
+    /// Responsible for encoding the body of the Http message.
+    /// 
+    /// For instance we have a 'Passthrough' encoder which does 
+    /// nothing, used for fixed-length content (Content-Length header is set),
+    /// and a 'chunked' encoder, used when the length of content is unknown.
+    /// </summary>
+    interface IHttpResponseEncoder
     {
 		/// <summary>
 		/// Continue encoding the specified data into the target stream

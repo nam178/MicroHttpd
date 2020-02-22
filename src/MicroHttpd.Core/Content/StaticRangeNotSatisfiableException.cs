@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace MicroHttpd.Core.Content
 {
-	[Serializable]
+    [Serializable]
 	sealed class StaticRangeNotSatisfiableException : Exception
 	{
 		public StaticRangeNotSatisfiableException()

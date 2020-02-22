@@ -14,7 +14,7 @@ namespace MicroHttpd.Core
 	///	2. Observe reads/writes to the underlying stream using a WatchDog,
 	/// so that if the stream id idle for too long, the WatchDog will terminate it.
 	/// </summary>
-	sealed class WatchDogStreamDecorator : Stream
+	public sealed class WatchDogStreamDecorator : Stream
 	{
 		readonly Stream _original;
 		readonly IWatchDogSession _watchDogSession;
@@ -29,12 +29,14 @@ namespace MicroHttpd.Core
 
 		public override bool CanTimeout => _original.CanTimeout;
 
-		public override int ReadTimeout {
+		public override int ReadTimeout 
+		{
 			get => _original.ReadTimeout;
 			set => _original.ReadTimeout = value;
 		}
 
-		public override int WriteTimeout {
+		public override int WriteTimeout 
+		{
 			get => _original.WriteTimeout;
 			set => _original.WriteTimeout = value;
 		}

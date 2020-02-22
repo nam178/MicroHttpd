@@ -7,7 +7,6 @@ namespace MicroHttpd.Core
 	/// </summary>
 	interface IClock
     {
-		DateTime UtcNow
-		{ get; }
+		DateTime UtcNow { get; }
     }
 }

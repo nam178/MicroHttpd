@@ -5,7 +5,7 @@ namespace MicroHttpd.Core
 	/// <summary>
 	/// Validation helper
 	/// </summary>
-	static class Validation
+	public static class Validation
     {
 		/// <summary>
 		/// Validate the provided 'start' and 'count' argument so that
@@ -30,29 +30,6 @@ namespace MicroHttpd.Core
 		{
 			if(false == (port > 0 && port <= ushort.MaxValue))
 				throw new ArgumentException(nameof(port));
-		}
-
-		/// <summary>
-		/// Validate the provided HttpSettings and throw exception when fail.
-		/// </summary>
-		public static void RequireValidHttpSettings(HttpSettings httpSettings)
-		{
-			RequireValidBufferSize(httpSettings.MaxBodyChunkSize);
-			RequireValidBufferSize(httpSettings.MaxBodySizeInMemory);
-			RequireNonNegative(httpSettings.MaxKeepAliveConnectionsGlobally);
-			RequirePositive(httpSettings.KeepAliveTimeout);
-		}
-
-		/// <summary>
-		/// Validate the provided TcpSettings
-		/// </summary>
-		public static void RequireValidTcpSettings(TcpSettings tcpSettings)
-		{
-			if(tcpSettings.ReadWriteBufferSize <= 0 
-				|| tcpSettings.ReadWriteBufferSize >= (8 * 1024 * 1024))
-			{
-				throw new ArgumentOutOfRangeException(nameof(tcpSettings.ReadWriteBufferSize));
-			}
 		}
 
 		/// <summary>

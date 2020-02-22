@@ -1,6 +1,5 @@
 ﻿using MicroHttpd.Core.Content;
 using Moq;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,7 +8,7 @@ using Xunit;
 
 namespace MicroHttpd.Core.Tests
 {
-	public class StaticRangeFileServerExtensionsTest
+    public class StaticRangeFileServerExtensionsTest
     {
 		[Fact]
 		public async Task ServeSingleRangeAsync()

@@ -10,8 +10,7 @@ namespace MicroHttpd.Core
 	{
 		event EventHandler Ticked;
 
-		bool AutoReset
-		{ get; set; }
+		bool AutoReset { get; set; }
 
 		void Start();
 

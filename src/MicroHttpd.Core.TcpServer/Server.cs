@@ -16,7 +16,7 @@ namespace MicroHttpd.Core
 		readonly ITcpClientHandler _tcpClientConnectedEventHandler;
 		readonly object _syncRoot = new object();
 
-		const string ListenAddress = "0.0.0.0";
+		const string LISTEN_ADDRESS = "0.0.0.0";
 
 		public Server(
 			ITcpListenerFactory tcpListenerFactory,
@@ -53,9 +53,9 @@ namespace MicroHttpd.Core
 
 		ITcpListener AcceptConnections(int port)
 		{
-			var listener = _tcpListenerFactory.Create(ListenAddress, port);
+			var listener = _tcpListenerFactory.Create(LISTEN_ADDRESS, port);
 			listener.Start();
-			_logger.Debug($"TCP Server started {ListenAddress}:{port}");
+			_logger.Debug($"TCP Server started {LISTEN_ADDRESS}:{port}");
 
 			AcceptConnections(
 				listener,
@@ -66,7 +66,7 @@ namespace MicroHttpd.Core
 
 		async void AcceptConnections(
 			ITcpListener tcpListener, 
-			ITcpClientHandler eventHandler, 
+			ITcpClientHandler tcpClientHandler, 
 			ILogger logger)
 		{
 			if(tcpListener == null)
@@ -76,7 +76,7 @@ namespace MicroHttpd.Core
 			{
 				try
 				{
-					eventHandler.Handle(
+					tcpClientHandler.Handle(
 						await tcpListener.AcceptTcpClientAsync()
 						);
 				}
@@ -92,8 +92,7 @@ namespace MicroHttpd.Core
 			}
 		}
 
-		bool IsDisposed()
-			=> Interlocked.CompareExchange(ref _dispose, 0, 0) == 1;
+		bool IsDisposed() => Interlocked.CompareExchange(ref _dispose, 0, 0) == 1;
 
 		void ThrowIfDisposed()
 		{

@@ -2,27 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>0.0.1</Version>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\mime.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\mime.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="5.1.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="NLog" Version="4.6.8" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MicroHttpd.Core.Common\MicroHttpd.Core.Common.csproj" />
-    <ProjectReference Include="..\MicroHttpd.Core.TcpServer\MicroHttpd.Core.TcpServer.csproj" />
   </ItemGroup>
 
 </Project>

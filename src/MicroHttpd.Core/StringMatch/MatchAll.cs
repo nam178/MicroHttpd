@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace MicroHttpd.Core.StringMatch
+﻿namespace MicroHttpd.Core.StringMatch
 {
-	public class MatchAll : IStringMatch
+    public class MatchAll : IStringMatch
 	{
 		public bool IsMatch(string testString) => true;
 	}

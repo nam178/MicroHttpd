@@ -33,7 +33,7 @@ namespace MicroHttpd.Core
 			RegisterGlobalSingleton(builder);
 			RegisterPerTcpSessionSingleton(builder);
 			RegisterPerHttpSessionSingleton(builder);
-			RegisterPerDependencyInstances(builder);
+			RegisterTransient(builder);
 		}
 
 		static void RegisterGlobalSingleton(ContainerBuilder builder)
@@ -58,16 +58,6 @@ namespace MicroHttpd.Core
 					(p, x) => p.ParameterType == typeof(IWatchDog),
 					(p, x) => x.ResolveNamed<IWatchDog>("HTTP"))
 				.AsImplementedInterfaces()
-				.SingleInstance();
-
-			// register TcpSessionInitializer as a singleton
-			builder
-				.RegisterType<TcpClientHandler>()
-				.WithParameter( /* use the watch dog with TCP timeout */
-					(p, x) => p.ParameterType == typeof(IWatchDog),
-					(p, x) => x.ResolveNamed<IWatchDog>("TCP")
-				)
-				.AsSelf().AsImplementedInterfaces()
 				.SingleInstance();
 
 			// Singleton dictionary to allow looking up
@@ -121,7 +111,7 @@ namespace MicroHttpd.Core
 
 			builder
 				.RegisterType<StaticFileServer>()
-				.AsSelf().AsImplementedInterfaces()
+				.AsImplementedInterfaces()
 				.SingleInstance();
 		}
 
@@ -130,12 +120,12 @@ namespace MicroHttpd.Core
 			// We'll have one HttpConnectionLoop per TCP connection
 			builder
 				.RegisterType<HttpConnectionLoop>()
-				.AsSelf().AsImplementedInterfaces()
+				.AsImplementedInterfaces()
 				.InstancePerMatchingLifetimeScope(Tags.TcpSession);
 
 			builder
 				.RegisterType<HttpSessionFactory>()
-				.AsSelf().AsImplementedInterfaces()
+				.AsImplementedInterfaces()
 				.InstancePerMatchingLifetimeScope(Tags.TcpSession);
 		}
 
@@ -157,27 +147,21 @@ namespace MicroHttpd.Core
 				.InstancePerMatchingLifetimeScope(Tags.HttpSession);
 		}
 
-		static void RegisterPerDependencyInstances(ContainerBuilder builder)
+		static void RegisterTransient(ContainerBuilder builder)
 		{
-			builder
-				.RegisterType<Server>()
-				.AsSelf();
-
-			builder
-				.RegisterType<TcpListenerFactory>()
-				.AsImplementedInterfaces();
-
-			builder
-				.RegisterType<TcpClientHandler>()
-				.AsImplementedInterfaces();
-
-			builder
-				.RegisterType<SslService>()
-				.AsImplementedInterfaces();
-
+			builder.RegisterType<Server>().AsSelf();
+			builder.RegisterType<TcpListenerFactory>().AsImplementedInterfaces();
+			builder.RegisterType<SslService>().AsImplementedInterfaces();
 			builder.RegisterType<TimerFactory>().AsImplementedInterfaces();
-
 			builder.RegisterType<Clock>().AsImplementedInterfaces();
+			builder
+				.RegisterType<TcpClientAsyncHandler>()
+				.WithParameter( /* use the watch dog with TCP timeout */
+					(p, x) => p.ParameterType == typeof(IWatchDog),
+					(p, x) => x.ResolveNamed<IWatchDog>("TCP")
+				)
+				.AsSelf()
+				.AsImplementedInterfaces();
 		}
 
 		static WatchDog CreateWatchDogWithSessionTTL(

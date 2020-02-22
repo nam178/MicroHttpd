@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace MicroHttpd.Core
 {
-	sealed class HttpChunkedRequestBody : ReadOnlyStream
+    sealed class HttpChunkedRequestBody : ReadOnlyStream
 	{
 		readonly HttpChunkHeaderBuilder _chunkHeaderBuilder = new HttpChunkHeaderBuilder();
 		readonly HttpLineBuilder _lineBuilder = new HttpLineBuilder();

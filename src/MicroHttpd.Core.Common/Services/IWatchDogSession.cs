@@ -6,7 +6,7 @@ namespace MicroHttpd.Core
 	/// Represents session of a disposable object that watched by the IWatchDog.
 	/// The session can be cancelled by disposing it
 	/// </summary>
-	interface IWatchDogSession : IDisposable
+	public interface IWatchDogSession : IDisposable
 	{
 		/// <summary>
 		/// This method prevents the watched IDisposable from being disposed

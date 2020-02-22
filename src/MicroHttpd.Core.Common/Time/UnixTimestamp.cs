@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MicroHttpd.Core
 {
-    static class UnixTimestamp
+	static class UnixTimestamp
     {
 		public static double FromDateTime(DateTime dateTime)
 		{

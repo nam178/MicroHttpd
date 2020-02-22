@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using MicroHttpd.Core.TcpServer.IoC;
 using System;
 using System.IO;
 
@@ -17,11 +18,11 @@ namespace MicroHttpd.Core
 		public IAsyncOperation Create(ITcpClient client, Stream connection)
 		{
 			var child = _rootLifeTimeScope.BeginLifetimeScope(
-				Module.Tags.TcpSession, 
+				Tags.TCP_SESSION, 
 				x => AddInstanceToRegistration(x, client, connection));
 			return new AsyncOperationWithLifeTimeScope(
 				child,
-				child.Resolve<HttpConnectionLoop>()
+				child.Resolve<IAsyncOperation>()
 				);
 		}
 
